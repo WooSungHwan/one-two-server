@@ -2,7 +2,10 @@ package com.blackdog.onetwo.domain.user.result;
 
 import lombok.Value;
 
-@Value(staticConstructor = "of")
+
+@Value
 public class UserResult {
     private Long id;
+
+    private String nickname;
 }
