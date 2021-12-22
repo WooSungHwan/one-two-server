@@ -1,5 +1,6 @@
 package com.blackdog.onetwo.configuration.response.success;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Value;
 
 import java.time.LocalDateTime;
@@ -11,6 +12,7 @@ public class RestResponse<T> {
 
     private T result;
 
+    @JsonFormat(pattern = "yyyy.MM.dd hh:mm:ss")
     private LocalDateTime responseTime;
 
 }

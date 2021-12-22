@@ -1,5 +1,6 @@
 package com.blackdog.onetwo.configuration.controlleradvice;
 
+import com.blackdog.onetwo.configuration.exception.VerifyException;
 import com.blackdog.onetwo.configuration.response.error.ErrorCode;
 import com.blackdog.onetwo.configuration.response.error.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -19,9 +20,9 @@ public class RestControllerExceptionAdvice {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler
-    public ErrorResponse handleRuntimeException(RuntimeException e, HttpServletRequest req) {
-        log.error("===================== RuntimeException Handling =====================");
-        e.printStackTrace();
+    public ErrorResponse handleVerifyException(VerifyException e, HttpServletRequest req) {
+        log.error("===================== VerifyException Handling =====================");
+
         return ErrorResponse.of(ErrorCode.BAD_REQUEST, now());
     }
 
