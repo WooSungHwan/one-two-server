@@ -12,20 +12,20 @@ link:./index-docs.html[처음으로]
 == 카카오 로그인
 CURL
 
-include::{snippets}/test-user-controller/api_카카오로그인/curl-request.adoc[]
+include::build/generated-snippets/test-user-controller/api_카카오로그인/curl-request.adoc[]
 
 요청정보
 
-include::{snippets}/test-user-controller/api_카카오로그인/request-fields.adoc[]
+include::build/generated-snippets/test-user-controller/api_카카오로그인/request-fields.adoc[]
 
 요청형식
 
-include::{snippets}/test-user-controller/api_카카오로그인/request-body.adoc[]
+include::build/generated-snippets/test-user-controller/api_카카오로그인/request-body.adoc[]
 
 응답정보
 
-include::{snippets}/test-user-controller/api_카카오로그인/response-fields.adoc[]
+include::build/generated-snippets/test-user-controller/api_카카오로그인/response-fields.adoc[]
 
 응답형식
 
-include::{snippets}/test-user-controller/api_카카오로그인/response-body.adoc[]
+include::build/generated-snippets/test-user-controller/api_카카오로그인/response-body.adoc[]
