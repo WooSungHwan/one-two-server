@@ -17,6 +17,14 @@ public class UserController {
 
     private final UserService userService;
 
+    /**
+     * <pre>
+     *     카카오 로그인 & 카카오 유저 등록
+     * </pre>
+     * @param param
+     * @return
+     * @throws Exception
+     */
     @PostMapping(value = "/kakao-login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Object kakaoLogin(@RequestBody @Validated AddKakaoUserParam param) throws Exception {
         return userService.kakaoLogin(param);
