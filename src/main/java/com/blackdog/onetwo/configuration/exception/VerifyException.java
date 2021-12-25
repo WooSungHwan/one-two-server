@@ -11,4 +11,8 @@ public class VerifyException extends RuntimeException {
         this.errorCode = errorCode;
     }
 
+    public ErrorCode getErrorCode() {
+        return this.errorCode;
+    }
+
 }

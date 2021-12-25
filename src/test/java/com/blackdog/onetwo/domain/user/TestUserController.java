@@ -8,8 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.payload.JsonFieldType;
 
-import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.post;
+import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
+import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
+import static org.springframework.restdocs.request.RequestDocumentation.pathParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -20,7 +22,7 @@ public class TestUserController extends TestAbstractController {
     @Test
     void API_카카오로그인() throws Exception {
         AddKakaoUserParam param = AddKakaoUserParam.builder()
-                .accessToken("JkSqIyk3CKnCpEYFLaIzynBiChoKmxCHZnKCnQo9dZsAAAF95gTpIQ")
+                .accessToken("rFObdXKQMK-1fIQJp_MBI155wkI3D9gXDoaHago9dJcAAAF97yZW5g")
                 .build();
 
         mockMvc.perform(post(BASE_URL + "/kakao-login")
@@ -37,11 +39,33 @@ public class TestUserController extends TestAbstractController {
                                 getRestResponseDescriptor(
                                         JsonFieldType.OBJECT, false,
                                         fieldWithPath("result.id").type(JsonFieldType.NUMBER).description("유저 번호"),
-                                        fieldWithPath("result.nickname").type(JsonFieldType.STRING).description("닉네임")
+                                        fieldWithPath("result.nickname").type(JsonFieldType.STRING).description("카카오에서 가져온 닉네임")
                                 )
                         )
                 ));
 
+    }
+
+    @Test
+    void API_유저조회() throws Exception{
+        final Long seq = 1L;
+
+        mockMvc.perform(get(BASE_URL + "/{seq}", seq)
+                .accept(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andDo(document.document(
+                        pathParameters(
+                                parameterWithName("seq").description("유저 번호")
+                        ),
+                        responseFields(
+                                getRestResponseDescriptor(JsonFieldType.OBJECT, false,
+                                        fieldWithPath("result.id").type(JsonFieldType.NUMBER).description("유저 번호"),
+                                        fieldWithPath("result.nickname").type(JsonFieldType.STRING).description("카카오에서 가져온 닉네임")
+                                )
+                        )
+                ))
+        ;
     }
 
 }

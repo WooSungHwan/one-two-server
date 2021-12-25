@@ -22,8 +22,8 @@ public class RestControllerExceptionAdvice {
     @ExceptionHandler
     public ErrorResponse handleVerifyException(VerifyException e, HttpServletRequest req) {
         log.error("===================== VerifyException Handling =====================");
-
-        return ErrorResponse.of(ErrorCode.BAD_REQUEST, now());
+        e.printStackTrace();
+        return ErrorResponse.of(e.getErrorCode(), now());
     }
 
 }

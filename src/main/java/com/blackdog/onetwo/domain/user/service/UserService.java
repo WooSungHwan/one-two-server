@@ -1,5 +1,6 @@
 package com.blackdog.onetwo.domain.user.service;
 
+import com.blackdog.onetwo.configuration.exception.VerifyException;
 import com.blackdog.onetwo.configuration.response.error.ErrorCode;
 import com.blackdog.onetwo.domain.user.entity.UserEntity;
 import com.blackdog.onetwo.domain.user.kakao.KakaoClient;
@@ -34,5 +35,10 @@ public class UserService {
 
         UserEntity user = userRepository.save(UserEntity.of(authInfo.getNickname(), authInfo.getId()));
         return userMapstruct.userEntityToUserResult(user);
+    }
+
+    public UserResult getUser(Long seq) {
+        UserEntity userEntity = userRepository.findById(seq).orElseThrow(() -> new VerifyException(ErrorCode.USER_NOT_FOUND));
+        return userMapstruct.userEntityToUserResult(userEntity);
     }
 }
