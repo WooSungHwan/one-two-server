@@ -23,7 +23,7 @@ public class RestControllerExceptionAdvice {
     public ErrorResponse handleVerifyException(VerifyException e, HttpServletRequest req) {
         log.error("===================== VerifyException Handling =====================");
         e.printStackTrace();
-        return ErrorResponse.of(e.getErrorCode(), now());
+        return ErrorResponse.of(e.getErrorCode());
     }
 
 }

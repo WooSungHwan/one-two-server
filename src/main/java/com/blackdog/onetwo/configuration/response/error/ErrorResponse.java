@@ -6,8 +6,11 @@ import java.time.LocalDateTime;
 
 @Value(staticConstructor = "of")
 public class ErrorResponse {
-    // TODO Serializer
     private ErrorCode errorCode;
 
     private LocalDateTime responseTime;
+
+    public static ErrorResponse of (ErrorCode errorCode) {
+        return ErrorResponse.of(errorCode, LocalDateTime.now());
+    }
 }

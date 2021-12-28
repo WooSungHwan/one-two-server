@@ -4,6 +4,7 @@ import com.blackdog.onetwo.configuration.response.error.ErrorCode;
 import com.blackdog.onetwo.configuration.response.error.ErrorResponse;
 import com.blackdog.onetwo.utils.ResponseUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
@@ -18,14 +19,14 @@ import java.time.LocalDateTime;
 
 import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
+@RequiredArgsConstructor
 @Component
 @Slf4j
 public class SecurityAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
-    @Autowired
-    ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper;
 
-    private final ErrorResponse UNAUTHORIZED_RESPONSE = ErrorResponse.of(ErrorCode.LOGIN_EXPIRED, LocalDateTime.now());
+    private final ErrorResponse UNAUTHORIZED_RESPONSE = ErrorResponse.of(ErrorCode.LOGIN_EXPIRED);
 
     @Override
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
