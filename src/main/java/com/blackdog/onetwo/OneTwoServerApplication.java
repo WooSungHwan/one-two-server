@@ -1,9 +1,11 @@
 package com.blackdog.onetwo;
 
+import com.blackdog.onetwo.configuration.security.properties.JwtProperties;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
@@ -14,6 +16,7 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.time.Duration;
 
+@EnableConfigurationProperties({JwtProperties.class})
 @SpringBootApplication
 public class OneTwoServerApplication {
 

@@ -1,11 +1,13 @@
 package com.blackdog.onetwo.configuration;
 
 import com.blackdog.onetwo.configuration.security.SecurityAccessDeniedHandler;
+import com.blackdog.onetwo.configuration.security.SecurityAuthenticationFilter;
 import com.blackdog.onetwo.configuration.security.SecurityAuthenticationEntryPoint;
 import com.blackdog.onetwo.configuration.security.SecurityUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AccountStatusUserDetailsChecker;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -14,6 +16,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsChecker;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
@@ -34,6 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final SecurityAuthenticationEntryPoint securityAuthenticationEntryPoint;
     private final SecurityAccessDeniedHandler securityAccessDeniedHandler;
     private final SecurityUserDetailsService securityUserDetailsService;
+    private final SecurityAuthenticationFilter securityAuthenticationFilter;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -50,27 +54,29 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .cors()
-                .and()
+                    .and()
                 .csrf()
-                .disable()
-                .formLogin().and()
+                    .disable()
+                .formLogin()
+                    .and()
                 .exceptionHandling()
                 .authenticationEntryPoint(securityAuthenticationEntryPoint)
                 .accessDeniedHandler(securityAccessDeniedHandler)
-                .and()
+                    .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
+                    .and()
                 .authorizeRequests()
                 .antMatchers("/", "/favicon.ico", "/resources/**", "/error/**")
-                .permitAll()
+                    .permitAll()
+                .antMatchers("/api/v1/users/kakao-login", "/api/vi/users/*")
+                    .permitAll()
                 .antMatchers("/api/*/**")
-//                .authenticated()
-                .permitAll()
+                    .authenticated()
                 .anyRequest()
-                .permitAll();
+                    .permitAll();
 
-//        http.addFilterBefore(authKeyAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(securityAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
 }
