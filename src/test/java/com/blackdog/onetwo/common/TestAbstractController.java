@@ -31,7 +31,7 @@ import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWit
 
 @ExtendWith({SpringExtension.class, RestDocumentationExtension.class})
 @SpringBootTest
-public class TestAbstractController {
+public abstract class TestAbstractController {
 
     protected MockMvc mockMvc;
 

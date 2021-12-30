@@ -1,4 +1,4 @@
-package com.blackdog.onetwo.domain.user;
+package com.blackdog.onetwo.domain.user.controller;
 
 import com.blackdog.onetwo.common.TestAbstractController;
 import com.blackdog.onetwo.domain.user.controller.UserController;
