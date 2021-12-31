@@ -1,5 +1,6 @@
 package com.blackdog.onetwo;
 
+import com.blackdog.onetwo.configuration.properties.OpenAPiProperties;
 import com.blackdog.onetwo.configuration.security.properties.JwtProperties;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -16,7 +17,7 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.time.Duration;
 
-@EnableConfigurationProperties({JwtProperties.class})
+@EnableConfigurationProperties({JwtProperties.class, OpenAPiProperties.class})
 @SpringBootApplication
 public class OneTwoServerApplication {
 
