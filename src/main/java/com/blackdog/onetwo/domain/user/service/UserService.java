@@ -2,7 +2,7 @@ package com.blackdog.onetwo.domain.user.service;
 
 import com.blackdog.onetwo.configuration.exception.VerifyException;
 import com.blackdog.onetwo.configuration.response.error.ErrorCode;
-import com.blackdog.onetwo.domain.user.entity.UserEntity;
+import com.blackdog.onetwo.domain.user.entity.Users;
 import com.blackdog.onetwo.domain.user.kakao.KakaoClient;
 import com.blackdog.onetwo.domain.user.kakao.response.AuthResult;
 import com.blackdog.onetwo.domain.user.mapstruct.UserMapstruct;
@@ -29,16 +29,16 @@ public class UserService {
         VerifyUtil.nonNull(authInfo, ErrorCode.KAKAO_USER_NOT_FOUND);
 
         if (userRepository.existsByKakaoId(authInfo.getId())) {
-            UserEntity user = userRepository.findByKakaoId(authInfo.getId());
-            return userMapstruct.userEntityToUserResult(user);
+            Users user = userRepository.findByKakaoId(authInfo.getId());
+            return userMapstruct.usersToUserResult(user);
         }
 
-        UserEntity user = userRepository.save(UserEntity.of(authInfo.getNickname(), authInfo.getId()));
-        return userMapstruct.userEntityToUserResult(user);
+        Users user = userRepository.save(Users.of(authInfo.getNickname(), authInfo.getId()));
+        return userMapstruct.usersToUserResult(user);
     }
 
     public UserResult getUser(Long seq) {
-        UserEntity userEntity = userRepository.findById(seq).orElseThrow(() -> new VerifyException(ErrorCode.USER_NOT_FOUND));
-        return userMapstruct.userEntityToUserResult(userEntity);
+        Users users = userRepository.findById(seq).orElseThrow(() -> new VerifyException(ErrorCode.USER_NOT_FOUND));
+        return userMapstruct.usersToUserResult(users);
     }
 }

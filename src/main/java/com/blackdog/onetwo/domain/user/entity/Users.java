@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-import static lombok.AccessLevel.PRIVATE;
 import static lombok.AccessLevel.PROTECTED;
 
 @Getter
@@ -14,7 +13,7 @@ import static lombok.AccessLevel.PROTECTED;
 @NoArgsConstructor(access = PROTECTED)
 @Table(name = "users")
 @Entity
-public class UserEntity {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +25,12 @@ public class UserEntity {
     @Column(name = "kakao_id", length = 20, nullable = false)
     private String kakaoId;
 
-    public static UserEntity of(Long id, String nickname, String kakaoId) {
-        return new UserEntity(id, nickname, kakaoId);
+    public static Users of(Long id, String nickname, String kakaoId) {
+        return new Users(id, nickname, kakaoId);
     }
 
-    public static UserEntity of(String nickname, String kakaoId) {
-        return UserEntity.of(null, nickname, kakaoId);
+    public static Users of(String nickname, String kakaoId) {
+        return Users.of(null, nickname, kakaoId);
     }
 
 }

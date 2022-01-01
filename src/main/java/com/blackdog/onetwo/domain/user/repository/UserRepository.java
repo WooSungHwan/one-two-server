@@ -1,11 +1,11 @@
 package com.blackdog.onetwo.domain.user.repository;
 
-import com.blackdog.onetwo.domain.user.entity.UserEntity;
+import com.blackdog.onetwo.domain.user.entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
+public interface UserRepository extends JpaRepository<Users, Long> {
 
     boolean existsByKakaoId(String id);
 
-    UserEntity findByKakaoId(String id);
+    Users findByKakaoId(String id);
 }

@@ -1,6 +1,6 @@
 package com.blackdog.onetwo.configuration.security;
 
-import com.blackdog.onetwo.domain.user.entity.UserEntity;
+import com.blackdog.onetwo.domain.user.entity.Users;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,8 +20,8 @@ public class SecurityUser implements UserDetails {
         return new SecurityUser(seq, nickname);
     }
 
-    public static SecurityUser of(UserEntity userEntity) {
-        return SecurityUser.of(userEntity.getId(), userEntity.getNickname());
+    public static SecurityUser of(Users users) {
+        return SecurityUser.of(users.getId(), users.getNickname());
     }
 
     @Override
