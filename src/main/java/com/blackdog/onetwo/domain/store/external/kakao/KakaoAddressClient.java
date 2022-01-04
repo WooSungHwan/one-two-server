@@ -1,6 +1,6 @@
-package com.blackdog.onetwo.domain.store.kakao;
+package com.blackdog.onetwo.domain.store.external.kakao;
 
-import com.blackdog.onetwo.domain.store.kakao.response.AddressResult;
+import com.blackdog.onetwo.domain.store.external.kakao.response.AddressResult;
 import com.blackdog.onetwo.utils.JsonUtil;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -63,17 +63,17 @@ public class KakaoAddressClient {
         }
 
         public Double getFirstX() {
-            if (CollectionUtils.isEmpty(this.documents)) {
+            if (CollectionUtils.isEmpty(documents)) {
                 return null;
             }
-            return this.documents.get(0).getX();
+            return documents.get(0).getX();
         }
 
         public Double getFirstY() {
-            if (CollectionUtils.isEmpty(this.documents)) {
+            if (CollectionUtils.isEmpty(documents)) {
                 return null;
             }
-            return this.documents.get(0).getY();
+            return documents.get(0).getY();
         }
     }
 }
