@@ -26,7 +26,7 @@ public class KakaoAddressClient {
         try {
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.set("Authorization", "KakaoAK cf6d2026face7a19e0a4d818ce63abca");
-            httpHeaders.set("KA", "sdk/4.4.3 os/javascript lang/ko-KR device/MacIntel origin/https%3A%2F%2Fwww.deveapp.com");
+            httpHeaders.set("KA", "sdk/4.4.3 os/javascript lang/ko-KR device/MacIntel origin/https://www.deveapp.com");
 
             URI uri = new URIBuilder(KAKAO_ADDRESS_URL)
                     .addParameter("query", address)
