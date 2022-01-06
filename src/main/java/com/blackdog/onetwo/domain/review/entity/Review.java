@@ -22,8 +22,8 @@ public class Review {
     private Long id;
 
     @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "store_seq",
-            referencedColumnName = "seq",
+    @JoinColumn(name = "stores_id",
+            referencedColumnName = "id",
             nullable = false,
             foreignKey = @ForeignKey(name = "FK_REVIEWS_STORE_SEQ"))
     private Store store;
