@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Value;
 
 @AllArgsConstructor
-@Value(staticConstructor = "of")
+@Value
 public class DataSeoulResult {
 
     private String managementId;

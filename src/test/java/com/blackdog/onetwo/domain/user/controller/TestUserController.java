@@ -48,15 +48,15 @@ public class TestUserController extends TestAbstractController {
 
     @Test
     void API_유저조회() throws Exception{
-        final Long seq = 1L;
+        final Long id = 1L;
 
-        mockMvc.perform(get(BASE_URL + "/{seq}", seq)
+        mockMvc.perform(get(BASE_URL + "/{id}", id)
                 .accept(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andDo(document.document(
                         pathParameters(
-                                parameterWithName("seq").description("유저 번호")
+                                parameterWithName("id").description("유저 번호")
                         ),
                         responseFields(
                                 getRestResponseDescriptor(JsonFieldType.OBJECT, false,

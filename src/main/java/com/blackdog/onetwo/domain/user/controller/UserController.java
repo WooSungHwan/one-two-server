@@ -18,13 +18,13 @@ public class UserController {
      * <pre>
      *     유저 조회
      * </pre>
-     * @param seq
+     * @param id
      * @return
      * @throws Exception
      */
-    @GetMapping(value = "/{seq}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Object getUser(@PathVariable("seq") Long seq) throws Exception {
-        return userService.getUser(seq);
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Object getUser(@PathVariable("id") Long id) throws Exception {
+        return userService.getUser(id);
     }
 
     /**

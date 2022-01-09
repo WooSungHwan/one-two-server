@@ -1,5 +1,6 @@
 package com.blackdog.onetwo.domain.user.entity;
 
+import com.blackdog.onetwo.domain.common.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import static lombok.AccessLevel.PROTECTED;
 @NoArgsConstructor(access = PROTECTED)
 @Table(name = "users")
 @Entity
-public class Users {
+public class Users extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +31,7 @@ public class Users {
     }
 
     public static Users of(String nickname, String kakaoId) {
-        return Users.of(null, nickname, kakaoId);
+        return of(null, nickname, kakaoId);
     }
 
 }

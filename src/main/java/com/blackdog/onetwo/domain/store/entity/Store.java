@@ -1,5 +1,6 @@
 package com.blackdog.onetwo.domain.store.entity;
 
+import com.blackdog.onetwo.domain.common.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +18,7 @@ import static lombok.AccessLevel.PROTECTED;
                 @UniqueConstraint(name = "uk_stores_management_id", columnNames = {"management_id"})
         })
 @Entity
-public class Store {
+public class Store extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,4 +53,12 @@ public class Store {
      */
     @Column(name = "business_item", length = 100)
     private String businessItem;
+
+    public static Store of(Long id, String managementId, String approvalDate, String jibunAddress, String roadAddress, String businessItem) {
+        return new Store(id, managementId, approvalDate, jibunAddress, roadAddress, businessItem);
+    }
+
+    public static Store of(String managementId, String approvalDate, String jibunAddress, String roadAddress, String businessItem) {
+        return of(null, managementId, approvalDate, jibunAddress, roadAddress, businessItem);
+    }
 }

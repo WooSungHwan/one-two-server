@@ -30,15 +30,19 @@ public class UserService {
 
         if (userRepository.existsByKakaoId(authInfo.getId())) {
             Users user = userRepository.findByKakaoId(authInfo.getId());
-            return userMapstruct.usersToUserResult(user);
+            return getUserResult(user);
         }
 
         Users user = userRepository.save(Users.of(authInfo.getNickname(), authInfo.getId()));
-        return userMapstruct.usersToUserResult(user);
+        return getUserResult(user);
     }
 
     public UserResult getUser(Long seq) {
         Users users = userRepository.findById(seq).orElseThrow(() -> new VerifyException(ErrorCode.USER_NOT_FOUND));
+        return getUserResult(users);
+    }
+
+    public UserResult getUserResult(Users users) {
         return userMapstruct.usersToUserResult(users);
     }
 }
