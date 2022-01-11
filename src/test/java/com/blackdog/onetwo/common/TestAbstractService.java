@@ -8,6 +8,4 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public abstract class TestAbstractService {
 
-
-
 }
