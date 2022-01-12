@@ -1,7 +1,9 @@
 package com.blackdog.onetwo.domain.store.result;
 
+import lombok.Builder;
 import lombok.Value;
 
+@Builder
 @Value
 public class StoreResult {
     private String managementId;

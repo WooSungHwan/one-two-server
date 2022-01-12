@@ -2,13 +2,16 @@ package com.blackdog.onetwo.domain.store.entity;
 
 import com.blackdog.onetwo.domain.common.BaseEntity;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 
 import static lombok.AccessLevel.PROTECTED;
 
+@Builder
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor(access = PROTECTED)

@@ -6,6 +6,7 @@ import com.blackdog.onetwo.domain.review.result.ReviewDetailResult;
 import com.blackdog.onetwo.domain.review.result.ReviewResult;
 import com.blackdog.onetwo.domain.store.result.StoreResult;
 import com.blackdog.onetwo.domain.user.result.UserResult;
+import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -22,7 +23,7 @@ public interface ReviewMapstruct {
         @Mapping(target = "user",  expression = "java(user)")
     })
     ReviewDetailResult makeReviewDetailResult(ReviewResult review,
-                                              UserResult user,
-                                              StoreResult store);
+                                              @Context UserResult user,
+                                              @Context StoreResult store);
 
 }

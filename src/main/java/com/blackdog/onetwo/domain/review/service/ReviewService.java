@@ -5,7 +5,10 @@ import com.blackdog.onetwo.domain.review.entity.Review;
 import com.blackdog.onetwo.domain.review.mapstruct.ReviewMapstruct;
 import com.blackdog.onetwo.domain.review.repository.ReviewRepository;
 import com.blackdog.onetwo.domain.review.result.ReviewDetailResult;
+import com.blackdog.onetwo.domain.review.result.ReviewResult;
+import com.blackdog.onetwo.domain.store.result.StoreResult;
 import com.blackdog.onetwo.domain.store.service.StoreService;
+import com.blackdog.onetwo.domain.user.result.UserResult;
 import com.blackdog.onetwo.domain.user.service.UserService;
 import com.blackdog.onetwo.utils.VerifyUtil;
 import lombok.RequiredArgsConstructor;
@@ -31,8 +34,8 @@ public class ReviewService {
         VerifyUtil.nonNull(review, ErrorCode.RESOURCE_NOT_FOUND);
 
         return reviewMapstruct.makeReviewDetailResult(
-                    reviewMapstruct.reviewToReviewResult(review),
-                    userService.getUserResult(review.getUsers()),
-                    storeService.getStoreResult(review.getStore()));
+                reviewMapstruct.reviewToReviewResult(review),
+                userService.getUserResult(review.getUsers()),
+                storeService.getStoreResult(review.getStore()));
     }
 }

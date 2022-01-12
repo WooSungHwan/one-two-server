@@ -4,14 +4,17 @@ import com.blackdog.onetwo.domain.common.BaseEntity;
 import com.blackdog.onetwo.domain.store.entity.Store;
 import com.blackdog.onetwo.domain.user.entity.Users;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 
 import static javax.persistence.FetchType.LAZY;
 import static lombok.AccessLevel.PROTECTED;
 
+@Builder
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor(access = PROTECTED)
