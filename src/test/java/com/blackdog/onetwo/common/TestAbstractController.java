@@ -1,5 +1,6 @@
 package com.blackdog.onetwo.common;
 
+import com.blackdog.onetwo.CustomRestDocumentationExtension;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.ArrayUtils;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,7 +30,7 @@ import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.docu
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 
-@ExtendWith({SpringExtension.class, RestDocumentationExtension.class})
+@ExtendWith({SpringExtension.class, CustomRestDocumentationExtension.class})
 @SpringBootTest
 public abstract class TestAbstractController {
 

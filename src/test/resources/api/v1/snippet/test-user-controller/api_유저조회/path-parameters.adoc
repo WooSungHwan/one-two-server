@@ -1,0 +1,8 @@
+.+/api/v1/users/{id}+
+|===
+|Parameter|Description
+
+|`+id+`
+|유저 번호
+
+|===

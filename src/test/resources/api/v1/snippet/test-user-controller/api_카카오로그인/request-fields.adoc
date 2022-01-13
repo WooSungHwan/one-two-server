@@ -1,0 +1,8 @@
+|===
+|Path|Type|Description
+
+|`+accessToken+`
+|`+String+`
+|카카오 엑세스 토큰
+
+|===

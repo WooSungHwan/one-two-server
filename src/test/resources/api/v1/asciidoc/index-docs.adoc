@@ -11,7 +11,10 @@
 [cols="2,2,6"]
 |===
 | 날짜 | API 문서 | 내용
-
+| 2022-01-13
+| 리뷰 문서 추가
+|
+| 1. 리뷰 단건 조회 API 개발
 | 2021-12-23
 | 문서 최초 생성
 |
@@ -20,7 +23,8 @@
 |===
 [id="display-none"]
 == link:./user-api-docs.html[유저 API]
-
+[id="display-none"]
+== link:./review-api-docs.html[리뷰 API]
 ++++
 <style>
 #display-none {

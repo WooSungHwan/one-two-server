@@ -1,16 +1,11 @@
 package com.blackdog.onetwo.domain.review.controller;
 
-
 import com.blackdog.onetwo.common.TestAbstractController;
-import com.blackdog.onetwo.domain.review.repository.ReviewRepository;
-import com.blackdog.onetwo.domain.user.controller.UserController;
-import com.blackdog.onetwo.domain.user.repository.UserRepository;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.payload.JsonFieldType;
 
-import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
+import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.get;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
@@ -23,7 +18,7 @@ public class TestReviewController extends TestAbstractController {
     private static final String BASE_URL = extractingRequestMapping(ReviewController.class);
 
     @Test
-    void 리뷰한건조회() throws Exception {
+    void API_리뷰한건조회() throws Exception {
         mockMvc.perform(get(BASE_URL + "/{id}", 1L)
                 .accept(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isOk())

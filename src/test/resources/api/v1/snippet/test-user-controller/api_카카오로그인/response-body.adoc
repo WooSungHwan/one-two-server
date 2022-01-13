@@ -1,0 +1,11 @@
+[source,options="nowrap"]
+----
+{
+  "message" : "OK",
+  "result" : {
+    "id" : 9,
+    "nickname" : "우성환"
+  },
+  "responseTime" : "2022.01.13 09:50:24"
+}
+----

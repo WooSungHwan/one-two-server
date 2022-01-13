@@ -1,0 +1,30 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json;charset=UTF-8
+Content-Length: 478
+
+{
+  "message" : "OK",
+  "result" : {
+    "review" : {
+      "id" : 1,
+      "content" : "content"
+    },
+    "store" : {
+      "managementId" : "0ef15043-9b8a-46ca-b735-fa85a99a0bbb",
+      "jibunAddress" : "경기도 의정부시 의정부1동 225-16",
+      "roadAddress" : "경기도 의정부시 가능로136번길 9-10",
+      "businessItem" : "음식점"
+    },
+    "user" : {
+      "id" : 1,
+      "nickname" : "test"
+    }
+  },
+  "responseTime" : "2022.01.13 09:50:23"
+}
+----

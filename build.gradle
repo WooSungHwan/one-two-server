@@ -20,7 +20,9 @@ repositories {
 }
 
 ext {
-    set('snippetsDir', file("build/generated-snippets"))
+    set('snippetsDir', file("src/test/resources/api/v1/snippet"))
+    set('asciidocsDir', file("src/test/resources/api/v1/asciidoc"))
+    set('htmlsDir', file("src/test/resources/html"))
 }
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -60,11 +62,13 @@ dependencies {
 
 
 test {
+    exclude '**/*'
     outputs.dir snippetsDir
     useJUnitPlatform()
 }
 
 asciidoctor {
-    inputs.dir snippetsDir
+    setSourceDir(asciidocsDir)
+    setOutputDir(htmlsDir)
     dependsOn test
 }

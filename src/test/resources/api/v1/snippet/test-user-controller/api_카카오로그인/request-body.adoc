@@ -1,0 +1,4 @@
+[source,options="nowrap"]
+----
+{"accessToken":"WSppQqgwTZeriS7zQWPMuXt-9f344pZlleEPJgo9c5oAAAF-U3n5eQ"}
+----

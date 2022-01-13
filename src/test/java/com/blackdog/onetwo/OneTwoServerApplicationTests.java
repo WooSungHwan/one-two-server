@@ -25,6 +25,10 @@ class OneTwoServerApplicationTests {
 
     @Test
     void contextLoads() {
+//        extracted();
+    }
+
+    private void extracted() {
         List<DataSeoulResult> dataSeoulResult = dataSeoulListClient.getDataSeoulResult(1, 1000);
         System.out.println(dataSeoulResult);
         DataSeoulResult dataSeoulResult1 = dataSeoulResult.get(3);

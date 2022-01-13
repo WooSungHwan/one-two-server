@@ -8,15 +8,11 @@ import com.blackdog.onetwo.domain.review.result.ReviewDetailResult;
 import com.blackdog.onetwo.domain.review.result.ReviewResult;
 import com.blackdog.onetwo.domain.store.result.StoreResult;
 import com.blackdog.onetwo.domain.store.service.StoreService;
-import com.blackdog.onetwo.domain.user.mapstruct.UserMapstruct;
 import com.blackdog.onetwo.domain.user.result.UserResult;
 import com.blackdog.onetwo.domain.user.service.UserService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 

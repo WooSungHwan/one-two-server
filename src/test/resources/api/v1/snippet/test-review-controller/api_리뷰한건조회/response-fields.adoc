@@ -1,0 +1,60 @@
+|===
+|Path|Type|Description
+
+|`+message+`
+|`+String+`
+|메시지
+
+|`+result+`
+|`+Object+`
+|결과
+
+|`+result.review+`
+|`+Object+`
+|리뷰 정보
+
+|`+result.review.id+`
+|`+Number+`
+|리뷰 번호
+
+|`+result.review.content+`
+|`+String+`
+|리뷰 상세 내용
+
+|`+result.store+`
+|`+Object+`
+|가게 정보
+
+|`+result.store.managementId+`
+|`+String+`
+|가게 관리 번호
+
+|`+result.store.jibunAddress+`
+|`+String+`
+|가게 지번 주소
+
+|`+result.store.roadAddress+`
+|`+String+`
+|가게 도로명 주소
+
+|`+result.store.businessItem+`
+|`+String+`
+|가게 업태
+
+|`+result.user+`
+|`+Object+`
+|유저 정보
+
+|`+result.user.id+`
+|`+Number+`
+|유저 번호
+
+|`+result.user.nickname+`
+|`+String+`
+|유저 닉네임
+
+|`+responseTime+`
+|`+String+`
+|API 응답 시간
+
+|===
