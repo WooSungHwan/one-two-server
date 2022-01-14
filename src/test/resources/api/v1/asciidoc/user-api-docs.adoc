@@ -19,7 +19,7 @@ include::{sourcedir}/test-user-controller/api_카카오로그인/curl-request.ad
 
 요청정보
 
-include::../snippet/test-user-controller/api_카카오로그인/request-fields.adoc[]
+include::../snippet/test-user-controller/api_카카오로그인/request-body.adoc[]
 
 요청형식
 
@@ -37,16 +37,16 @@ include::../snippet/test-user-controller/api_카카오로그인/response-body.ad
 == 유저 조회
 CURL
 
-include::../snippet/test-user-controller/api_get_user/curl-request.adoc[]
+include::../snippet/test-user-controller/api_유저조회/curl-request.adoc[]
 
-요청형식
+URI 파라미터
 
-include::../snippet/test-user-controller/api_get_user/request-body.adoc[]
+include::../snippet/test-user-controller/api_유저조회/path-parameters.adoc[]
 
 응답정보
 
-include::../snippet/test-user-controller/api_get_user/response-fields.adoc[]
+include::../snippet/test-user-controller/api_유저조회/response-fields.adoc[]
 
 응답형식
 
-include::../snippet/test-user-controller/api_get_user/response-body.adoc[]
+include::../snippet/test-user-controller/api_유저조회/response-body.adoc[]

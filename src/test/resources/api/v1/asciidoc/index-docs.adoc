@@ -2,9 +2,12 @@
 :doctype: article
 :icons: font
 :source-highlighter: highlightjs
-:toc: left
 :toclevels: 3
 :sectlinks:
+
+=== icon:link[] link:./user-api-docs.html[유저 API]
+
+=== icon:link[] link:./review-api-docs.html[리뷰 API]
 
 [discrete]
 === 수정이력
@@ -12,23 +15,12 @@
 |===
 | 날짜 | API 문서 | 내용
 | 2022-01-13
-| 리뷰 문서 추가
+| 리뷰 API
 |
-| 1. 리뷰 단건 조회 API 개발
+1. 리뷰 단건 조회 API 개발
 | 2021-12-23
-| 문서 최초 생성
+| 인덱스, 유저 API
 |
 1. 카카오 로그인 API 개발
 
 |===
-[id="display-none"]
-== link:./user-api-docs.html[유저 API]
-[id="display-none"]
-== link:./review-api-docs.html[리뷰 API]
-++++
-<style>
-#display-none {
-    display: none;
-}
-</style>
-++++

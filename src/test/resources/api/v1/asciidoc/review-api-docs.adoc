@@ -8,24 +8,21 @@
 
 link:./index-docs.html[처음으로]
 
-[[카카오_로그인]]
-== 카카오 로그인
+[[리뷰한건조회]]
+== 리뷰 한건 조회
 CURL
 
-include::../snippet/test-user-controller/api_카카오로그인/curl-request.adoc[]
+include::../snippet/test-review-controller/api_리뷰한건조회/curl-request.adoc[]
 
-요청정보
+URI 파라미터
 
-include::../snippet/test-user-controller/api_카카오로그인/request-fields.adoc[]
+include::../snippet/test-review-controller/api_리뷰한건조회/path-parameters.adoc[]
 
-요청형식
-
-include::../snippet/test-user-controller/api_카카오로그인/request-body.adoc[]
 
 응답정보
 
-include::../snippet/test-user-controller/api_카카오로그인/response-fields.adoc[]
+include::../snippet/test-review-controller/api_리뷰한건조회/response-fields.adoc[]
 
 응답형식
 
-include::../snippet/test-user-controller/api_카카오로그인/response-body.adoc[]
+include::../snippet/test-review-controller/api_리뷰한건조회/response-body.adoc[]
