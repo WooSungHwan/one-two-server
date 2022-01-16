@@ -1,5 +1,7 @@
 package com.blackdog.onetwo;
 
+import com.blackdog.onetwo.configuration.properties.AmazonProperties;
+import com.blackdog.onetwo.configuration.properties.AmazonS3Properties;
 import com.blackdog.onetwo.configuration.properties.OpenAPiProperties;
 import com.blackdog.onetwo.configuration.security.properties.JwtProperties;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -20,7 +22,7 @@ import java.security.NoSuchAlgorithmException;
 import java.time.Duration;
 
 @EnableJpaAuditing
-@EnableConfigurationProperties({JwtProperties.class, OpenAPiProperties.class})
+@EnableConfigurationProperties({JwtProperties.class, OpenAPiProperties.class, AmazonProperties.class, AmazonS3Properties.class})
 @SpringBootApplication
 public class OneTwoServerApplication {
 
