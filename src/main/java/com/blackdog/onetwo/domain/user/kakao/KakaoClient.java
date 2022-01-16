@@ -39,7 +39,7 @@ public class KakaoClient {
 
             try {
                 KakaoInfo kakaoInfo = JsonUtil.fromJson(response.getBody(), KakaoInfo.class);
-                return AuthResult.of(kakaoInfo.getId(), kakaoInfo.getNickname());
+                return AuthResult.of(kakaoInfo.getId(), kakaoInfo.getNickname(), kakaoInfo.getProfileImageUrl());
             } catch (Exception e) {
                 throw e;
             }
@@ -85,6 +85,13 @@ public class KakaoClient {
 
         public String getNickname() {
             return StringUtils.defaultIfBlank(kakaoAccount.getProfile().getNickname(), properties.getNickname());
+        }
+
+        public String getProfileImageUrl() {
+            if (kakaoAccount.getProfile().isDefaultImage()) {
+                return null;
+            }
+            return kakaoAccount.getProfile().getProfileImageUrl();
         }
     }
 }

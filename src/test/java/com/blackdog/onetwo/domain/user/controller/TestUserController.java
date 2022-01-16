@@ -3,6 +3,7 @@ package com.blackdog.onetwo.domain.user.controller;
 import com.blackdog.onetwo.common.TestAbstractController;
 import com.blackdog.onetwo.domain.user.request.AddKakaoUserParam;
 import com.blackdog.onetwo.utils.JsonUtil;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.payload.JsonFieldType;
@@ -18,10 +19,11 @@ public class TestUserController extends TestAbstractController {
 
     private static final String BASE_URL = extractingRequestMapping(UserController.class);
 
+    @Disabled
     @Test
     void API_카카오로그인() throws Exception {
         AddKakaoUserParam param = AddKakaoUserParam.builder()
-                .accessToken("WSppQqgwTZeriS7zQWPMuXt-9f344pZlleEPJgo9c5oAAAF-U3n5eQ")
+                .accessToken("2NXX-3hB928NY7NWgWYd-5wR0yqSnTWiNj-IgQopb1UAAAF-WlcFCQ")
                 .build();
 
         mockMvc.perform(post(BASE_URL + "/kakao-login")

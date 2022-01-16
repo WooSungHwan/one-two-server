@@ -33,7 +33,7 @@ public class UserService {
             return getUserResult(user);
         }
 
-        Users user = userRepository.save(Users.of(authInfo.getNickname(), authInfo.getId()));
+        Users user = userRepository.save(Users.of(authInfo.getNickname(), authInfo.getId(), authInfo.getProfileImageUrl()));
         return getUserResult(user);
     }
 

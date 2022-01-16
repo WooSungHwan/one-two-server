@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 
@@ -15,6 +18,7 @@ import static lombok.AccessLevel.PROTECTED;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor(access = PROTECTED)
+@DynamicInsert
 @Table(name = "users")
 @Entity
 public class Users extends BaseEntity {
@@ -29,12 +33,33 @@ public class Users extends BaseEntity {
     @Column(name = "kakao_id", length = 20, nullable = false)
     private String kakaoId;
 
-    public static Users of(Long id, String nickname, String kakaoId) {
-        return new Users(id, nickname, kakaoId);
+    @Column(name = "is_find_friends", nullable = false, columnDefinition = "boolean default false")
+    private Boolean isFindFriends;
+
+    @Column(name = "profile")
+    private String profile;
+
+    private Users(Long id, String nickname, String kakaoId, String profile) {
+        this.id = id;
+        this.nickname = nickname;
+        this.kakaoId = kakaoId;
+        this.profile = profile;
     }
 
-    public static Users of(String nickname, String kakaoId) {
-        return of(null, nickname, kakaoId);
+    public static Users of(Long id, String nickname, String kakaoId, String profile) {
+        return new Users(id, nickname, kakaoId, profile);
+    }
+
+    public static Users of(String nickname, String kakaoId, String profile) {
+        return of(null, nickname, kakaoId, profile);
+    }
+
+    public void onFindFriends() {
+        this.isFindFriends = true;
+    }
+
+    public void offFindFriends() {
+        this.isFindFriends = false;
     }
 
 }

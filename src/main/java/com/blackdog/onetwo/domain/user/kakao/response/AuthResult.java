@@ -6,4 +6,5 @@ import lombok.Value;
 public class AuthResult {
     private String id;
     private String nickname;
+    private String profileImageUrl;
 }
