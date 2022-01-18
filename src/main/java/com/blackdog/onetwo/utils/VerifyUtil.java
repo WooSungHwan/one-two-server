@@ -28,4 +28,8 @@ public class VerifyUtil {
             throw new VerifyException(errorCode);
         }
     }
+
+    public static void throwError(ErrorCode errorCode) {
+        throw new VerifyException(errorCode);
+    }
 }
