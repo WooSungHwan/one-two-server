@@ -19,7 +19,7 @@ public class TestUserController extends TestAbstractController {
 
     private static final String BASE_URL = extractingRequestMapping(UserController.class);
 
-//    @Disabled
+    @Disabled
     @Test
     void API_카카오로그인() throws Exception {
         AddKakaoUserParam param = AddKakaoUserParam.builder()
