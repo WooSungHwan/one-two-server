@@ -445,7 +445,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#리뷰한건조회">리뷰 한건 조회</a></li>
+<li><a href="#리뷰한건조회">리뷰 한건 조회 API</a></li>
 </ul>
 </div>
 </div>
@@ -453,12 +453,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="./index-docs.html">처음으로</a></p>
+<p><a href="index-docs.html">처음으로</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="리뷰한건조회"><a class="link" href="#리뷰한건조회">리뷰 한건 조회</a></h2>
+<h2 id="리뷰한건조회"><a class="link" href="#리뷰한건조회">리뷰 한건 조회 API</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>CURL</p>
@@ -466,9 +466,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/reviews/1' -i -X GET \
-    -H 'Accept: application/json'</code></pre>
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI0MzE5NDgsImV4cCI6MTY0NTMxMTk0OCwic2VxIjoyOH0.OV0XG5akuqerIHKavHWe90ObDN7GGVcl82c1_XkHekY'</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>요청 헤더</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JWT 토큰</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>URI 파라미터</p>
 </div>
@@ -603,7 +625,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
       "nickname" : "test"
     }
   },
-  "responseTime" : "2022.01.13 09:50:23"
+  "responseTime" : "2022.01.18 09:07:35"
 }</code></pre>
 </div>
 </div>
@@ -612,7 +634,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-15 00:00:23 +0900
+Last updated 2022-01-18 21:21:04 +0900
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>

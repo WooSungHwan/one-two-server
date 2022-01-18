@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<title>헛둘 API 문서</title>
+<title>헛둘 업로드 API 문서</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,57 +439,151 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
 </head>
-<body class="article">
+<body class="book toc2 toc-left">
 <div id="header">
-<h1>헛둘 API 문서</h1>
+<h1>헛둘 업로드 API 문서</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#이미지_업로드">이미지 업로드 API</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
-<div class="sect2">
-<h3 id="_유저_api"><a class="link" href="#_유저_api"><span class="icon"><i class="fa fa-link"></i></span> <a href="user-api-docs.html">유저 API</a></a></h3>
-
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="index-docs.html">처음으로</a></p>
 </div>
-<div class="sect2">
-<h3 id="_리뷰_api"><a class="link" href="#_리뷰_api"><span class="icon"><i class="fa fa-link"></i></span> <a href="review-api-docs.html">리뷰 API</a></a></h3>
-
 </div>
-<div class="sect2">
-<h3 id="_업로드_api"><a class="link" href="#_업로드_api"><span class="icon"><i class="fa fa-link"></i></span> <a href="upload-api-docs.html">업로드 API</a></a></h3>
-<h3 id="_수정이력" class="discrete">수정이력</h3>
+</div>
+<div class="sect1">
+<h2 id="이미지_업로드"><a class="link" href="#이미지_업로드">이미지 업로드 API</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>CURL</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/uploads/images' -i -X POST \
+    -H 'Content-Type: multipart/form-data;charset=UTF-8' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI0MzE5NDgsImV4cCI6MTY0NTMxMTk0OCwic2VxIjoyOH0.OV0XG5akuqerIHKavHWe90ObDN7GGVcl82c1_XkHekY' \
+    -F 'image=@test.png;type=image/png'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>요청헤더</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">날짜</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API 문서</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">내용</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2022-01-18</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">리뷰 API, 유저 API, 업로드 API</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1. 인증 헤더 추가.
-2. 이미지 업로드 API 개발</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2022-01-13</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">리뷰 API</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1. 리뷰 단건 조회 API 개발</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-12-23</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">인덱스, 유저 API</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1. 카카오 로그인 API 개발</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JWT 토큰</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>요청파트</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Part</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>image</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">업로드할 이미지</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>응답정보</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>message</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">메시지</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>result</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">결과</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>result</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">결과 객체</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>result.id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">파일 아이디</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>result.url</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">파일 경로</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>responseTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API 응답 시간</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>응답형식</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
+  "message" : "OK",
+  "result" : {
+    "id" : "460dd40e-b027-449e-ab86-884d1eaebbf5",
+    "url" : "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/460dd40e-b027-449e-ab86-884d1eaebbf5"
+  },
+  "responseTime" : "2022.01.18 09:07:35"
+}</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-18 21:22:08 +0900
+Last updated 2022-01-18 21:20:52 +0900
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>

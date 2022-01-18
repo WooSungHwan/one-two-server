@@ -9,6 +9,8 @@
 
 === icon:link[] link:./review-api-docs.html[리뷰 API]
 
+=== icon:link[] link:./upload-api-docs.html[업로드 API]
+
 [discrete]
 === 수정이력
 [cols="2,2,6"]
