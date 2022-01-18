@@ -8,21 +8,27 @@
 
 link:./index-docs.html[처음으로]
 
+:includedir: _includes
+:sourcedir: ../snippet
+
 [[리뷰한건조회]]
-== 리뷰 한건 조회
+== 리뷰 한건 조회 API
 CURL
 
-include::../snippet/test-review-controller/api_리뷰한건조회/curl-request.adoc[]
+include::{sourcedir}/test-review-controller/api_리뷰한건조회/curl-request.adoc[]
+
+요청 헤더
+
+include::{sourcedir}/test-review-controller/api_리뷰한건조회/request-headers.adoc[]
 
 URI 파라미터
 
-include::../snippet/test-review-controller/api_리뷰한건조회/path-parameters.adoc[]
-
+include::{sourcedir}/test-review-controller/api_리뷰한건조회/path-parameters.adoc[]
 
 응답정보
 
-include::../snippet/test-review-controller/api_리뷰한건조회/response-fields.adoc[]
+include::{sourcedir}/test-review-controller/api_리뷰한건조회/response-fields.adoc[]
 
 응답형식
 
-include::../snippet/test-review-controller/api_리뷰한건조회/response-body.adoc[]
+include::{sourcedir}/test-review-controller/api_리뷰한건조회/response-body.adoc[]

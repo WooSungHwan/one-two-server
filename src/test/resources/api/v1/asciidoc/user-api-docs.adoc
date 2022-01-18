@@ -12,41 +12,41 @@ link:./index-docs.html[처음으로]
 :sourcedir: ../snippet
 
 [[카카오_로그인]]
-== 카카오 로그인
+== 카카오 로그인 API
 CURL
 
 include::{sourcedir}/test-user-controller/api_카카오로그인/curl-request.adoc[]
 
 요청정보
 
-include::../snippet/test-user-controller/api_카카오로그인/request-body.adoc[]
+include::{sourcedir}/test-user-controller/api_카카오로그인/request-body.adoc[]
 
 요청형식
 
-include::../snippet/test-user-controller/api_카카오로그인/request-fields.adoc[]
+include::{sourcedir}/test-user-controller/api_카카오로그인/request-fields.adoc[]
 
 응답정보
 
-include::../snippet/test-user-controller/api_카카오로그인/response-fields.adoc[]
+include::{sourcedir}/test-user-controller/api_카카오로그인/response-fields.adoc[]
 
 응답형식
 
-include::../snippet/test-user-controller/api_카카오로그인/response-body.adoc[]
+include::{sourcedir}/test-user-controller/api_카카오로그인/response-body.adoc[]
 
 [[유저조회]]
-== 유저 조회
+== 유저 조회 API
 CURL
 
-include::../snippet/test-user-controller/api_유저조회/curl-request.adoc[]
+include::{sourcedir}/test-user-controller/api_유저조회/curl-request.adoc[]
 
 URI 파라미터
 
-include::../snippet/test-user-controller/api_유저조회/path-parameters.adoc[]
+include::{sourcedir}/test-user-controller/api_유저조회/path-parameters.adoc[]
 
 응답정보
 
-include::../snippet/test-user-controller/api_유저조회/response-fields.adoc[]
+include::{sourcedir}/test-user-controller/api_유저조회/response-fields.adoc[]
 
 응답형식
 
-include::../snippet/test-user-controller/api_유저조회/response-body.adoc[]
+include::{sourcedir}/test-user-controller/api_유저조회/response-body.adoc[]
