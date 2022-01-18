@@ -1,0 +1,7 @@
+|===
+|Part|Description
+
+|`+image+`
+|업로드할 이미지
+
+|===

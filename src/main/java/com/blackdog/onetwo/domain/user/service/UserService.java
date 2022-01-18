@@ -11,6 +11,7 @@ import com.blackdog.onetwo.domain.user.request.AddKakaoUserParam;
 import com.blackdog.onetwo.domain.user.result.UserResult;
 import com.blackdog.onetwo.utils.VerifyUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,18 +23,18 @@ public class UserService {
     private final UserRepository userRepository;
     private final UserMapstruct userMapstruct;
     private final KakaoClient kakaoClient;
+    private final PasswordEncoder passwordEncoder;
 
     @Transactional
     public UserResult kakaoLogin(AddKakaoUserParam param) {
         AuthResult authInfo = kakaoClient.getAuthInfo(param.getAccessToken());
         VerifyUtil.nonNull(authInfo, ErrorCode.KAKAO_USER_NOT_FOUND);
 
-        if (userRepository.existsByKakaoId(authInfo.getId())) {
-            Users user = userRepository.findByKakaoId(authInfo.getId());
+        if (!userRepository.existsByKakaoId(authInfo.getId())) {
+            Users user = userRepository.save(Users.of(authInfo.getNickname(), authInfo.getId(), passwordEncoder.encode(authInfo.getId()), authInfo.getProfileImageUrl()));
             return getUserResult(user);
         }
-
-        Users user = userRepository.save(Users.of(authInfo.getNickname(), authInfo.getId(), authInfo.getProfileImageUrl()));
+        Users user = userRepository.findByKakaoId(authInfo.getId());
         return getUserResult(user);
     }
 

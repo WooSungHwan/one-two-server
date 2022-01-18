@@ -19,11 +19,11 @@ public class TestUserController extends TestAbstractController {
 
     private static final String BASE_URL = extractingRequestMapping(UserController.class);
 
-    @Disabled
+//    @Disabled
     @Test
     void API_카카오로그인() throws Exception {
         AddKakaoUserParam param = AddKakaoUserParam.builder()
-                .accessToken("2NXX-3hB928NY7NWgWYd-5wR0yqSnTWiNj-IgQopb1UAAAF-WlcFCQ")
+                .accessToken("MovtOddavs8RLeATnPwpkJdPRbYl0reixApX6wopb9QAAAF-bRUzlw")
                 .build();
 
         mockMvc.perform(post(BASE_URL + "/kakao-login")
@@ -39,8 +39,11 @@ public class TestUserController extends TestAbstractController {
                         responseFields(
                                 getRestResponseDescriptor(
                                         JsonFieldType.OBJECT, false,
-                                        fieldWithPath("result.id").type(JsonFieldType.NUMBER).description("유저 번호"),
-                                        fieldWithPath("result.nickname").type(JsonFieldType.STRING).description("카카오에서 가져온 닉네임")
+                                        fieldWithPath("result").type(JsonFieldType.OBJECT).description("결과 객체"),
+                                        fieldWithPath("result.user").type(JsonFieldType.OBJECT).description("유저 정보 객체"),
+                                        fieldWithPath("result.user.id").type(JsonFieldType.NUMBER).description("유저 번호"),
+                                        fieldWithPath("result.user.nickname").type(JsonFieldType.STRING).description("카카오에서 가져온 닉네임"),
+                                        fieldWithPath("result.token").type(JsonFieldType.STRING).description("JWT 토큰")
                                 )
                         )
                 ));

@@ -7,6 +7,7 @@ import com.blackdog.onetwo.configuration.security.SecurityUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AccountStatusUserDetailsChecker;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
@@ -17,10 +18,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsChecker;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- * Created by niceboyone on 2019. 7. 25..
  *
  * @EnableWebSecurity
  * 스프링 MVC 인수 결정자를 설정하여, 핸들러 메소드가 @AuthenticationPrincipal 애너테이션이 붙은 인자를 사용하여 인증한 사용자 주체를 받는다.
@@ -31,7 +33,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(securedEnabled = true)
+//@EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final SecurityAuthenticationEntryPoint securityAuthenticationEntryPoint;
@@ -39,9 +41,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final SecurityUserDetailsService securityUserDetailsService;
     private final SecurityAuthenticationFilter securityAuthenticationFilter;
 
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(securityUserDetailsService);
+        auth.userDetailsService(securityUserDetailsService).passwordEncoder(passwordEncoder());
     }
 
     @Bean(BeanIds.AUTHENTICATION_MANAGER)
@@ -69,9 +76,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/", "/favicon.ico", "/resources/**", "/error/**")
                     .permitAll()
-                .antMatchers("/api/v1/users/kakao-login", "/api/vi/users/*")
+                .antMatchers("/api/v1/users/*")// TODO 임시
                     .permitAll()
-                .antMatchers("/api/*/**")
+                .antMatchers(HttpMethod.POST, "/api/v1/users/kakao-login") // 카카오 로그인
+                    .permitAll()
+                .antMatchers("/api/v1/**")
                     .authenticated()
                 .anyRequest()
                     .permitAll();

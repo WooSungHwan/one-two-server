@@ -29,7 +29,6 @@ public class SecurityAuthenticationFilter extends OncePerRequestFilter {
     private final ObjectMapper objectMapper;
     private final SecurityUserDetailsService securityUserDetailsService;
     private final JwtProvider jwtProvider;
-    private final UserDetailsChecker userDetailsChecker;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -46,7 +45,7 @@ public class SecurityAuthenticationFilter extends OncePerRequestFilter {
             String jwtToken = jwtProvider.getJwtToken(request);
             Long seq = jwtProvider.getSeq(jwtToken);
             UserDetails userDetails = securityUserDetailsService.loadUserByUsername(String.valueOf(seq));
-            userDetailsChecker.check(userDetails);
+//            userDetailsChecker.check(userDetails);
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
         } catch(Exception e) {
@@ -55,6 +54,7 @@ public class SecurityAuthenticationFilter extends OncePerRequestFilter {
             e.printStackTrace();
         }
 
+        filterChain.doFilter(request, response);
         log.info("==================================== Security Authentication Filter END ====================================");
     }
 }

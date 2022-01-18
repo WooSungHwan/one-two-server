@@ -1,6 +1,7 @@
 [source,bash]
 ----
-$ http GET 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/reviews/1' \
+$ http --form POST 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/uploads/images' \
+    'image'@'test.png' \
     'Accept:application/json' \
     'Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI0MzE5NDgsImV4cCI6MTY0NTMxMTk0OCwic2VxIjoyOH0.OV0XG5akuqerIHKavHWe90ObDN7GGVcl82c1_XkHekY'
 ----

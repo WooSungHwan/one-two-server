@@ -27,6 +27,8 @@ public class Users extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String password;
+
     @Column(name = "nickname", length = 50)
     private String nickname;
 
@@ -39,19 +41,20 @@ public class Users extends BaseEntity {
     @Column(name = "profile")
     private String profile;
 
-    private Users(Long id, String nickname, String kakaoId, String profile) {
+    private Users(Long id, String password, String nickname, String kakaoId, String profile) {
         this.id = id;
+        this.password = password;
         this.nickname = nickname;
         this.kakaoId = kakaoId;
         this.profile = profile;
     }
 
-    public static Users of(Long id, String nickname, String kakaoId, String profile) {
-        return new Users(id, nickname, kakaoId, profile);
+    public static Users of(Long id, String password, String nickname, String kakaoId, String profile) {
+        return new Users(id, password, nickname, kakaoId, profile);
     }
 
-    public static Users of(String nickname, String kakaoId, String profile) {
-        return of(null, nickname, kakaoId, profile);
+    public static Users of(String password, String nickname, String kakaoId, String profile) {
+        return of(null, password, nickname, kakaoId, profile);
     }
 
     public void onFindFriends() {

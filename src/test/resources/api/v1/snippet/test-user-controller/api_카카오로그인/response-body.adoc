@@ -3,9 +3,12 @@
 {
   "message" : "OK",
   "result" : {
-    "id" : 9,
-    "nickname" : "우성환"
+    "user" : {
+      "id" : 28,
+      "nickname" : "우성환"
+    },
+    "token" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI1MDc2NTYsImV4cCI6MTY0NTM4NzY1Niwic2VxIjoyOH0.vLTemeMEYFJDX-MJDKLzVOUGl69h2fuIW4Kq6KDNYfM"
   },
-  "responseTime" : "2022.01.13 09:50:24"
+  "responseTime" : "2022.01.18 09:07:36"
 }
 ----

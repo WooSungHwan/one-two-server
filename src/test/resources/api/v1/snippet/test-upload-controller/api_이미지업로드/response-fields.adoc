@@ -13,21 +13,13 @@
 |`+Object+`
 |결과 객체
 
-|`+result.user+`
-|`+Object+`
-|유저 정보 객체
-
-|`+result.user.id+`
-|`+Number+`
-|유저 번호
-
-|`+result.user.nickname+`
+|`+result.id+`
 |`+String+`
-|카카오에서 가져온 닉네임
+|파일 아이디
 
-|`+result.token+`
+|`+result.url+`
 |`+String+`
-|JWT 토큰
+|파일 경로
 
 |`+responseTime+`
 |`+String+`

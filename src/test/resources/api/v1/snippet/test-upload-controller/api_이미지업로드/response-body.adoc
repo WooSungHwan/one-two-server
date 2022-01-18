@@ -1,0 +1,11 @@
+[source,options="nowrap"]
+----
+{
+  "message" : "OK",
+  "result" : {
+    "id" : "460dd40e-b027-449e-ab86-884d1eaebbf5",
+    "url" : "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/460dd40e-b027-449e-ab86-884d1eaebbf5"
+  },
+  "responseTime" : "2022.01.18 09:07:35"
+}
+----

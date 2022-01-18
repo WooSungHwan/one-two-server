@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
@@ -23,10 +24,12 @@ public class DataInitializer implements ApplicationRunner {
     private final UserRepository userRepository;
     private final StoreRepository storeRepository;
     private final ReviewRepository reviewRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Users users = userRepository.save(Users.of("test", UUID.randomUUID().toString().substring(20), "profile"));
+        String kakaoId = UUID.randomUUID().toString().substring(20);
+        Users users = userRepository.save(Users.of(passwordEncoder.encode(kakaoId), "test", kakaoId, "profile"));
         Store store = storeRepository.save(Store.of(UUID.randomUUID().toString(), "20211231", "경기도 의정부시 의정부1동 225-16", "경기도 의정부시 가능로136번길 9-10", "음식점"));
         Review review = reviewRepository.save(Review.of("content", store, users));
 

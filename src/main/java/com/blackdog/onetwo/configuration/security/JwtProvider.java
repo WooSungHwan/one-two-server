@@ -18,7 +18,7 @@ public class JwtProvider {
 
     private final JwtProperties jwtProperties;
 
-    public String generateJwtToken(int seq) {
+    public String generateJwtToken(long seq) {
         Date now = new Date();
         String jwtToken = Jwts.builder()
                 .setSubject("ONE-TWO-SERVER API")
@@ -47,7 +47,7 @@ public class JwtProvider {
     private Claims getClaims(String jwtToken) {
         return Jwts.parser()
                 .setSigningKey(jwtProperties.getSecret())
-                .parseClaimsJwt(jwtToken)
+                .parseClaimsJws(jwtToken)
                 .getBody();
     }
 }

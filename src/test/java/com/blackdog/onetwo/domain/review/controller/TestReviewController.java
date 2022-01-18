@@ -1,10 +1,14 @@
 package com.blackdog.onetwo.domain.review.controller;
 
 import com.blackdog.onetwo.common.TestAbstractController;
+import org.apache.http.HttpHeaders;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
+import org.springframework.restdocs.headers.HeaderDescriptor;
 import org.springframework.restdocs.payload.JsonFieldType;
 
+import static org.springframework.restdocs.headers.HeaderDocumentation.headerWithName;
+import static org.springframework.restdocs.headers.HeaderDocumentation.requestHeaders;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.get;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
@@ -20,10 +24,14 @@ public class TestReviewController extends TestAbstractController {
     @Test
     void API_리뷰한건조회() throws Exception {
         mockMvc.perform(get(BASE_URL + "/{id}", 1L)
-                .accept(MediaType.APPLICATION_JSON_VALUE))
+                .accept(MediaType.APPLICATION_JSON_VALUE)
+                .header(HttpHeaders.AUTHORIZATION, "Bearer "+getToken()))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andDo(document.document(
+                        requestHeaders(
+                                loginRequired()
+                        ),
                         pathParameters(
                                 parameterWithName("id").description("리뷰 번호")
                         ),
