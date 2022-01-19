@@ -1,6 +1,7 @@
 package com.blackdog.onetwo.domain.store.entity;
 
 import com.blackdog.onetwo.domain.common.BaseEntity;
+import com.blackdog.onetwo.domain.store.StoreStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -34,6 +35,12 @@ public class Store extends BaseEntity {
     private String managementId;
 
     /**
+     * 가게 이름
+     */
+    @Column(name = "store_name", length = 100)
+    private String storeName;
+
+    /**
      * 인허가 일자
      */
     @Column(name = "approval_date", length = 8)
@@ -57,11 +64,29 @@ public class Store extends BaseEntity {
     @Column(name = "business_item", length = 100)
     private String businessItem;
 
-    public static Store of(Long id, String managementId, String approvalDate, String jibunAddress, String roadAddress, String businessItem) {
-        return new Store(id, managementId, approvalDate, jibunAddress, roadAddress, businessItem);
+    /**
+     * 영업상태
+     */
+    @Column(name = "status", length = 20)
+    private String status;
+
+    /**
+     * x 좌표
+     */
+    @Column(name = "latitude")
+    private Double latitude;
+
+    /**
+     * y 좌표
+     */
+    @Column(name = "longitude")
+    private Double longitude;
+
+    public static Store of(Long id, String managementId, String storeName, String approvalDate, String jibunAddress, String roadAddress, String businessItem, String status, Double latitude, Double longitude) {
+        return new Store(id, managementId, storeName, approvalDate, jibunAddress, roadAddress, businessItem, status, latitude, longitude);
     }
 
-    public static Store of(String managementId, String approvalDate, String jibunAddress, String roadAddress, String businessItem) {
-        return of(null, managementId, approvalDate, jibunAddress, roadAddress, businessItem);
+    public static Store of(String managementId, String storeName, String approvalDate, String jibunAddress, String roadAddress, String businessItem, String status, Double latitude, Double longitude) {
+        return of(null, managementId, storeName, approvalDate, jibunAddress, roadAddress, businessItem, status, latitude, longitude);
     }
 }

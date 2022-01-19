@@ -44,6 +44,9 @@ public class TestReviewController extends TestAbstractController {
                                         // 가게 정보
                                         fieldWithPath("result.store").type(JsonFieldType.OBJECT).description("가게 정보"),
                                         fieldWithPath("result.store.managementId").type(JsonFieldType.STRING).description("가게 관리 번호"),
+                                        fieldWithPath("result.store.storeName").type(JsonFieldType.STRING).description("가게 이름"),
+                                        fieldWithPath("result.store.location").type(JsonFieldType.ARRAY).description("가게 위치 좌표"),
+                                        fieldWithPath("result.store.status").type(JsonFieldType.STRING).description("가게 운영 상태"),
                                         fieldWithPath("result.store.jibunAddress").type(JsonFieldType.STRING).description("가게 지번 주소"),
                                         fieldWithPath("result.store.roadAddress").type(JsonFieldType.STRING).description("가게 도로명 주소"),
                                         fieldWithPath("result.store.businessItem").type(JsonFieldType.STRING).description("가게 업태"),

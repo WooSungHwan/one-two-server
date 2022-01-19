@@ -11,7 +11,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 478
+Content-Length: 585
 
 {
   "message" : "OK",
@@ -21,16 +21,19 @@ Content-Length: 478
       "content" : "content"
     },
     "store" : {
-      "managementId" : "0ef15043-9b8a-46ca-b735-fa85a99a0bbb",
+      "managementId" : "a3e1f038-404f-45af-838b-e2a53213e908",
+      "storeName" : "옛손칼",
+      "location" : [ 127.0147866, 37.4962232 ],
+      "status" : "영업",
       "jibunAddress" : "경기도 의정부시 의정부1동 225-16",
       "roadAddress" : "경기도 의정부시 가능로136번길 9-10",
-      "businessItem" : "음식점"
+      "businessItem" : "제육"
     },
     "user" : {
-      "id" : 1,
+      "id" : 126,
       "nickname" : "test"
     }
   },
-  "responseTime" : "2022.01.18 09:07:35"
+  "responseTime" : "2022.01.19 11:39:04"
 }
 ----

@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.payload.JsonFieldType;
 
+import java.util.Optional;
+
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
@@ -19,11 +21,10 @@ public class TestUserController extends TestAbstractController {
 
     private static final String BASE_URL = extractingRequestMapping(UserController.class);
 
-    @Disabled
     @Test
     void API_카카오로그인() throws Exception {
         AddKakaoUserParam param = AddKakaoUserParam.builder()
-                .accessToken("MovtOddavs8RLeATnPwpkJdPRbYl0reixApX6wopb9QAAAF-bRUzlw")
+                .accessToken("vuCOCK8yk5WcvD6gwERXWblJ3dUKmuicdHI_Dgo9dRkAAAF-csQ-AQ")
                 .build();
 
         mockMvc.perform(post(BASE_URL + "/kakao-login")

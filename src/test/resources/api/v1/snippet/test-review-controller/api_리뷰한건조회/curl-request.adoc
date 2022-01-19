@@ -2,5 +2,5 @@
 ----
 $ curl 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/reviews/1' -i -X GET \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI0MzE5NDgsImV4cCI6MTY0NTMxMTk0OCwic2VxIjoyOH0.OV0XG5akuqerIHKavHWe90ObDN7GGVcl82c1_XkHekY'
+    -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI2MDMwMDEsImV4cCI6MTY0NTQ4MzAwMSwic2VxIjoxMjh9.qfSD9uahi8HW_dWIN50B0AtU3qfZrwhpOGze2bQaiQw'
 ----
