@@ -31,7 +31,7 @@ public class UserService {
         VerifyUtil.nonNull(authInfo, ErrorCode.KAKAO_USER_NOT_FOUND);
 
         if (!userRepository.existsByKakaoId(authInfo.getId())) {
-            Users user = userRepository.save(Users.of(authInfo.getNickname(), authInfo.getId(), passwordEncoder.encode(authInfo.getId()), authInfo.getProfileImageUrl()));
+            Users user = userRepository.save(Users.of(passwordEncoder.encode(authInfo.getId()), authInfo.getNickname(), authInfo.getId(), authInfo.getProfileImageUrl()));
             return getUserResult(user);
         }
         Users user = userRepository.findByKakaoId(authInfo.getId());
