@@ -13,4 +13,8 @@ public class UserResult {
 
     @JsonIgnore
     private String kakaoId;
+
+    private Boolean isFindFriends;
+
+    private String profile;
 }
