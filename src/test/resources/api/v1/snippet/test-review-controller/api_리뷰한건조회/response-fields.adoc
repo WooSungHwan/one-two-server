@@ -65,6 +65,14 @@
 |`+String+`
 |유저 닉네임
 
+|`+result.user.isFindFriends+`
+|`+Boolean+`
+|유저 동료찾기 활성화 여부
+
+|`+result.user.profile+`
+|`+String+`
+|유저 프로필 사진
+
 |`+responseTime+`
 |`+String+`
 |API 응답 시간

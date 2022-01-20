@@ -53,7 +53,9 @@ public class TestReviewController extends TestAbstractController {
                                         // 유저 정보
                                         fieldWithPath("result.user").type(JsonFieldType.OBJECT).description("유저 정보"),
                                         fieldWithPath("result.user.id").type(JsonFieldType.NUMBER).description("유저 번호"),
-                                        fieldWithPath("result.user.nickname").type(JsonFieldType.STRING).description("유저 닉네임")
+                                        fieldWithPath("result.user.nickname").type(JsonFieldType.STRING).description("유저 닉네임"),
+                                        fieldWithPath("result.user.isFindFriends").type(JsonFieldType.BOOLEAN).description("유저 동료찾기 활성화 여부"),
+                                        fieldWithPath("result.user.profile").type(JsonFieldType.STRING).description("유저 프로필 사진")
                                 )
                         )
                 ));
