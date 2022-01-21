@@ -1,6 +1,7 @@
 package com.blackdog.onetwo.domain.review.entity;
 
 import com.blackdog.onetwo.domain.common.BaseEntity;
+import com.blackdog.onetwo.domain.review.enums.ReviewTag;
 import com.blackdog.onetwo.domain.store.entity.Store;
 import com.blackdog.onetwo.domain.user.entity.Users;
 import lombok.AllArgsConstructor;
@@ -11,6 +12,11 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 
+import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.List;
+
+import static javax.persistence.EnumType.STRING;
 import static javax.persistence.FetchType.LAZY;
 import static lombok.AccessLevel.PROTECTED;
 
@@ -44,12 +50,21 @@ public class Review extends BaseEntity {
     )
     private Users users;
 
-    public static Review of(Long id, String content, Store store, Users users) {
-        return new Review(id, content, store, users);
+    @ElementCollection(targetClass = ReviewTag.class, fetch = LAZY)
+    @Enumerated(STRING)
+    private List<ReviewTag> tags;
+
+    public static Review of(Long id, String content, Store store, Users users, List<ReviewTag> tags) {
+        return new Review(id, content, store, users, tags);
     }
 
-    public static Review of(String content, Store store, Users users) {
-        return of(null, content, store, users);
+    public static Review of(String content, Store store, Users users, List<ReviewTag> tags) {
+        return of(null, content, store, users, tags);
     }
 
+    public void delete() {
+        this.tags = Collections.emptyList();
+        this.deleted = true;
+        this.deletedAt = LocalDateTime.now();
+    }
 }
