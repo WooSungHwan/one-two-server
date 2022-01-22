@@ -17,6 +17,10 @@ CURL
 
 include::{sourcedir}/test-user-controller/api_카카오로그인/curl-request.adoc[]
 
+HTTP 요청 정보
+
+include::{sourcedir}/test-user-controller/api_카카오로그인/http-request.adoc[]
+
 요청정보
 
 include::{sourcedir}/test-user-controller/api_카카오로그인/request-body.adoc[]
@@ -33,20 +37,46 @@ include::{sourcedir}/test-user-controller/api_카카오로그인/response-fields
 
 include::{sourcedir}/test-user-controller/api_카카오로그인/response-body.adoc[]
 
-[[유저조회]]
-== 유저 조회 API
+[[내정보]]
+== 내정보 API
 CURL
 
-include::{sourcedir}/test-user-controller/api_유저조회/curl-request.adoc[]
+include::{sourcedir}/test-user-controller/api_내정보/curl-request.adoc[]
 
-URI 파라미터
+HTTP 요청 정보
 
-include::{sourcedir}/test-user-controller/api_유저조회/path-parameters.adoc[]
+include::{sourcedir}/test-user-controller/api_내정보/http-request.adoc[]
+
+요청헤더
+
+include::{sourcedir}/test-user-controller/api_내정보/request-headers.adoc[]
 
 응답정보
 
-include::{sourcedir}/test-user-controller/api_유저조회/response-fields.adoc[]
+include::{sourcedir}/test-user-controller/api_내정보/response-fields.adoc[]
 
 응답형식
 
-include::{sourcedir}/test-user-controller/api_유저조회/response-body.adoc[]
+include::{sourcedir}/test-user-controller/api_내정보/response-body.adoc[]
+
+[[회원탈퇴]]
+== 회원 탈퇴 API
+CURL
+
+include::{sourcedir}/test-user-controller/api_회원탈퇴/curl-request.adoc[]
+
+HTTP 요청 정보
+
+include::{sourcedir}/test-user-controller/api_회원탈퇴/http-request.adoc[]
+
+요청 헤더
+
+include::{sourcedir}/test-user-controller/api_회원탈퇴/request-headers.adoc[]
+
+응답정보
+
+include::{sourcedir}/test-user-controller/api_회원탈퇴/response-fields.adoc[]
+
+응답형식
+
+include::{sourcedir}/test-user-controller/api_회원탈퇴/response-body.adoc[]

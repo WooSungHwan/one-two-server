@@ -11,11 +11,15 @@ link:./index-docs.html[처음으로]
 :includedir: _includes
 :sourcedir: ../snippet
 
-[[리뷰한건조회]]
-== 리뷰 한건 조회 API
+[[리뷰상세]]
+== 리뷰 상세 API
 CURL
 
 include::{sourcedir}/test-review-controller/api_리뷰한건조회/curl-request.adoc[]
+
+HTTP 요청 정보
+
+include::{sourcedir}/test-review-controller/api_리뷰한건조회/http-request.adoc[]
 
 요청 헤더
 
@@ -32,3 +36,30 @@ include::{sourcedir}/test-review-controller/api_리뷰한건조회/response-fiel
 응답형식
 
 include::{sourcedir}/test-review-controller/api_리뷰한건조회/response-body.adoc[]
+
+[[리뷰삭제]]
+== 리뷰 삭제 API
+
+CURL
+
+include::{sourcedir}/test-review-controller/api_리뷰삭제/curl-request.adoc[]
+
+HTTP 요청 정보
+
+include::{sourcedir}/test-review-controller/api_리뷰삭제/http-request.adoc[]
+
+요청 헤더
+
+include::{sourcedir}/test-review-controller/api_리뷰삭제/request-headers.adoc[]
+
+URI 파라미터
+
+include::{sourcedir}/test-review-controller/api_리뷰삭제/path-parameters.adoc[]
+
+응답정보
+
+include::{sourcedir}/test-review-controller/api_리뷰삭제/response-fields.adoc[]
+
+응답형식
+
+include::{sourcedir}/test-review-controller/api_리뷰삭제/response-body.adoc[]

@@ -17,6 +17,10 @@ CURL
 
 include::{sourcedir}/test-upload-controller/api_이미지업로드/curl-request.adoc[]
 
+HTTP 요청 정보
+
+include::{sourcedir}/test-upload-controller/api_이미지업로드/http-request.adoc[]
+
 요청헤더
 
 include::{sourcedir}/test-upload-controller/api_이미지업로드/request-headers.adoc[]
