@@ -35,7 +35,7 @@ public class TestUploadController extends TestAbstractController {
                 .file(image)
                 .contentType(MediaType.MULTIPART_FORM_DATA_VALUE)
                 .accept(MediaType.APPLICATION_JSON_VALUE)
-                .header(HttpHeaders.AUTHORIZATION, "Bearer " + getToken()))
+                .header(HttpHeaders.AUTHORIZATION, getToken()))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andDo(document.document(

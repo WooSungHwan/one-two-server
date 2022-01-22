@@ -1,6 +1,8 @@
 package com.blackdog.onetwo.domain.review.service;
 
+import com.blackdog.onetwo.configuration.exception.VerifyException;
 import com.blackdog.onetwo.configuration.response.error.ErrorCode;
+import com.blackdog.onetwo.configuration.security.SecurityUser;
 import com.blackdog.onetwo.domain.review.entity.Review;
 import com.blackdog.onetwo.domain.review.mapstruct.ReviewMapstruct;
 import com.blackdog.onetwo.domain.review.repository.ReviewRepository;
@@ -29,13 +31,23 @@ public class ReviewService {
 
     // TODO 단건이라 쿼리 최대 3개 나갈테지만 fetch join으로 수정 필요함. -> query dsl 도입 필요할듯. 목록개발에서 필요성은 더 대두됨.
     public ReviewDetailResult getReview(Long id) {
-        Review review = reviewRepository.findById(id).get();
-
-        VerifyUtil.nonNull(review, ErrorCode.RESOURCE_NOT_FOUND);
+        Review review = reviewRepository.findById(id)
+                .orElseThrow(() -> new VerifyException(ErrorCode.RESOURCE_NOT_FOUND));
 
         return reviewMapstruct.makeReviewDetailResult(
                 reviewMapstruct.reviewToReviewResult(review),
                 userService.getUserResult(review.getUsers()),
                 storeService.getStoreResult(review.getStore()));
+    }
+
+    @Transactional
+    public void deleteReview(Long id,
+                             SecurityUser securityUser) {
+        Review review = reviewRepository.findById(id)
+                .orElseThrow(() -> new VerifyException(ErrorCode.RESOURCE_NOT_FOUND));
+
+        VerifyUtil.isTrue(review.isMine(securityUser.getSeq()), ErrorCode.RESOURCE_FORBIDDEN);
+
+        review.delete();
     }
 }

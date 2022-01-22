@@ -1,6 +1,7 @@
 package com.blackdog.onetwo.domain.user.controller;
 
 import com.blackdog.onetwo.configuration.security.JwtProvider;
+import com.blackdog.onetwo.configuration.security.SecurityUser;
 import com.blackdog.onetwo.domain.user.request.AddKakaoUserParam;
 import com.blackdog.onetwo.domain.user.result.LoginResult;
 import com.blackdog.onetwo.domain.user.result.UserResult;
@@ -10,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.annotation.Validated;
@@ -27,15 +29,14 @@ public class UserController {
 
     /**
      * <pre>
-     *     유저 조회
+     *     내정보 보기
      * </pre>
-     * @param id
      * @return
      * @throws Exception
      */
-    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Object getUser(@PathVariable("id") Long id) throws Exception {
-        return userService.getUser(id);
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public Object getUser(@AuthenticationPrincipal SecurityUser securityUser) throws Exception {
+        return userService.getUser(securityUser.getSeq());
     }
 
     /**
@@ -50,6 +51,19 @@ public class UserController {
     public Object kakaoLogin(@RequestBody @Validated AddKakaoUserParam param) throws Exception {
         UserResult userResult = userService.kakaoLogin(param);
         return LoginResult.of(userResult, jwtProvider.generateJwtToken(userResult.getId()));
+    }
+
+    /**
+     * <pre>
+     *     유저 회원 탈퇴
+     * </pre>
+     * @param securityUser
+     * @return
+     */
+    @DeleteMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public Object deleteUser(@AuthenticationPrincipal SecurityUser securityUser) {
+        userService.deleteUser(securityUser);
+        return null;
     }
 
 }

@@ -1,0 +1,6 @@
+[source,bash]
+----
+$ http GET 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/users' \
+    'Accept:application/json' \
+    'Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI4MjUwMzMsImV4cCI6MTY0NTcwNTAzMywic2VxIjoxNTZ9.-9B6UMS6q4cZCYTcjLGv7qeCCjV_SB2auL-5shRAluM'
+----

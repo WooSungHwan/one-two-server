@@ -1,12 +1,11 @@
 package com.blackdog.onetwo.domain.review.controller;
 
+import com.blackdog.onetwo.configuration.security.SecurityUser;
 import com.blackdog.onetwo.domain.review.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -24,8 +23,22 @@ public class ReviewController {
      * @throws Exception
      */
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Object getReview(@PathVariable("id") Long id) throws Exception {
+    public Object getReview(@PathVariable("id") long id) throws Exception {
         return reviewService.getReview(id);
+    }
+
+    /**
+     * <pre>
+     *     리뷰 삭제
+     * </pre>
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Object deleteReview(@PathVariable("id") long id, @AuthenticationPrincipal SecurityUser securityUser) throws Exception {
+        reviewService.deleteReview(id, securityUser);
+        return null;
     }
 
 }

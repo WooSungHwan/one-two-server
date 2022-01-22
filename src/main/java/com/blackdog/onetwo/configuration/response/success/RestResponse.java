@@ -1,6 +1,8 @@
 package com.blackdog.onetwo.configuration.response.success;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Value;
 
 import java.time.LocalDateTime;

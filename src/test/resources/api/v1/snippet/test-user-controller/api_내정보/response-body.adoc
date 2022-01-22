@@ -1,0 +1,13 @@
+[source,options="nowrap"]
+----
+{
+  "message" : "OK",
+  "result" : {
+    "id" : 156,
+    "nickname" : "우성환",
+    "isFindFriends" : false,
+    "profile" : "http://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
+  },
+  "responseTime" : "2022.01.22 01:24:30"
+}
+----

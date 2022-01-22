@@ -1,0 +1,8 @@
+[source,options="nowrap"]
+----
+{
+  "message" : "OK",
+  "result" : null,
+  "responseTime" : "2022.01.22 12:20:14"
+}
+----

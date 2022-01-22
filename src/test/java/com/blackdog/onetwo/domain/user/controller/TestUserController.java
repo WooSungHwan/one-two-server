@@ -3,6 +3,7 @@ package com.blackdog.onetwo.domain.user.controller;
 import com.blackdog.onetwo.common.TestAbstractController;
 import com.blackdog.onetwo.domain.user.request.AddKakaoUserParam;
 import com.blackdog.onetwo.utils.JsonUtil;
+import org.apache.http.HttpHeaders;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
@@ -10,6 +11,7 @@ import org.springframework.restdocs.payload.JsonFieldType;
 
 import java.util.Optional;
 
+import static org.springframework.restdocs.headers.HeaderDocumentation.requestHeaders;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
@@ -24,7 +26,7 @@ public class TestUserController extends TestAbstractController {
     @Test
     void API_카카오로그인() throws Exception {
         AddKakaoUserParam param = AddKakaoUserParam.builder()
-                .accessToken("vuCOCK8yk5WcvD6gwERXWblJ3dUKmuicdHI_Dgo9dRkAAAF-csQ-AQ")
+                .accessToken("VmB1gGvu2KP1uFoKafUXmwA-ILnv5rDiLFHwaAorDNQAAAF-f__6Nw")
                 .build();
 
         mockMvc.perform(post(BASE_URL + "/kakao-login")
@@ -43,7 +45,9 @@ public class TestUserController extends TestAbstractController {
                                         fieldWithPath("result").type(JsonFieldType.OBJECT).description("결과 객체"),
                                         fieldWithPath("result.user").type(JsonFieldType.OBJECT).description("유저 정보 객체"),
                                         fieldWithPath("result.user.id").type(JsonFieldType.NUMBER).description("유저 번호"),
-                                        fieldWithPath("result.user.nickname").type(JsonFieldType.STRING).description("카카오에서 가져온 닉네임"),
+                                        fieldWithPath("result.user.nickname").type(JsonFieldType.STRING).description("유저 닉네임"),
+                                        fieldWithPath("result.user.isFindFriends").type(JsonFieldType.BOOLEAN).description("동료찾기 여부").optional(),
+                                        fieldWithPath("result.user.profile").type(JsonFieldType.STRING).description("프로필 사진"),
                                         fieldWithPath("result.token").type(JsonFieldType.STRING).description("JWT 토큰")
                                 )
                         )
@@ -52,22 +56,41 @@ public class TestUserController extends TestAbstractController {
     }
 
     @Test
-    void API_유저조회() throws Exception{
-        final Long id = 1L;
-
-        mockMvc.perform(get(BASE_URL + "/{id}", id)
-                .accept(MediaType.APPLICATION_JSON_VALUE))
+    void API_내정보() throws Exception{
+        mockMvc.perform(get(BASE_URL)
+                .accept(MediaType.APPLICATION_JSON_VALUE)
+                .header(HttpHeaders.AUTHORIZATION, getToken()))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andDo(document.document(
-                        pathParameters(
-                                parameterWithName("id").description("유저 번호")
+                        requestHeaders(
+                                loginRequired()
                         ),
                         responseFields(
                                 getRestResponseDescriptor(JsonFieldType.OBJECT, false,
+                                        fieldWithPath("result").type(JsonFieldType.OBJECT).description("결과 객체"),
                                         fieldWithPath("result.id").type(JsonFieldType.NUMBER).description("유저 번호"),
-                                        fieldWithPath("result.nickname").type(JsonFieldType.STRING).description("카카오에서 가져온 닉네임")
+                                        fieldWithPath("result.nickname").type(JsonFieldType.STRING).description("닉네임"),
+                                        fieldWithPath("result.profile").type(JsonFieldType.STRING).description("프로필 사진"),
+                                        fieldWithPath("result.isFindFriends").type(JsonFieldType.BOOLEAN).description("동료찾기 여부")
                                 )
+                        )
+                ));
+    }
+
+    @Test
+    void API_회원탈퇴() throws Exception {
+        mockMvc.perform(delete(BASE_URL)
+                .accept(MediaType.APPLICATION_JSON_VALUE)
+                .header(HttpHeaders.AUTHORIZATION, getToken()))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andDo(document.document(
+                        requestHeaders(
+                                loginRequired()
+                        ),
+                        responseFields(
+                                getRestResponseDescriptor(JsonFieldType.NULL, false)
                         )
                 ))
         ;

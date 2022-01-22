@@ -3,5 +3,5 @@
 $ curl 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/users/kakao-login' -i -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
-    -d '{"accessToken":"MovtOddavs8RLeATnPwpkJdPRbYl0reixApX6wopb9QAAAF-bRUzlw"}'
+    -d '{"accessToken":"VmB1gGvu2KP1uFoKafUXmwA-ILnv5rDiLFHwaAorDNQAAAF-f__6Nw"}'
 ----

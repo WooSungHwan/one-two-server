@@ -9,17 +9,20 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 import static javax.persistence.EnumType.STRING;
 import static javax.persistence.FetchType.LAZY;
 import static lombok.AccessLevel.PROTECTED;
 
+@DynamicUpdate
 @Builder
 @Getter
 @AllArgsConstructor
@@ -66,5 +69,9 @@ public class Review extends BaseEntity {
         this.tags = Collections.emptyList();
         this.deleted = true;
         this.deletedAt = LocalDateTime.now();
+    }
+
+    public boolean isMine(Long seq) {
+        return Objects.equals(seq, users.getId());
     }
 }

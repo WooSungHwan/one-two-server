@@ -12,6 +12,9 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 
+import java.time.LocalDateTime;
+import java.util.Objects;
+
 import static lombok.AccessLevel.PROTECTED;
 
 @Builder
@@ -19,6 +22,7 @@ import static lombok.AccessLevel.PROTECTED;
 @AllArgsConstructor
 @NoArgsConstructor(access = PROTECTED)
 @DynamicInsert
+@DynamicUpdate
 @Table(name = "users")
 @Entity
 public class Users extends BaseEntity {
@@ -27,15 +31,16 @@ public class Users extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "password")
     private String password;
 
     @Column(name = "nickname", length = 50)
     private String nickname;
 
-    @Column(name = "kakao_id", length = 20, nullable = false)
+    @Column(name = "kakao_id", length = 50)
     private String kakaoId;
 
-    @Column(name = "is_find_friends", nullable = false, columnDefinition = "boolean default false")
+    @Column(name = "is_find_friends", columnDefinition = "boolean default false")
     private Boolean isFindFriends;
 
     @Column(name = "profile")
@@ -65,4 +70,17 @@ public class Users extends BaseEntity {
         this.isFindFriends = false;
     }
 
+    public boolean isMe(Long seq) {
+        return Objects.equals(seq, this.id);
+    }
+
+    public void signOut() {
+        this.deleted = true;
+        this.deletedAt = LocalDateTime.now();
+        this.nickname = "삭제된 유저";
+        this.kakaoId = null;
+        this.isFindFriends = null;
+        this.profile = null;
+        this.password = null;
+    }
 }

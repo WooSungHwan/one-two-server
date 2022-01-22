@@ -11,17 +11,19 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 359
+Content-Length: 495
 
 {
   "message" : "OK",
   "result" : {
     "user" : {
-      "id" : 28,
-      "nickname" : "우성환"
+      "id" : 160,
+      "nickname" : "우성환",
+      "isFindFriends" : false,
+      "profile" : "http://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
     },
-    "token" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI1MDc2NTYsImV4cCI6MTY0NTM4NzY1Niwic2VxIjoyOH0.vLTemeMEYFJDX-MJDKLzVOUGl69h2fuIW4Kq6KDNYfM"
+    "token" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI4MjU3MTMsImV4cCI6MTY0NTcwNTcxMywic2VxIjoxNjB9.TNFDcdFDdIpYFgFs2L5Cmc1KGs1qgF8tC2AETLRcBeQ"
   },
-  "responseTime" : "2022.01.18 09:07:36"
+  "responseTime" : "2022.01.22 01:28:33"
 }
 ----

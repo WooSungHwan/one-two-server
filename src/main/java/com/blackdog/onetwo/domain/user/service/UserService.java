@@ -2,6 +2,7 @@ package com.blackdog.onetwo.domain.user.service;
 
 import com.blackdog.onetwo.configuration.exception.VerifyException;
 import com.blackdog.onetwo.configuration.response.error.ErrorCode;
+import com.blackdog.onetwo.configuration.security.SecurityUser;
 import com.blackdog.onetwo.domain.user.entity.Users;
 import com.blackdog.onetwo.domain.user.kakao.KakaoClient;
 import com.blackdog.onetwo.domain.user.kakao.response.AuthResult;
@@ -39,11 +40,24 @@ public class UserService {
     }
 
     public UserResult getUser(Long seq) {
-        Users users = userRepository.findById(seq).orElseThrow(() -> new VerifyException(ErrorCode.USER_NOT_FOUND));
+        Users users = getValidatedUsers(seq);
         return getUserResult(users);
+    }
+
+    @Transactional
+    public void deleteUser(SecurityUser securityUser) {
+        Users users = getValidatedUsers(securityUser.getSeq());
+
+        users.signOut();
     }
 
     public UserResult getUserResult(Users users) {
         return userMapstruct.usersToUserResult(users);
     }
+
+    private Users getValidatedUsers(Long seq) {
+        return userRepository.findById(seq)
+                .orElseThrow(() -> new VerifyException(ErrorCode.USER_NOT_FOUND));
+    }
+
 }

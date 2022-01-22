@@ -1,4 +1,4 @@
 [source,options="nowrap"]
 ----
-{"accessToken":"MovtOddavs8RLeATnPwpkJdPRbYl0reixApX6wopb9QAAAF-bRUzlw"}
+{"accessToken":"VmB1gGvu2KP1uFoKafUXmwA-ILnv5rDiLFHwaAorDNQAAAF-f__6Nw"}
 ----
