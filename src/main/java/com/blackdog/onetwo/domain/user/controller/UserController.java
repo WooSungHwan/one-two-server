@@ -3,16 +3,14 @@ package com.blackdog.onetwo.domain.user.controller;
 import com.blackdog.onetwo.configuration.security.JwtProvider;
 import com.blackdog.onetwo.configuration.security.SecurityUser;
 import com.blackdog.onetwo.domain.user.request.AddKakaoUserParam;
+import com.blackdog.onetwo.domain.user.request.AddUserTastesParam;
 import com.blackdog.onetwo.domain.user.result.LoginResult;
 import com.blackdog.onetwo.domain.user.result.UserResult;
 import com.blackdog.onetwo.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -63,6 +61,21 @@ public class UserController {
     @DeleteMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Object deleteUser(@AuthenticationPrincipal SecurityUser securityUser) {
         userService.deleteUser(securityUser);
+        return null;
+    }
+
+    /**
+     * <pre>
+     *     유저 취향 선택
+     * </pre>
+     * @param param
+     * @param securityUser
+     * @return
+     */
+    @PostMapping(value = "/tastes", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Object addUsersTastes(@RequestBody @Validated AddUserTastesParam param,
+                                 @AuthenticationPrincipal SecurityUser securityUser) {
+        userService.addUsersTastes(param, securityUser);
         return null;
     }
 

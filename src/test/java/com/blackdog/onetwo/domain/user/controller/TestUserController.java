@@ -1,7 +1,9 @@
 package com.blackdog.onetwo.domain.user.controller;
 
 import com.blackdog.onetwo.common.TestAbstractController;
+import com.blackdog.onetwo.domain.user.enums.*;
 import com.blackdog.onetwo.domain.user.request.AddKakaoUserParam;
+import com.blackdog.onetwo.domain.user.request.AddUserTastesParam;
 import com.blackdog.onetwo.utils.JsonUtil;
 import org.apache.http.HttpHeaders;
 import org.junit.jupiter.api.Disabled;
@@ -94,6 +96,27 @@ public class TestUserController extends TestAbstractController {
                         )
                 ))
         ;
+    }
+
+    @Test
+    void API_취향선택() throws Exception {
+        AddUserTastesParam param = AddUserTastesParam.builder()
+                .genderStep(GenderStep.FEMALE)
+                .priceStep(PriceStep.IMPORTANT)
+                .alcoholStep(AlcoholStep.HATE)
+                .freshFoodStep(FreshFoodStep.HATE)
+                .playStep(PlayStep.WITH_PLAY)
+                .timeStep(TimeStep.AM)
+                .build();
+
+        mockMvc.perform(post(BASE_URL + "/tastes")
+                .accept(MediaType.APPLICATION_JSON_VALUE)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .header(HttpHeaders.AUTHORIZATION, getToken())
+                .content(JsonUtil.toJson(param)))
+                .andDo(print())
+                .andExpect(status().isOk());
+
     }
 
 }

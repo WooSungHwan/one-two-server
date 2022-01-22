@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.platform.commons.function.Try.success;
 
 @Slf4j
-public class TestAddKakaoUserParam<T> extends TestAbstractParam {
+public class TestAddKakaoUserParam extends TestAbstractParam {
 
     @ParameterizedTest
     @MethodSource("generateKakaoAccessToken")
