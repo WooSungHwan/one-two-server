@@ -1,6 +1,8 @@
 package com.blackdog.onetwo.domain.review.enums;
 
+import com.blackdog.onetwo.configuration.converter.BaseEnumAttributeConverter;
 import com.blackdog.onetwo.domain.common.enums.BaseEnum;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -43,8 +45,15 @@ public enum ReviewTag implements BaseEnum {
         return BaseEnum.find(type, values());
     }
 
+    @JsonCreator
     public static ReviewTag findToNull(String type) {
         return BaseEnum.findToNull(type, values());
     }
 
+    @javax.persistence.Converter(autoApply = true)
+    public static class Converter extends BaseEnumAttributeConverter<ReviewTag> {
+        public Converter() {
+            super(ReviewTag.class);
+        }
+    }
 }

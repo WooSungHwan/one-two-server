@@ -1,5 +1,6 @@
 package com.blackdog.onetwo.domain.user.enums;
 
+import com.blackdog.onetwo.configuration.converter.BaseEnumAttributeConverter;
 import com.blackdog.onetwo.domain.common.enums.BaseEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.AllArgsConstructor;
@@ -24,4 +25,10 @@ public enum PlayStep implements BaseEnum {
         return BaseEnum.findToNull(type, values());
     }
 
+    @javax.persistence.Converter(autoApply = true)
+    public static class Converter extends BaseEnumAttributeConverter<PlayStep> {
+        public Converter() {
+            super(PlayStep.class);
+        }
+    }
 }

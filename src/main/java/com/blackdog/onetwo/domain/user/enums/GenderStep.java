@@ -1,7 +1,7 @@
 package com.blackdog.onetwo.domain.user.enums;
 
+import com.blackdog.onetwo.configuration.converter.BaseEnumAttributeConverter;
 import com.blackdog.onetwo.domain.common.enums.BaseEnum;
-import com.blackdog.onetwo.domain.review.enums.ReviewTag;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,4 +26,10 @@ public enum GenderStep implements BaseEnum {
         return BaseEnum.findToNull(type, values());
     }
 
+    @javax.persistence.Converter(autoApply = true)
+    public static class Converter extends BaseEnumAttributeConverter<GenderStep> {
+        public Converter() {
+            super(GenderStep.class);
+        }
+    }
 }
