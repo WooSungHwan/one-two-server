@@ -1,0 +1,16 @@
+|===
+|Path|Type|Description
+
+|`+message+`
+|`+String+`
+|메시지
+
+|`+result+`
+|`+Object+`
+|결과
+
+|`+responseTime+`
+|`+String+`
+|API 응답 시간
+
+|===

@@ -1,0 +1,28 @@
+|===
+|Path|Type|Description
+
+|`+genderStep+`
+|`+String+`
+|성별
+
+|`+priceStep+`
+|`+String+`
+|가격취향
+
+|`+alcoholStep+`
+|`+String+`
+|음주 취향
+
+|`+freshFoodStep+`
+|`+String+`
+|채식주의? 취향
+
+|`+playStep+`
+|`+String+`
+|놀이 취향
+
+|`+timeStep+`
+|`+String+`
+|시간대 취향
+
+|===

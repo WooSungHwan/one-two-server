@@ -6,18 +6,14 @@ import com.blackdog.onetwo.domain.user.request.AddKakaoUserParam;
 import com.blackdog.onetwo.domain.user.request.AddUserTastesParam;
 import com.blackdog.onetwo.utils.JsonUtil;
 import org.apache.http.HttpHeaders;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.payload.JsonFieldType;
 
-import java.util.Optional;
-
 import static org.springframework.restdocs.headers.HeaderDocumentation.requestHeaders;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
-import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
-import static org.springframework.restdocs.request.RequestDocumentation.pathParameters;
+import static org.springframework.restdocs.request.RequestDocumentation.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -115,7 +111,23 @@ public class TestUserController extends TestAbstractController {
                 .header(HttpHeaders.AUTHORIZATION, getToken())
                 .content(JsonUtil.toJson(param)))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andDo(document.document(
+                        requestHeaders(
+                                loginRequired()
+                        ),
+                        requestFields(
+                                fieldWithPath("genderStep").type(JsonFieldType.STRING).description("성별"),
+                                fieldWithPath("priceStep").type(JsonFieldType.STRING).description("가격취향"),
+                                fieldWithPath("alcoholStep").type(JsonFieldType.STRING).description("음주 취향"),
+                                fieldWithPath("freshFoodStep").type(JsonFieldType.STRING).description("채식주의? 취향"),
+                                fieldWithPath("playStep").type(JsonFieldType.STRING).description("놀이 취향"),
+                                fieldWithPath("timeStep").type(JsonFieldType.STRING).description("시간대 취향")
+                        ),
+                        responseFields(
+                                getRestResponseDescriptor(JsonFieldType.OBJECT, true)
+                        )
+                ));
 
     }
 

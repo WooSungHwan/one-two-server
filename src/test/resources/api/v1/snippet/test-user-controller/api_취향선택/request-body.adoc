@@ -1,0 +1,4 @@
+[source,options="nowrap"]
+----
+{"genderStep":"FEMALE","priceStep":"IMPORTANT","alcoholStep":"HATE","freshFoodStep":"HATE","playStep":"WITH_PLAY","timeStep":"AM"}
+----

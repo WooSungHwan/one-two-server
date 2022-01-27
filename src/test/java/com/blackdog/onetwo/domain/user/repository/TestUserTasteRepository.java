@@ -1,7 +1,6 @@
 package com.blackdog.onetwo.domain.user.repository;
 
 import com.blackdog.onetwo.common.TestAbstractRepository;
-import com.blackdog.onetwo.domain.user.UserFixture;
 import com.blackdog.onetwo.domain.user.entity.UserTaste;
 import com.blackdog.onetwo.domain.user.entity.Users;
 import com.blackdog.onetwo.domain.user.enums.*;

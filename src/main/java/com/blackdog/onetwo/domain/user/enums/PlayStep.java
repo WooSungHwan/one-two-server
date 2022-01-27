@@ -1,6 +1,7 @@
 package com.blackdog.onetwo.domain.user.enums;
 
 import com.blackdog.onetwo.domain.common.enums.BaseEnum;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -18,6 +19,7 @@ public enum PlayStep implements BaseEnum {
         return BaseEnum.find(type, values());
     }
 
+    @JsonCreator
     public static PlayStep findToNull(String type) {
         return BaseEnum.findToNull(type, values());
     }

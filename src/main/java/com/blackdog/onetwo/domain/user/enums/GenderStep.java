@@ -2,6 +2,7 @@ package com.blackdog.onetwo.domain.user.enums;
 
 import com.blackdog.onetwo.domain.common.enums.BaseEnum;
 import com.blackdog.onetwo.domain.review.enums.ReviewTag;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -20,6 +21,7 @@ public enum GenderStep implements BaseEnum {
         return BaseEnum.find(type, values());
     }
 
+    @JsonCreator
     public static GenderStep findToNull(String type) {
         return BaseEnum.findToNull(type, values());
     }

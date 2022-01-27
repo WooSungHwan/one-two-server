@@ -80,3 +80,29 @@ include::{sourcedir}/test-user-controller/api_회원탈퇴/response-fields.adoc[
 응답형식
 
 include::{sourcedir}/test-user-controller/api_회원탈퇴/response-body.adoc[]
+
+[[취향_입력]]
+== 취향 입력 API
+CURL
+
+include::{sourcedir}/test-user-controller/api_취향선택/curl-request.adoc[]
+
+HTTP 요청 정보
+
+include::{sourcedir}/test-user-controller/api_취향선택/http-request.adoc[]
+
+요청정보
+
+include::{sourcedir}/test-user-controller/api_취향선택/request-body.adoc[]
+
+요청형식
+
+include::{sourcedir}/test-user-controller/api_취향선택/request-fields.adoc[]
+
+응답정보
+
+include::{sourcedir}/test-user-controller/api_취향선택/response-fields.adoc[]
+
+응답형식
+
+include::{sourcedir}/test-user-controller/api_취향선택/response-body.adoc[]
