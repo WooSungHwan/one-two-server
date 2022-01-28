@@ -1,12 +1,10 @@
 package com.blackdog.onetwo.domain.store.entity;
 
-import com.blackdog.onetwo.domain.common.BaseEntity;
-import com.blackdog.onetwo.domain.store.StoreStatus;
+import com.blackdog.onetwo.domain.common.entity.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 

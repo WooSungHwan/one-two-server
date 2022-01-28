@@ -1,4 +1,4 @@
-package com.blackdog.onetwo.domain.common;
+package com.blackdog.onetwo.domain.common.entity;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
