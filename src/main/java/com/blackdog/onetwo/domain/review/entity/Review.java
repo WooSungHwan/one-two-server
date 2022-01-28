@@ -54,7 +54,6 @@ public class Review extends BaseEntity {
     private Users users;
 
     @ElementCollection(targetClass = ReviewTag.class, fetch = LAZY)
-    @Enumerated(STRING)
     private List<ReviewTag> tags;
 
     public static Review of(Long id, String content, Store store, Users users, List<ReviewTag> tags) {

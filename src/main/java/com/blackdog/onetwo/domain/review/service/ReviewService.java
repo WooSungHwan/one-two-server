@@ -6,6 +6,7 @@ import com.blackdog.onetwo.configuration.security.SecurityUser;
 import com.blackdog.onetwo.domain.review.entity.Review;
 import com.blackdog.onetwo.domain.review.mapstruct.ReviewMapstruct;
 import com.blackdog.onetwo.domain.review.repository.ReviewRepository;
+import com.blackdog.onetwo.domain.review.repository.ReviewRepositorySupport;
 import com.blackdog.onetwo.domain.review.result.ReviewDetailResult;
 import com.blackdog.onetwo.domain.review.result.ReviewResult;
 import com.blackdog.onetwo.domain.store.result.StoreResult;
@@ -25,13 +26,13 @@ import org.springframework.transaction.annotation.Transactional;
 public class ReviewService {
 
     private final ReviewRepository reviewRepository;
+    private final ReviewRepositorySupport reviewRepositorySupport;
     private final UserService userService;
     private final StoreService storeService;
     private final ReviewMapstruct reviewMapstruct;
 
-    // TODO 단건이라 쿼리 최대 3개 나갈테지만 fetch join으로 수정 필요함. -> query dsl 도입 필요할듯. 목록개발에서 필요성은 더 대두됨.
     public ReviewDetailResult getReview(Long id) {
-        Review review = reviewRepository.findById(id)
+        Review review = reviewRepositorySupport.findByIdFetch(id)
                 .orElseThrow(() -> new VerifyException(ErrorCode.RESOURCE_NOT_FOUND));
 
         return reviewMapstruct.makeReviewDetailResult(
