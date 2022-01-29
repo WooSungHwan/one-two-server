@@ -4,7 +4,7 @@ import com.blackdog.onetwo.domain.review.entity.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-public interface ReviewRepository extends JpaRepository<Review, Long> {
+public interface ReviewRepository extends JpaRepository<Review, Long>, ReviewRepositorySupport {
 
     @Query(value = "select max(id) from Review")
     Long max();

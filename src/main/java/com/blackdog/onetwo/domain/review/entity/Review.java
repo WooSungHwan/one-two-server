@@ -1,6 +1,6 @@
 package com.blackdog.onetwo.domain.review.entity;
 
-import com.blackdog.onetwo.domain.common.BaseEntity;
+import com.blackdog.onetwo.domain.common.entity.BaseEntity;
 import com.blackdog.onetwo.domain.review.enums.ReviewTag;
 import com.blackdog.onetwo.domain.store.entity.Store;
 import com.blackdog.onetwo.domain.user.entity.Users;
@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
@@ -18,7 +17,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-import static javax.persistence.EnumType.STRING;
+import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.FetchType.LAZY;
 import static lombok.AccessLevel.PROTECTED;
 
