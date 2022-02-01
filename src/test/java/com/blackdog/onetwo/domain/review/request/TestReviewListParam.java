@@ -18,7 +18,6 @@ import java.util.stream.Stream;
 import static com.blackdog.onetwo.domain.review.enums.ReviewTag.GOOD_PICTURE;
 import static com.blackdog.onetwo.domain.review.enums.ReviewTag.NO_KIDS_ZONE;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.catchThrowable;
 import static org.junit.platform.commons.function.Try.success;
 
 public class TestReviewListParam extends TestAbstractParam {
@@ -100,7 +99,7 @@ public class TestReviewListParam extends TestAbstractParam {
                 .tags(tags)
                 .page(page)
                 .limit(limit)
-                .id(id)
+                .lastId(id)
                 .build();
     }
 }

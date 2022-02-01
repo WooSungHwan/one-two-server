@@ -78,6 +78,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll()
                 .antMatchers("/api/v1/users/*")// TODO 임시
                     .permitAll()
+                .antMatchers(HttpMethod.GET, "/api/v1/reviews")
+                    .permitAll()
                 .antMatchers(HttpMethod.POST, "/api/v1/users/kakao-login") // 카카오 로그인
                     .permitAll()
                 .antMatchers("/api/v1/**")

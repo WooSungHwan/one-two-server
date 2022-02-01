@@ -51,8 +51,8 @@ public class TestReviewService extends TestAbstractService {
         ReviewDetailResult result = new ReviewDetailResult(reviewResult, storeResult, userResult);
 
         when(reviewRepository.findById(eq(review.getId()))).thenReturn(Optional.of(review));
-        when(userService.getUserResult(eq(review.getUsers()))).thenReturn(userResult);
-        when(storeService.getStoreResult(eq(review.getStore()))).thenReturn(storeResult);
+        when(userService.toUserResult(eq(review.getUsers()))).thenReturn(userResult);
+        when(storeService.toStoreResult(eq(review.getStore()))).thenReturn(storeResult);
         when(reviewMapstruct.reviewToReviewResult(eq(review))).thenReturn(reviewResult);
         when(reviewMapstruct.makeReviewDetailResult(reviewResult, userResult, storeResult)).thenReturn(result);
 
@@ -66,8 +66,8 @@ public class TestReviewService extends TestAbstractService {
         verify(reviewRepository, times(1)).findById(eq(review.getId()));
         verify(reviewMapstruct, times(1)).reviewToReviewResult(eq(review));
         verify(reviewMapstruct, times(1)).makeReviewDetailResult(eq(reviewResult), eq(userResult), eq(storeResult));
-        verify(userService, times(1)).getUserResult(eq(review.getUsers()));
-        verify(storeService, times(1)).getStoreResult(eq(review.getStore()));
+        verify(userService, times(1)).toUserResult(eq(review.getUsers()));
+        verify(storeService, times(1)).toStoreResult(eq(review.getStore()));
     }
 
 }

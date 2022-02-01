@@ -29,19 +29,19 @@ public class MainListPageParam {
     @Range(min = 5, max = 10, message = "목록 행수를 {min} ~ {max}으로 입력해주세요.", groups = OrderFirst.class)
     private Integer limit = 5;
 
-    @Positive(message = "id는 양수로 입력해주세요.", groups = OrderSecond.class)
-    private Long id;
+    @Positive(message = "lastId는 양수로 입력해주세요.", groups = OrderSecond.class)
+    private Long lastId;
 
     @JsonIgnore
     @AssertTrue(message = "첫 페이지에서는 id를 입력할 수 없습니다.", groups = OrderSecond.class)
     private boolean isValidId() {
-        return this.page != 1 || Objects.isNull(this.id);
+        return this.page != 1 || Objects.isNull(this.lastId);
     }
 
     @JsonIgnore
     @AssertTrue(message = "id를 입력해주세요.", groups = OrderSecond.class)
     private boolean isIdNotNull() {
-        return this.page == 1 || Objects.nonNull(this.id);
+        return this.page == 1 || Objects.nonNull(this.lastId);
     }
 
 }

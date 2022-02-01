@@ -52,7 +52,7 @@ public class Review extends BaseEntity {
     )
     private Users users;
 
-    @ElementCollection(targetClass = ReviewTag.class, fetch = LAZY)
+    @ElementCollection(targetClass = ReviewTag.class, fetch = EAGER)
     private List<ReviewTag> tags;
 
     public static Review of(Long id, String content, Store store, Users users, List<ReviewTag> tags) {

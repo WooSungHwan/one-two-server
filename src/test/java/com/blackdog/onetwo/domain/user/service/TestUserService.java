@@ -49,7 +49,7 @@ public class TestUserService extends TestAbstractService {
         when(userMapstruct.usersToUserResult(eq(users))).thenReturn(userResult);
 
         // call
-        UserResult result = userService.getUserResult(users);
+        UserResult result = userService.toUserResult(users);
 
         assertThat(result).isNotNull();
         assertThat(result).extracting("id").isEqualTo(users.getId());

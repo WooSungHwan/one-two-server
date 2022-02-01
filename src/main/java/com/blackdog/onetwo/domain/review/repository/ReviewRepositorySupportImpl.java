@@ -12,10 +12,7 @@ import com.querydsl.jpa.sql.JPASQLQuery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.util.CollectionUtils;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -41,11 +38,27 @@ public class ReviewRepositorySupportImpl implements ReviewRepositorySupport {
                     .fetchOne());
     }
 
+    private List<Review> findByIdsFetch(List<Long> ids) {
+        BooleanExpression[] whereExpressions = BooleanExpressionBuilder.builder()
+                .addCondition(eqIds(ids))
+                .addCondition(eqDeleted(false))
+                .build();
+
+        return jpaQueryFactory.selectFrom(review)
+                .innerJoin(review.tags).fetchJoin()
+                .innerJoin(review.users, user).fetchJoin()
+                .leftJoin(review.store, store).fetchJoin()
+                .where(whereExpressions)
+                .orderBy(review.id.desc())
+                .distinct()
+                .fetch();
+    }
+
     @Override
     public List<Review> findReviewsBySearch(List<ReviewTag> tags,
                                             Long id,
-                                            Integer page,
-                                            Integer limit) {
+                                            int page,
+                                            int limit) {
         BooleanExpression[] whereExpressions = BooleanExpressionBuilder.builder()
                 .addCondition(ltId(id, page))
                 .addCondition(eqTag(tags))
@@ -62,12 +75,7 @@ public class ReviewRepositorySupportImpl implements ReviewRepositorySupport {
             return Collections.emptyList();
         }
 
-        return jpaQueryFactory.selectFrom(review)
-                .innerJoin(review.tags).fetchJoin()
-                .where(eqIds(ids))
-                .groupBy(review.id)
-                .orderBy(review.id.desc())
-                .fetch();
+        return findByIdsFetch(ids);
     }
 
     private BooleanExpression eqIds(List<Long> ids) {

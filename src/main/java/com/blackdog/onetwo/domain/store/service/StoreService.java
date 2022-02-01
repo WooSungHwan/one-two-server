@@ -16,7 +16,7 @@ public class StoreService {
     private final StoreRepository storeRepository;
     private final StoreMapstruct storeMapstruct;
 
-    public StoreResult getStoreResult(Store store) {
+    public StoreResult toStoreResult(Store store) {
         return storeMapstruct.storeToStoreResult(store);
     }
 

@@ -37,15 +37,15 @@ public class UserService {
 
         if (!userRepository.existsByKakaoId(authInfo.getId())) {
             Users user = userRepository.save(Users.of(passwordEncoder.encode(authInfo.getId()), authInfo.getNickname(), authInfo.getId(), authInfo.getProfileImageUrl()));
-            return getUserResult(user);
+            return toUserResult(user);
         }
         Users user = userRepository.findByKakaoId(authInfo.getId());
-        return getUserResult(user);
+        return toUserResult(user);
     }
 
     public UserResult getUser(Long seq) {
         Users users = getValidatedUsers(seq);
-        return getUserResult(users);
+        return toUserResult(users);
     }
 
     @Transactional
@@ -55,7 +55,7 @@ public class UserService {
         users.signOut();
     }
 
-    public UserResult getUserResult(Users users) {
+    public UserResult toUserResult(Users users) {
         return userMapstruct.usersToUserResult(users);
     }
 
