@@ -37,6 +37,29 @@ include::{sourcedir}/test-review-controller/api_리뷰한건조회/response-fiel
 
 include::{sourcedir}/test-review-controller/api_리뷰한건조회/response-body.adoc[]
 
+[[리뷰목록]]
+== 리뷰 목록 API
+
+CURL
+
+include::{sourcedir}/test-review-controller/api_리뷰목록/curl-request.adoc[]
+
+HTTP 요청 정보
+
+include::{sourcedir}/test-review-controller/api_리뷰목록/http-request.adoc[]
+
+요청정보
+
+include::{sourcedir}/test-review-controller/api_리뷰목록/request-parameters.adoc[]
+
+응답정보
+
+include::{sourcedir}/test-review-controller/api_리뷰목록/response-fields.adoc[]
+
+응답형식
+
+include::{sourcedir}/test-review-controller/api_리뷰목록/response-body.adoc[]
+
 [[리뷰삭제]]
 == 리뷰 삭제 API
 
