@@ -98,7 +98,7 @@ configurations {
 //querydsl 추가 끝
 
 test {
-//    exclude '**/*'
+    exclude '**/*'
     outputs.dir snippetsDir
     useJUnitPlatform()
 }
