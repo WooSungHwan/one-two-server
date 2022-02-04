@@ -32,6 +32,7 @@ public class ReviewRepositorySupportImpl implements ReviewRepositorySupport {
 
         return Optional.ofNullable(jpaQueryFactory.selectFrom(review)
                     .innerJoin(review.tags).fetchJoin()
+                    .innerJoin(review.images).fetchJoin()
                     .innerJoin(review.users, user).fetchJoin()
                     .leftJoin(review.store, store).fetchJoin()
                     .where(whereExpressions)
@@ -46,6 +47,7 @@ public class ReviewRepositorySupportImpl implements ReviewRepositorySupport {
 
         return jpaQueryFactory.selectFrom(review)
                 .innerJoin(review.tags).fetchJoin()
+                .innerJoin(review.images).fetchJoin()
                 .innerJoin(review.users, user).fetchJoin()
                 .leftJoin(review.store, store).fetchJoin()
                 .where(whereExpressions)

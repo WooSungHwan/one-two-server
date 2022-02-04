@@ -32,10 +32,11 @@ public class TestReviewRepositorySupport extends TestAbstractRepositorySupport {
     void findReviewsBySearchTest() {
         List<ReviewTag> tags = List.of(ReviewTag.CHEAP, ReviewTag.NO_KIDS_ZONE);
         long pagingId = 180L;
-        List<Review> reviews = reviewRepository.findReviewsBySearch(tags, pagingId, 2, 5);
+        int limit = 5;
+        List<Review> reviews = reviewRepository.findReviewsBySearch(tags, pagingId, 2, limit + 1);
 
         assertThat(reviews).hasSizeGreaterThanOrEqualTo(1);
-        assertThat(reviews).hasSizeLessThanOrEqualTo(5);
+        assertThat(reviews).hasSizeLessThanOrEqualTo(limit + 1);
 
         reviews.forEach(review -> {
             log.info("id : {}", review.getId());

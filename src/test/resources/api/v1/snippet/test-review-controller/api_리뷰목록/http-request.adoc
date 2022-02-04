@@ -1,6 +1,6 @@
 [source,http,options="nowrap"]
 ----
-GET /api/v1/reviews?tags=NO_KIDS_ZONE&tags=CHEAP&page=2&limit=5&lastId=192 HTTP/1.1
+GET /api/v1/reviews?tags=NO_KIDS_ZONE&tags=CHEAP&page=1&limit=5&lastId= HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
 Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510

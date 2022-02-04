@@ -30,13 +30,7 @@ public class TestReviewService extends TestAbstractService {
     private ReviewRepository reviewRepository;
 
     @Mock
-    private StoreService storeService;
-
-    @Mock
     private ReviewMapstruct reviewMapstruct;
-
-    @Mock
-    private UserService userService;
 
     @InjectMocks
     private ReviewService reviewService;
@@ -50,11 +44,8 @@ public class TestReviewService extends TestAbstractService {
         StoreResult storeResult = standardStoreResult();
         ReviewDetailResult result = new ReviewDetailResult(reviewResult, storeResult, userResult);
 
-        when(reviewRepository.findById(eq(review.getId()))).thenReturn(Optional.of(review));
-        when(userService.toUserResult(eq(review.getUsers()))).thenReturn(userResult);
-        when(storeService.toStoreResult(eq(review.getStore()))).thenReturn(storeResult);
-        when(reviewMapstruct.reviewToReviewResult(eq(review))).thenReturn(reviewResult);
-        when(reviewMapstruct.makeReviewDetailResult(reviewResult, userResult, storeResult)).thenReturn(result);
+        when(reviewRepository.findByIdFetch(eq(review.getId()))).thenReturn(Optional.of(review));
+        when(reviewMapstruct.reviewToReviewDetailResult(review)).thenReturn(result);
 
         // call
         ReviewDetailResult reviewDetailResult = reviewService.getReview(review.getId());
@@ -63,11 +54,8 @@ public class TestReviewService extends TestAbstractService {
         assertThat(reviewDetailResult).extracting("review").extracting("id").isEqualTo(review.getId());
 
         // verify call to mock
-        verify(reviewRepository, times(1)).findById(eq(review.getId()));
-        verify(reviewMapstruct, times(1)).reviewToReviewResult(eq(review));
-        verify(reviewMapstruct, times(1)).makeReviewDetailResult(eq(reviewResult), eq(userResult), eq(storeResult));
-        verify(userService, times(1)).toUserResult(eq(review.getUsers()));
-        verify(storeService, times(1)).toStoreResult(eq(review.getStore()));
+        verify(reviewRepository, times(1)).findByIdFetch(eq(review.getId()));
+        verify(reviewMapstruct, times(1)).reviewToReviewDetailResult(eq(review));
     }
 
 }

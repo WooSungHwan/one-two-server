@@ -41,7 +41,7 @@ public class ReviewController {
      * @throws Exception
      */
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Object getReviews(@ModelAttribute @Validated(Order.class) ReviewListParam param) throws Exception {
+    public Object getReviews(@ModelAttribute @Validated ReviewListParam param) throws Exception {
         return reviewService.getReviews(
                 param.getTags(),
                 param.getLastId(),
@@ -58,7 +58,8 @@ public class ReviewController {
      * @throws Exception
      */
     @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Object deleteReview(@PathVariable("id") long id, @AuthenticationPrincipal SecurityUser securityUser) throws Exception {
+    public Object deleteReview(@PathVariable("id") long id,
+                               @AuthenticationPrincipal SecurityUser securityUser) throws Exception {
         reviewService.deleteReview(
                 id,
                 securityUser);

@@ -29,6 +29,10 @@
 |`+Array+`
 |리뷰 태그 목록
 
+|`+result.list[].review.images[]+`
+|`+Array+`
+|리뷰 이미지 목록
+
 |`+result.list[].store+`
 |`+Object+`
 |가게

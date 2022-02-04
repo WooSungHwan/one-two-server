@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.FetchType.LAZY;
@@ -52,19 +53,22 @@ public class Review extends BaseEntity {
     )
     private Users users;
 
-    @ElementCollection(targetClass = ReviewTag.class, fetch = EAGER)
-    private List<ReviewTag> tags;
+    @ElementCollection(targetClass = ReviewTag.class, fetch = LAZY)
+    private Set<ReviewTag> tags;
 
-    public static Review of(Long id, String content, Store store, Users users, List<ReviewTag> tags) {
-        return new Review(id, content, store, users, tags);
+    @ElementCollection(targetClass = String.class, fetch = LAZY)
+    private Set<String> images;
+
+    public static Review of(Long id, String content, Store store, Users users, Set<ReviewTag> tags, Set<String> images) {
+        return new Review(id, content, store, users, tags, images);
     }
 
-    public static Review of(String content, Store store, Users users, List<ReviewTag> tags) {
-        return of(null, content, store, users, tags);
+    public static Review of(String content, Store store, Users users, Set<ReviewTag> tags, Set<String> images) {
+        return of(null, content, store, users, tags, images);
     }
 
     public void delete() {
-        this.tags = Collections.emptyList();
+        this.tags = Collections.emptySet();
         this.deleted = true;
         this.deletedAt = LocalDateTime.now();
     }

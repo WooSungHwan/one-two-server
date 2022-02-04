@@ -14,4 +14,6 @@ public class ReviewResult {
     private String content;
 
     private List<String> tags;
+
+    private List<String> images;
 }

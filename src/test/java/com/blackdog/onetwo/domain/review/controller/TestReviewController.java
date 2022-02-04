@@ -85,9 +85,9 @@ public class TestReviewController extends TestAbstractController {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .param("tags", NO_KIDS_ZONE.toString())
                 .param("tags", CHEAP.toString())
-                .param("page", "2")
+                .param("page", "1")
                 .param("limit", "5")
-                .param("lastId", "192"))
+                .param("lastId", ""))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andDo(document.document(
@@ -105,6 +105,7 @@ public class TestReviewController extends TestAbstractController {
                                         fieldWithPath("result.list[].review.id").type(JsonFieldType.NUMBER).description("리뷰 아이디"),
                                         fieldWithPath("result.list[].review.content").type(JsonFieldType.STRING).description("리뷰 상세 내용"),
                                         fieldWithPath("result.list[].review.tags[]").type(JsonFieldType.ARRAY).description("리뷰 태그 목록"),
+                                        fieldWithPath("result.list[].review.images[]").type(JsonFieldType.ARRAY).description("리뷰 이미지 목록"),
 
                                         fieldWithPath("result.list[].store").type(JsonFieldType.OBJECT).description("가게").optional(),
                                         fieldWithPath("result.list[].store.managementId").type(JsonFieldType.STRING).description("가게 관리 번호").optional(),
@@ -145,8 +146,7 @@ public class TestReviewController extends TestAbstractController {
                         responseFields(
                                 getRestResponseDescriptor(JsonFieldType.NULL, false)
                         )
-                ))
-        ;
+                ));
     }
 
 }

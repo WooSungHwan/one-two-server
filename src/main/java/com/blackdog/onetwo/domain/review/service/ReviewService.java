@@ -27,18 +27,13 @@ import java.util.List;
 public class ReviewService {
 
     private final ReviewRepository reviewRepository;
-    private final UserService userService;
-    private final StoreService storeService;
     private final ReviewMapstruct reviewMapstruct;
 
     public ReviewDetailResult getReview(Long id) {
         Review review = reviewRepository.findByIdFetch(id)
                 .orElseThrow(() -> new VerifyException(ErrorCode.RESOURCE_NOT_FOUND));
 
-        return reviewMapstruct.makeReviewDetailResult(
-                reviewMapstruct.reviewToReviewResult(review),
-                userService.toUserResult(review.getUsers()),
-                storeService.toStoreResult(review.getStore()));
+        return reviewMapstruct.reviewToReviewDetailResult(review);
     }
 
     public ReviewListResult getReviews(List<ReviewTag> tags,
@@ -49,19 +44,9 @@ public class ReviewService {
                 tags,
                 id,
                 page,
-                limit);
+                limit + 1);
 
-        // TODO 추후 개선
-        List<ReviewDetailResult> results = new ArrayList<>();
-        reviews.forEach(review -> {
-            ReviewDetailResult result = reviewMapstruct.makeReviewDetailResult(
-                    reviewMapstruct.reviewToReviewResult(review),
-                    userService.toUserResult(review.getUsers()),
-                    storeService.toStoreResult(review.getStore()));
-            results.add(result);
-        });
-
-        return ReviewListResult.of(results);
+        return ReviewListResult.of(reviewsToReviewDetailResults(reviews));
     }
 
     @Transactional
@@ -73,5 +58,15 @@ public class ReviewService {
         VerifyUtil.isTrue(review.isMine(securityUser.getSeq()), ErrorCode.RESOURCE_FORBIDDEN);
 
         review.delete();
+    }
+
+    private List<ReviewDetailResult> reviewsToReviewDetailResults(List<Review> reviews) {
+        List<ReviewDetailResult> results = new ArrayList<>();
+        reviews.forEach(review -> results.add(reviewToReviewDetailResult(review)));
+        return results;
+    }
+
+    private ReviewDetailResult reviewToReviewDetailResult(Review review) {
+        return reviewMapstruct.reviewToReviewDetailResult(review);
     }
 }
