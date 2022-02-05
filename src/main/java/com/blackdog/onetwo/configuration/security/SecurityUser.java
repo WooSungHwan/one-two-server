@@ -13,15 +13,14 @@ import java.util.Collections;
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class SecurityUser implements UserDetails {
-    private Long seq;
-    private String nickname;
-
-    public static SecurityUser of(Long seq, String nickname) {
-        return new SecurityUser(seq, nickname);
-    }
+    private Users users;
 
     public static SecurityUser of(Users users) {
-        return SecurityUser.of(users.getId(), users.getNickname());
+        return new SecurityUser(users);
+    }
+
+    public Long getSeq() {
+        return users.getId();
     }
 
     @Override

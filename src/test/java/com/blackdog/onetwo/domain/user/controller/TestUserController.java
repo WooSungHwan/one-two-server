@@ -24,7 +24,7 @@ public class TestUserController extends TestAbstractController {
     @Test
     void API_카카오로그인() throws Exception {
         AddKakaoUserParam param = AddKakaoUserParam.builder()
-                .accessToken("VmB1gGvu2KP1uFoKafUXmwA-ILnv5rDiLFHwaAorDNQAAAF-f__6Nw")
+                .accessToken("AHzRyRWmww1diBHkai_Z2Jpb3XPkZt89OzPBDQo9dVwAAAF-x-vL1Q")
                 .build();
 
         mockMvc.perform(post(BASE_URL + "/kakao-login")
@@ -61,9 +61,7 @@ public class TestUserController extends TestAbstractController {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andDo(document.document(
-                        requestHeaders(
-                                loginRequired()
-                        ),
+                        requestHeaders(loginRequired()),
                         responseFields(
                                 getRestResponseDescriptor(JsonFieldType.OBJECT, false,
                                         fieldWithPath("result").type(JsonFieldType.OBJECT).description("결과 객체"),
@@ -84,9 +82,7 @@ public class TestUserController extends TestAbstractController {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andDo(document.document(
-                        requestHeaders(
-                                loginRequired()
-                        ),
+                        requestHeaders(loginRequired()),
                         responseFields(
                                 getRestResponseDescriptor(JsonFieldType.NULL, false)
                         )
@@ -113,9 +109,7 @@ public class TestUserController extends TestAbstractController {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andDo(document.document(
-                        requestHeaders(
-                                loginRequired()
-                        ),
+                        requestHeaders(loginRequired()),
                         requestFields(
                                 fieldWithPath("genderStep").type(JsonFieldType.STRING).description("성별"),
                                 fieldWithPath("priceStep").type(JsonFieldType.STRING).description("가격취향"),

@@ -1,0 +1,24 @@
+|===
+|Path|Type|Description
+
+|`+title+`
+|`+String+`
+|리뷰 제목
+
+|`+content+`
+|`+String+`
+|리뷰 내용
+
+|`+storeId+`
+|`+Number+`
+|가게 아이디
+
+|`+images+`
+|`+Array+`
+|이미지 배열
+
+|`+tags+`
+|`+Array+`
+|리뷰 배열
+
+|===

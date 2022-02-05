@@ -3,6 +3,7 @@ package com.blackdog.onetwo.domain.review.controller;
 import com.blackdog.onetwo.common.TestAbstractController;
 import com.blackdog.onetwo.domain.review.enums.ReviewTag;
 import com.blackdog.onetwo.domain.review.repository.ReviewRepository;
+import com.blackdog.onetwo.domain.review.request.AddReviewParam;
 import com.blackdog.onetwo.domain.review.request.ReviewListParam;
 import com.blackdog.onetwo.utils.JsonUtil;
 import org.apache.http.HttpHeaders;
@@ -13,13 +14,13 @@ import org.springframework.http.MediaType;
 import org.springframework.restdocs.payload.JsonFieldType;
 
 import java.util.List;
+import java.util.Set;
 
-import static com.blackdog.onetwo.domain.review.enums.ReviewTag.CHEAP;
-import static com.blackdog.onetwo.domain.review.enums.ReviewTag.NO_KIDS_ZONE;
+import static com.blackdog.onetwo.domain.review.enums.ReviewTag.*;
+import static org.springframework.restdocs.headers.HeaderDocumentation.headerWithName;
 import static org.springframework.restdocs.headers.HeaderDocumentation.requestHeaders;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
-import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
-import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
+import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 import static org.springframework.restdocs.request.RequestDocumentation.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -46,9 +47,7 @@ public class TestReviewController extends TestAbstractController {
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andDo(document.document(
-                        requestHeaders(
-                                loginRequired()
-                        ),
+                        requestHeaders(loginRequired()),
                         pathParameters(
                                 parameterWithName("id").description("리뷰 번호")
                         ),
@@ -73,6 +72,40 @@ public class TestReviewController extends TestAbstractController {
                                         fieldWithPath("result.user.nickname").type(JsonFieldType.STRING).description("유저 닉네임"),
                                         fieldWithPath("result.user.isFindFriends").type(JsonFieldType.BOOLEAN).description("유저 동료찾기 활성화 여부"),
                                         fieldWithPath("result.user.profile").type(JsonFieldType.STRING).description("유저 프로필 사진")
+                                )
+                        )
+                ));
+    }
+
+    @Test
+    void API_리뷰등록() throws Exception {
+        AddReviewParam param = AddReviewParam.builder()
+                .title("리뷰 제목입니다.")
+                .content("리뷰 내용입니다. 리뷰 내용은 30자를 넘겨야 합니다. 30자를 넘기기 매우 어렵네요.")
+                .storeId(176L)
+                .images(Set.of("test.png"))
+                .tags(Set.of(NO_KIDS_ZONE, CHEAP, GOOD_PICTURE))
+                .build();
+
+        mockMvc.perform(post(BASE_URL)
+                .header(HttpHeaders.AUTHORIZATION, getToken())
+                .accept(MediaType.APPLICATION_JSON_VALUE)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .content(JsonUtil.toJson(param)))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andDo(document.document(
+                        requestHeaders(loginRequired()),
+                        requestFields(
+                                fieldWithPath("title").type(JsonFieldType.STRING).description("리뷰 제목"),
+                                fieldWithPath("content").type(JsonFieldType.STRING).description("리뷰 내용"),
+                                fieldWithPath("storeId").type(JsonFieldType.NUMBER).description("가게 아이디"),
+                                fieldWithPath("images").type(JsonFieldType.ARRAY).description("이미지 배열"),
+                                fieldWithPath("tags").type(JsonFieldType.ARRAY).description("리뷰 배열")
+                        ),
+                        responseFields(
+                                getRestResponseDescriptor(JsonFieldType.OBJECT, false,
+                                        fieldWithPath("id").type(JsonFieldType.NUMBER).description("생성된 리뷰 번호")
                                 )
                         )
                 ));
@@ -137,9 +170,7 @@ public class TestReviewController extends TestAbstractController {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andDo(document.document(
-                        requestHeaders(
-                                loginRequired()
-                        ),
+                        requestHeaders(loginRequired()),
                         pathParameters(
                                 parameterWithName("id").description("리뷰 번호")
                         ),

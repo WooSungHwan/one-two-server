@@ -39,9 +39,7 @@ public class TestUploadController extends TestAbstractController {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andDo(document.document(
-                        requestHeaders(
-                                headerWithName("Authorization").description("JWT 토큰")
-                        ),
+                        requestHeaders(loginRequired()),
                         requestParts(
                                 partWithName("image").description("업로드할 이미지")
                         ),

@@ -18,7 +18,7 @@ public class SecurityUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String seq) throws UsernameNotFoundException {
-        Users users = userRepository.findById(Long.parseLong(seq))
+        Users users = userRepository.findByIdAndDeletedFalse(Long.parseLong(seq))
                 .orElseThrow(() -> new VerifyException(ErrorCode.USER_NOT_FOUND));
 
         return SecurityUser.of(users);

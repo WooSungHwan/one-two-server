@@ -36,7 +36,7 @@ public class DataInitializer implements ApplicationRunner {
         String kakaoId = UUID.randomUUID().toString().substring(20);
         Users users = userRepository.save(Users.of(passwordEncoder.encode(kakaoId), "test", kakaoId, "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"));
         Store store = storeRepository.save(Store.of(UUID.randomUUID().toString(), "옛손칼", "20211231", "경기도 의정부시 의정부1동 225-16", "경기도 의정부시 가능로136번길 9-10", "제육", "영업", 37.4962232, 127.0147866));
-        Review review = reviewRepository.save(Review.of("content", store, users, Set.of(GOOD_PICTURE, CHEAP, COFFEE_DELICIOUS), Set.of("test.png")));
+        Review review = reviewRepository.save(Review.of("title", "content", store, users, Set.of(GOOD_PICTURE, CHEAP, COFFEE_DELICIOUS), Set.of("test.png")));
 
         log.info("user 생성 : {}", users.getId());
         log.info("store 생성 : {}", store.getId());

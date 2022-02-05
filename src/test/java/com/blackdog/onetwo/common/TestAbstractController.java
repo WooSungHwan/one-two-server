@@ -88,7 +88,7 @@ public abstract class TestAbstractController {
     }
 
     protected String getToken() {
-        return "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI4MjU3MTMsImV4cCI6MTY0NTcwNTcxMywic2VxIjoxNjB9.TNFDcdFDdIpYFgFs2L5Cmc1KGs1qgF8tC2AETLRcBeQ";
+        return "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDQwMzE2NzMsImV4cCI6MTY0NjkxMTY3Mywic2VxIjoxNjl9.hVe2eTdYm8qwB9iDzj9LEt1VaNQZPhM57ngW8xXJBgQ";
     }
 
     protected HeaderDescriptor loginRequired() {

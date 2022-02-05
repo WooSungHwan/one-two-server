@@ -34,7 +34,7 @@ public class UserController {
      */
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Object getUser(@AuthenticationPrincipal SecurityUser securityUser) throws Exception {
-        return userService.getUser(securityUser.getSeq());
+        return userService.getUser(securityUser);
     }
 
     /**

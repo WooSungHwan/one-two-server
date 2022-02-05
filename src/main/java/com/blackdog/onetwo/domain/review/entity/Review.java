@@ -35,6 +35,9 @@ public class Review extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "title", length = 40)
+    private String title;
+
     @Column(name = "content", columnDefinition = "text")
     private String content;
 
@@ -59,12 +62,12 @@ public class Review extends BaseEntity {
     @ElementCollection(targetClass = String.class, fetch = LAZY)
     private Set<String> images;
 
-    public static Review of(Long id, String content, Store store, Users users, Set<ReviewTag> tags, Set<String> images) {
-        return new Review(id, content, store, users, tags, images);
+    public static Review of(Long id, String title, String content, Store store, Users users, Set<ReviewTag> tags, Set<String> images) {
+        return new Review(id, title, content, store, users, tags, images);
     }
 
-    public static Review of(String content, Store store, Users users, Set<ReviewTag> tags, Set<String> images) {
-        return of(null, content, store, users, tags, images);
+    public static Review of(String title, String content, Store store, Users users, Set<ReviewTag> tags, Set<String> images) {
+        return of(null, title, content, store, users, tags, images);
     }
 
     public void delete() {

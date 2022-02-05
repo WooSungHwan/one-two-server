@@ -43,9 +43,8 @@ public class UserService {
         return toUserResult(user);
     }
 
-    public UserResult getUser(Long seq) {
-        Users users = getValidatedUsers(seq);
-        return toUserResult(users);
+    public UserResult getUser(SecurityUser securityUser) {
+        return toUserResult(securityUser.getUsers());
     }
 
     @Transactional
@@ -68,7 +67,7 @@ public class UserService {
     public void addUsersTastes(AddUserTastesParam param,
                                SecurityUser securityUser) {
         // 기존 취향 있으면 삭제처리.
-        Users users = getValidatedUsers(securityUser.getSeq());
+        Users users = securityUser.getUsers();
         userTasteRepository.deleteUserTastesByUsers(users);
 
         UserTaste userTaste = UserTaste.of(

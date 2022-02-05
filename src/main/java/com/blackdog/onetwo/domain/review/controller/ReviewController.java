@@ -2,6 +2,7 @@ package com.blackdog.onetwo.domain.review.controller;
 
 import com.blackdog.onetwo.configuration.security.SecurityUser;
 import com.blackdog.onetwo.domain.common.order.Order;
+import com.blackdog.onetwo.domain.review.request.AddReviewParam;
 import com.blackdog.onetwo.domain.review.request.ReviewListParam;
 import com.blackdog.onetwo.domain.review.service.ReviewService;
 import lombok.RequiredArgsConstructor;
@@ -47,6 +48,27 @@ public class ReviewController {
                 param.getLastId(),
                 param.getPage(),
                 param.getLimit());
+    }
+
+    /**
+     * <pre>
+     *     리뷰 등록
+     * </pre>
+     * @param param
+     * @param securityUser
+     * @return
+     * @throws Exception
+     */
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Object addReview(@RequestBody @Validated AddReviewParam param,
+                            @AuthenticationPrincipal SecurityUser securityUser) throws Exception {
+        return reviewService.addReview(
+                param.getTitle(),
+                param.getContent(),
+                param.getStoreId(),
+                param.getImages(),
+                param.getTags(),
+                securityUser);
     }
 
     /**
