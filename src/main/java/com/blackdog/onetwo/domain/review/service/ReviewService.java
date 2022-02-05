@@ -46,7 +46,7 @@ public class ReviewService {
                 page,
                 limit + 1);
 
-        return ReviewListResult.of(reviewsToReviewDetailResults(reviews));
+        return ReviewListResult.of(reviewMapstruct.reviewsToReviewDetailResults(reviews));
     }
 
     @Transactional
@@ -58,15 +58,5 @@ public class ReviewService {
         VerifyUtil.isTrue(review.isMine(securityUser.getSeq()), ErrorCode.RESOURCE_FORBIDDEN);
 
         review.delete();
-    }
-
-    private List<ReviewDetailResult> reviewsToReviewDetailResults(List<Review> reviews) {
-        List<ReviewDetailResult> results = new ArrayList<>();
-        reviews.forEach(review -> results.add(reviewToReviewDetailResult(review)));
-        return results;
-    }
-
-    private ReviewDetailResult reviewToReviewDetailResult(Review review) {
-        return reviewMapstruct.reviewToReviewDetailResult(review);
     }
 }

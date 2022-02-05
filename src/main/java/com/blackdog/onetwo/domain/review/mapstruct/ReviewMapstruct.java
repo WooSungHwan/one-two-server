@@ -43,6 +43,9 @@ public abstract class ReviewMapstruct {
     })
     public abstract ReviewDetailResult reviewToReviewDetailResult(Review review);
 
+    @IterableMapping(elementTargetType = ReviewDetailResult.class)
+    public abstract List<ReviewDetailResult> reviewsToReviewDetailResults(List<Review> reviews);
+
     protected List<String> toTagStrs(Set<ReviewTag> tags) {
         return tags.stream()
             .map(ReviewTag::getName)
