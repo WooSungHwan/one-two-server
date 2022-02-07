@@ -5,13 +5,13 @@
   "result" : {
     "list" : [ {
       "review" : {
-        "id" : 224,
+        "id" : 247,
         "content" : "content",
-        "tags" : [ "사진찍기 좋아요", "커피가 맛있어요", "가격이 저렴해요" ],
+        "tags" : [ "가격이 저렴해요", "커피가 맛있어요", "사진찍기 좋아요" ],
         "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
       },
       "store" : {
-        "managementId" : "badbfb23-e122-4f15-aca1-ccbb512e1a8c",
+        "managementId" : "bd795fa8-41c3-4402-af49-8b7983f506a1",
         "storeName" : "옛손칼",
         "location" : [ 127.0147866, 37.4962232 ],
         "status" : "영업",
@@ -20,20 +20,108 @@
         "businessItem" : "제육"
       },
       "user" : {
+        "id" : 262,
+        "nickname" : "test",
+        "isFindFriends" : false,
+        "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
+      }
+    }, {
+      "review" : {
+        "id" : 246,
+        "content" : "content",
+        "tags" : [ "커피가 맛있어요", "가격이 저렴해요", "사진찍기 좋아요" ],
+        "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
+      },
+      "store" : {
+        "managementId" : "04ad31c8-71b8-44a2-9cae-d7a9f07b5b24",
+        "storeName" : "옛손칼",
+        "location" : [ 127.0147866, 37.4962232 ],
+        "status" : "영업",
+        "jibunAddress" : "경기도 의정부시 의정부1동 225-16",
+        "roadAddress" : "경기도 의정부시 가능로136번길 9-10",
+        "businessItem" : "제육"
+      },
+      "user" : {
+        "id" : 261,
+        "nickname" : "test",
+        "isFindFriends" : false,
+        "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
+      }
+    }, {
+      "review" : {
+        "id" : 245,
+        "content" : "content",
+        "tags" : [ "가격이 저렴해요", "커피가 맛있어요", "사진찍기 좋아요" ],
+        "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
+      },
+      "store" : {
+        "managementId" : "faf2cb08-8d0f-4f5c-b73f-678331d82c11",
+        "storeName" : "옛손칼",
+        "location" : [ 127.0147866, 37.4962232 ],
+        "status" : "영업",
+        "jibunAddress" : "경기도 의정부시 의정부1동 225-16",
+        "roadAddress" : "경기도 의정부시 가능로136번길 9-10",
+        "businessItem" : "제육"
+      },
+      "user" : {
+        "id" : 260,
+        "nickname" : "test",
+        "isFindFriends" : false,
+        "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
+      }
+    }, {
+      "review" : {
+        "id" : 244,
+        "content" : "content",
+        "tags" : [ "커피가 맛있어요", "가격이 저렴해요", "사진찍기 좋아요" ],
+        "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
+      },
+      "store" : {
+        "managementId" : "e1a6006a-57e4-472a-a76d-ff2886d7c806",
+        "storeName" : "옛손칼",
+        "location" : [ 127.0147866, 37.4962232 ],
+        "status" : "영업",
+        "jibunAddress" : "경기도 의정부시 의정부1동 225-16",
+        "roadAddress" : "경기도 의정부시 가능로136번길 9-10",
+        "businessItem" : "제육"
+      },
+      "user" : {
+        "id" : 259,
+        "nickname" : "test",
+        "isFindFriends" : false,
+        "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
+      }
+    }, {
+      "review" : {
+        "id" : 243,
+        "content" : "content",
+        "tags" : [ "커피가 맛있어요", "가격이 저렴해요", "사진찍기 좋아요" ],
+        "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
+      },
+      "store" : {
+        "managementId" : "bf280d65-61d9-482c-9716-773ab37f4518",
+        "storeName" : "옛손칼",
+        "location" : [ 127.0147866, 37.4962232 ],
+        "status" : "영업",
+        "jibunAddress" : "경기도 의정부시 의정부1동 225-16",
+        "roadAddress" : "경기도 의정부시 가능로136번길 9-10",
+        "businessItem" : "제육"
+      },
+      "user" : {
+        "id" : 258,
+        "nickname" : "test",
+        "isFindFriends" : false,
+        "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
+      }
+    }, {
+      "review" : {
         "id" : 242,
-        "nickname" : "test",
-        "isFindFriends" : false,
-        "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
-      }
-    }, {
-      "review" : {
-        "id" : 223,
-        "content" : "content",
-        "tags" : [ "사진찍기 좋아요", "커피가 맛있어요", "가격이 저렴해요" ],
+        "content" : "리뷰 내용입니다. 리뷰 내용은 30자를 넘겨야 합니다. 30자를 넘기기 매우 어렵네요.",
+        "tags" : [ "가격이 저렴해요", "노키즈 존이에요", "사진찍기 좋아요" ],
         "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
       },
       "store" : {
-        "managementId" : "8ff48af8-7ac4-46fa-b1f1-759ecc4efca8",
+        "managementId" : "a3e1f038-404f-45af-838b-e2a53213e908",
         "storeName" : "옛손칼",
         "location" : [ 127.0147866, 37.4962232 ],
         "status" : "영업",
@@ -42,102 +130,14 @@
         "businessItem" : "제육"
       },
       "user" : {
-        "id" : 240,
-        "nickname" : "test",
+        "id" : 255,
+        "nickname" : "우성환",
         "isFindFriends" : false,
-        "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
-      }
-    }, {
-      "review" : {
-        "id" : 222,
-        "content" : "content",
-        "tags" : [ "사진찍기 좋아요", "커피가 맛있어요", "가격이 저렴해요" ],
-        "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
-      },
-      "store" : {
-        "managementId" : "421ef522-209e-4fc0-ab8b-350426fa01c9",
-        "storeName" : "옛손칼",
-        "location" : [ 127.0147866, 37.4962232 ],
-        "status" : "영업",
-        "jibunAddress" : "경기도 의정부시 의정부1동 225-16",
-        "roadAddress" : "경기도 의정부시 가능로136번길 9-10",
-        "businessItem" : "제육"
-      },
-      "user" : {
-        "id" : 239,
-        "nickname" : "test",
-        "isFindFriends" : false,
-        "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
-      }
-    }, {
-      "review" : {
-        "id" : 221,
-        "content" : "content",
-        "tags" : [ "사진찍기 좋아요", "커피가 맛있어요", "가격이 저렴해요" ],
-        "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
-      },
-      "store" : {
-        "managementId" : "ee1cc8d5-5359-4b45-97f0-1548ece244f8",
-        "storeName" : "옛손칼",
-        "location" : [ 127.0147866, 37.4962232 ],
-        "status" : "영업",
-        "jibunAddress" : "경기도 의정부시 의정부1동 225-16",
-        "roadAddress" : "경기도 의정부시 가능로136번길 9-10",
-        "businessItem" : "제육"
-      },
-      "user" : {
-        "id" : 238,
-        "nickname" : "test",
-        "isFindFriends" : false,
-        "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
-      }
-    }, {
-      "review" : {
-        "id" : 220,
-        "content" : "content",
-        "tags" : [ "사진찍기 좋아요", "커피가 맛있어요", "가격이 저렴해요" ],
-        "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
-      },
-      "store" : {
-        "managementId" : "543e6496-c0a5-408a-9424-de42242789bc",
-        "storeName" : "옛손칼",
-        "location" : [ 127.0147866, 37.4962232 ],
-        "status" : "영업",
-        "jibunAddress" : "경기도 의정부시 의정부1동 225-16",
-        "roadAddress" : "경기도 의정부시 가능로136번길 9-10",
-        "businessItem" : "제육"
-      },
-      "user" : {
-        "id" : 237,
-        "nickname" : "test",
-        "isFindFriends" : false,
-        "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
-      }
-    }, {
-      "review" : {
-        "id" : 219,
-        "content" : "content",
-        "tags" : [ "사진찍기 좋아요", "커피가 맛있어요", "가격이 저렴해요" ],
-        "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
-      },
-      "store" : {
-        "managementId" : "00959a0b-decd-4621-9736-efec876546c2",
-        "storeName" : "옛손칼",
-        "location" : [ 127.0147866, 37.4962232 ],
-        "status" : "영업",
-        "jibunAddress" : "경기도 의정부시 의정부1동 225-16",
-        "roadAddress" : "경기도 의정부시 가능로136번길 9-10",
-        "businessItem" : "제육"
-      },
-      "user" : {
-        "id" : 236,
-        "nickname" : "test",
-        "isFindFriends" : false,
-        "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
+        "profile" : "http://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
       }
     } ],
-    "lastId" : 219
+    "lastId" : 242
   },
-  "responseTime" : "2022.02.04 10:07:09"
+  "responseTime" : "2022.02.07 10:12:52"
 }
 ----

@@ -1,0 +1,28 @@
+|===
+|필드|데이터형식|필수여부|양식|설명
+
+|`+message+`
+|`+String+`
+|true
+|
+|메시지
+
+|`+result+`
+|`+Object+`
+|true
+|
+|결과
+
+|`+result.id+`
+|`+Number+`
+|true
+|
+|생성된 리뷰 번호
+
+|`+responseTime+`
+|`+String+`
+|true
+|yyyy.MM.dd hh:mm:ss
+|API 응답 시간
+
+|===

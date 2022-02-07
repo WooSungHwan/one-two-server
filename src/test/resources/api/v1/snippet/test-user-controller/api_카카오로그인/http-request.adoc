@@ -6,5 +6,5 @@ Accept: application/json
 Content-Length: 72
 Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510
 
-{"accessToken":"VmB1gGvu2KP1uFoKafUXmwA-ILnv5rDiLFHwaAorDNQAAAF-f__6Nw"}
+{"accessToken":"kULGi1AAFR-Ynwi35GkrWZ71zTumGNQsK-jTLgo9cpcAAAF-1DcQYA"}
 ----

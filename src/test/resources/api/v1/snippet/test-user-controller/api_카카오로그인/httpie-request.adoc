@@ -1,6 +1,6 @@
 [source,bash]
 ----
-$ echo '{"accessToken":"VmB1gGvu2KP1uFoKafUXmwA-ILnv5rDiLFHwaAorDNQAAAF-f__6Nw"}' | http POST 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/users/kakao-login' \
+$ echo '{"accessToken":"kULGi1AAFR-Ynwi35GkrWZ71zTumGNQsK-jTLgo9cpcAAAF-1DcQYA"}' | http POST 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/users/kakao-login' \
     'Content-Type:application/json;charset=UTF-8' \
     'Accept:application/json'
 ----

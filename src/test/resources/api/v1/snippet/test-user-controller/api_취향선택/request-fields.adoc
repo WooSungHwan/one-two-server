@@ -1,28 +1,40 @@
 |===
-|Path|Type|Description
+|필드|데이터형식|필수여부|양식|설명
 
 |`+genderStep+`
 |`+String+`
+|true
+|https://one-two-api-docs.s3.ap-northeast-2.amazonaws.com/one-two-api/code-adoc.html#%EC%84%B1%EB%B3%84_%ED%98%95%EC%8B%9D[코드 이동^]
 |성별
 
 |`+priceStep+`
 |`+String+`
+|true
+|https://one-two-api-docs.s3.ap-northeast-2.amazonaws.com/one-two-api/code-adoc.html#%EA%B0%80%EA%B2%A9_%EC%A4%91%EC%9A%94_%ED%98%95%EC%8B%9D[코드 이동^]
 |가격취향
 
 |`+alcoholStep+`
 |`+String+`
+|true
+|https://one-two-api-docs.s3.ap-northeast-2.amazonaws.com/one-two-api/code-adoc.html#%EC%9D%8C%EC%A3%BC_%EC%84%A0%ED%98%B8_%ED%98%95%EC%8B%9D[코드 이동^]
 |음주 취향
 
 |`+freshFoodStep+`
 |`+String+`
+|true
+|https://one-two-api-docs.s3.ap-northeast-2.amazonaws.com/one-two-api/code-adoc.html#%EC%B1%84%EC%8B%9D_%EC%84%A0%ED%98%B8_%ED%98%95%EC%8B%9D[코드 이동^]
 |채식주의? 취향
 
 |`+playStep+`
 |`+String+`
+|true
+|https://one-two-api-docs.s3.ap-northeast-2.amazonaws.com/one-two-api/code-adoc.html#%EB%86%80%EC%9D%B4_%EC%84%A0%ED%98%B8_%ED%98%95%EC%8B%9D[코드 이동^]
 |놀이 취향
 
 |`+timeStep+`
 |`+String+`
+|true
+|https://one-two-api-docs.s3.ap-northeast-2.amazonaws.com/one-two-api/code-adoc.html#%EC%8B%9C%EA%B0%84%EB%8C%80_%EC%84%A0%ED%98%B8_%ED%98%95%EC%8B%9D[코드 이동^]
 |시간대 취향
 
 |===

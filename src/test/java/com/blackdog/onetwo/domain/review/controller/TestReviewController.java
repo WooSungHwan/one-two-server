@@ -101,11 +101,12 @@ public class TestReviewController extends TestAbstractController {
                                 fieldWithPath("content").type(JsonFieldType.STRING).description("리뷰 내용"),
                                 fieldWithPath("storeId").type(JsonFieldType.NUMBER).description("가게 아이디"),
                                 fieldWithPath("images").type(JsonFieldType.ARRAY).description("이미지 배열"),
-                                fieldWithPath("tags").type(JsonFieldType.ARRAY).description("리뷰 배열")
+                                fieldWithPath("tags").type(JsonFieldType.ARRAY).description("리뷰 태그 배열")
+                                    .attributes(getAttribute("https://one-two-api-docs.s3.ap-northeast-2.amazonaws.com/one-two-api/code-adoc.html#%EB%A6%AC%EB%B7%B0_%ED%83%9C%EA%B7%B8_%ED%98%95%EC%8B%9D[코드 이동^]"))
                         ),
                         responseFields(
                                 getRestResponseDescriptor(JsonFieldType.OBJECT, false,
-                                        fieldWithPath("id").type(JsonFieldType.NUMBER).description("생성된 리뷰 번호")
+                                        fieldWithPath("result.id").type(JsonFieldType.NUMBER).description("생성된 리뷰 번호")
                                 )
                         )
                 ));
@@ -125,7 +126,8 @@ public class TestReviewController extends TestAbstractController {
                 .andDo(print())
                 .andDo(document.document(
                         requestParameters(
-                                parameterWithName("tags").description("검색 태그").optional(),
+                                parameterWithName("tags").description("검색 태그").optional()
+                                        .attributes(getAttribute("https://one-two-api-docs.s3.ap-northeast-2.amazonaws.com/one-two-api/code-adoc.html#%EB%A6%AC%EB%B7%B0_%ED%83%9C%EA%B7%B8_%ED%98%95%EC%8B%9D[코드 이동^]")),
                                 parameterWithName("lastId").description("직전 마지막 행 아이디(page 값이 2 이상일때만)").optional(),
                                 parameterWithName("page").description("검색 페이지"),
                                 parameterWithName("limit").description("페이지당 목록 수(기본 5)").optional()

@@ -7,7 +7,7 @@ public class VerifyException extends RuntimeException {
     private ErrorCode errorCode;
 
     public VerifyException(final ErrorCode errorCode) {
-        super(errorCode.getMessage());
+        super(errorCode.getName());
         this.errorCode = errorCode;
     }
 

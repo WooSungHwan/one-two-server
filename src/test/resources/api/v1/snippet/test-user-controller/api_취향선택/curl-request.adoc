@@ -3,6 +3,6 @@
 $ curl 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/users/tastes' -i -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI4MjU3MTMsImV4cCI6MTY0NTcwNTcxMywic2VxIjoxNjB9.TNFDcdFDdIpYFgFs2L5Cmc1KGs1qgF8tC2AETLRcBeQ' \
+    -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDQyMzc5MjMsImV4cCI6MTY0NzExNzkyMywic2VxIjoyNTV9.yB31gquDIXZltud5DMfo_RGvzs6DvGkQH2yoixMyvCs' \
     -d '{"genderStep":"FEMALE","priceStep":"IMPORTANT","alcoholStep":"HATE","freshFoodStep":"HATE","playStep":"WITH_PLAY","timeStep":"AM"}'
 ----

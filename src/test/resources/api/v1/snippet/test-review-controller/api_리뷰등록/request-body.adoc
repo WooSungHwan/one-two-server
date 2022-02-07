@@ -1,4 +1,4 @@
 [source,options="nowrap"]
 ----
-{"title":"리뷰 제목입니다.","content":"리뷰 내용입니다. 리뷰 내용은 30자를 넘겨야 합니다. 30자를 넘기기 매우 어렵네요.","storeId":176,"images":["test.png"],"tags":["GOOD_PICTURE","CHEAP","NO_KIDS_ZONE"]}
+{"title":"리뷰 제목입니다.","content":"리뷰 내용입니다. 리뷰 내용은 30자를 넘겨야 합니다. 30자를 넘기기 매우 어렵네요.","storeId":176,"images":["test.png"],"tags":["NO_KIDS_ZONE","GOOD_PICTURE","CHEAP"]}
 ----
