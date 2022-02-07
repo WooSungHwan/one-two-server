@@ -53,7 +53,7 @@ public class RestControllerExceptionAdvice {
     private ErrorResponse getErrorResponseByBindingResult(BindingResult bindingResult, ErrorCode errorCode, String defaultMessage) {
         List<String> errorMessages = Optional.ofNullable(bindingResult.getAllErrors()).orElse(Collections.emptyList())
                 .stream().map(ObjectError::getDefaultMessage).collect(Collectors.toList());
-        return ErrorResponse.of(errorCode.getCode(), (errorMessages.isEmpty() ? defaultMessage : errorMessages.get(0)), errorMessages);
+        return ErrorResponse.of(errorCode.getType(), (errorMessages.isEmpty() ? defaultMessage : errorMessages.get(0)), errorMessages);
     }
 
 }

@@ -1,0 +1,166 @@
+= 헛둘 코드
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 3
+:sectlinks:
+
+[[에러_코드_형식]]
+== 에러 코드 형식
+enum : ErrorCode
+
+[cols="3,7"]
+|===
+| 이름 | 코드
+|AM
+|오전이 편해요.
+|PM
+|오후가 편해요.
+|===
+[[시간대_선호_형식]]
+== 시간대 선호 형식
+enum : TimeStep
+
+[cols="3,7"]
+|===
+| 이름 | 코드
+|AM
+|오전이 편해요.
+|PM
+|오후가 편해요.
+|===
+[[가격_중요_형식]]
+== 가격 중요 형식
+enum : PriceStep 이름
+
+[cols="3,7"]
+|===
+| 이름 | 코드
+|IMPORTANT
+|중요해요.
+|NOT_IMPORTANT
+|중요하지 않아요.
+|===
+[[놀이_선호_형식]]
+== 놀이 선호 형식
+enum : PlayStep
+
+[cols="3,7"]
+|===
+| 이름 | 코드
+|ONLY_FOOD
+|밥만 먹고 싶어요.
+|WITH_PLAY
+|놀고도 싶어요.
+|===
+[[성별_형식]]
+== 성별 형식
+enum : GenderStep
+
+[cols="3,7"]
+|===
+| 이름 | 코드
+|MALE
+|남성
+|FEMALE
+|여성
+|NONE
+|선택 안할래요.
+|===
+[[채식_선호_형식]]
+== 채식 선호 형식
+enum : FreshFoodStep
+
+[cols="3,7"]
+|===
+| 이름 | 코드
+|LIKE
+|선호하는 편이에요.
+|HATE
+|선호하지 않아요.
+|===
+[[음주_선호_형식]]
+== 음주 선호 형식
+enum : AlcoholStep
+
+[cols="3,7"]
+|===
+| 이름 | 코드
+|LIKE
+|좋아해요.
+|HATE
+|싫어해요.
+|===
+[[리뷰_태그_형식]]
+== 리뷰 태그 형식
+enum : ReviewTag
+
+[cols="3,7"]
+|===
+| 이름 | 코드
+|NO_KIDS_ZONE
+|노키즈 존이에요
+|WELCOME_KIDS
+|아이들을 환영해요
+|TOO_EXPENSIVE
+|가격이 부담돼요
+|CHEAP
+|가격이 저렴해요
+|NO_RESERVATION
+|예약이 안돼요
+|RESERVATION
+|예약 가능해요
+|WELCOME_PETS
+|반려동물을 환영해요
+|DARK_LIGHTS
+|조명이 어두워요
+|SONG_LOUD
+|노래가 시끄러워요
+|ALCOHOLIC_BEVERAGE_REQUIRED
+|주류주문이 필수에요
+|NO_TOILET
+|화장실이 없어요
+|SHARED_TOILET
+|화장실이 공용이에요
+|INSIDE_TOILET
+|화장실이 내부에 있어요
+|OUTSIDE_TOILET
+|화장실이 외부에 있어요
+|SPECIAL_SONG
+|노래가 특별해요
+|STORE_QUIET
+|가게가 조용해요
+|WILL_GO_BACK
+|다시 갈래요
+|DONT_GO_AGAIN
+|다신 안갈래요
+|COFFEE_DELICIOUS
+|커피가 맛있어요
+|FOOD_DELICIOUS
+|음식이 맛있어요
+|DRINK_DELICIOUS
+|음료가 맛있어요
+|DESSERT_DELICIOUS
+|디저트가 맛있어요
+|NICE_INTERIOR
+|인테리어가 좋아요
+|FRIENDLY_STAFF
+|직원분이 친절해요
+|GOOD_PICTURE
+|사진찍기 좋아요
+|SPECIAL_FOOD
+|음식이 특별해요
+|===
+[[음주_선호_형식]]
+== 음주 선호 형식
+enum : AlcoholStep
+
+[cols="3,7"]
+|===
+| 이름 | 코드
+|LIKE
+|좋아해요.
+|HATE
+|싫어해요.
+|===

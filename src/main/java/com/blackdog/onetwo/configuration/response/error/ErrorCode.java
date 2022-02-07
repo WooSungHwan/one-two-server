@@ -1,11 +1,13 @@
 package com.blackdog.onetwo.configuration.response.error;
 
+import com.blackdog.onetwo.domain.common.enums.BaseEnum;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Getter
+@Getter(AccessLevel.PRIVATE)
 @AllArgsConstructor
-public enum ErrorCode {
+public enum ErrorCode implements BaseEnum {
     BAD_REQUEST("BAD_REQUEST", "잘못된 요청입니다."),
     JWT_BAD_REQUEST("JWT_BAD_REQUEST", "인증 정보를 확인해주시기 바랍니다."),
     USER_NOT_FOUND("USER_NOT_FOUND", "유저 정보가 없습니다."),
@@ -20,4 +22,13 @@ public enum ErrorCode {
 
     private String message;
 
+    @Override
+    public String getType() {
+        return this.getCode();
+    }
+
+    @Override
+    public String getName() {
+        return this.getMessage();
+    }
 }

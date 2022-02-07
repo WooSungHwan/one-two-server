@@ -35,6 +35,6 @@ public class ErrorResponse {
     }
 
     public static ErrorResponse of (ErrorCode errorCode) {
-        return ErrorResponse.of(errorCode.getCode(), errorCode.getMessage());
+        return ErrorResponse.of(errorCode.getType(), errorCode.getName());
     }
 }
