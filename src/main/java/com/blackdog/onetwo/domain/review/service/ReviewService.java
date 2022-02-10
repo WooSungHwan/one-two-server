@@ -34,7 +34,6 @@ public class ReviewService {
 
     private final ReviewRepository reviewRepository;
     private final StoreRepository storeRepository;
-    private final UserRepository userRepository;
     private final ReviewMapstruct reviewMapstruct;
 
     public ReviewDetailResult getReview(Long id) {

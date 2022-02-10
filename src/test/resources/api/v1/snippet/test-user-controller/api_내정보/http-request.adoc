@@ -2,7 +2,7 @@
 ----
 GET /api/v1/users HTTP/1.1
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI4MjUwMzMsImV4cCI6MTY0NTcwNTAzMywic2VxIjoxNTZ9.-9B6UMS6q4cZCYTcjLGv7qeCCjV_SB2auL-5shRAluM
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDQyMzc5MjMsImV4cCI6MTY0NzExNzkyMywic2VxIjoyNTV9.yB31gquDIXZltud5DMfo_RGvzs6DvGkQH2yoixMyvCs
 Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510
 
 ----

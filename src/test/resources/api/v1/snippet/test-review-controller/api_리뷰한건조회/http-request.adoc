@@ -1,8 +1,8 @@
 [source,http,options="nowrap"]
 ----
-GET /api/v1/reviews/1 HTTP/1.1
+GET /api/v1/reviews/253 HTTP/1.1
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI2MDMwMDEsImV4cCI6MTY0NTQ4MzAwMSwic2VxIjoxMjh9.qfSD9uahi8HW_dWIN50B0AtU3qfZrwhpOGze2bQaiQw
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDQyMzc5MjMsImV4cCI6MTY0NzExNzkyMywic2VxIjoyNTV9.yB31gquDIXZltud5DMfo_RGvzs6DvGkQH2yoixMyvCs
 Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510
 
 ----

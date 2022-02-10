@@ -1,8 +1,9 @@
 .+/api/v1/reviews/{id}+
 |===
-|Parameter|Description
+|파라미터|양식|설명
 
 |`+id+`
+|
 |리뷰 번호
 
 |===

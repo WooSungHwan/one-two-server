@@ -37,6 +37,12 @@
 |
 |리뷰 상세 내용
 
+|`+result.list[].review.title+`
+|`+String+`
+|true
+|
+|리뷰 제목
+
 |`+result.list[].review.tags[]+`
 |`+Array+`
 |true

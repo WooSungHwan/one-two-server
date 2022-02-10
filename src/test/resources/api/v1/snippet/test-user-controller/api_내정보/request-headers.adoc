@@ -1,7 +1,8 @@
 |===
-|Name|Description
+|이름|양식|설명
 
 |`+Authorization+`
+|
 |JWT 토큰
 
 |===

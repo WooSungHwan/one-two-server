@@ -57,6 +57,9 @@ public class TestReviewController extends TestAbstractController {
                                         fieldWithPath("result.review").type(JsonFieldType.OBJECT).description("리뷰 정보"),
                                         fieldWithPath("result.review.id").type(JsonFieldType.NUMBER).description("리뷰 번호"),
                                         fieldWithPath("result.review.content").type(JsonFieldType.STRING).description("리뷰 상세 내용"),
+                                        fieldWithPath("result.review.title").type(JsonFieldType.STRING).description("리뷰 제목"),
+                                        fieldWithPath("result.review.tags").type(JsonFieldType.ARRAY).description("리뷰 태그 목록"),
+                                        fieldWithPath("result.review.images").type(JsonFieldType.ARRAY).description("리뷰 이미지 배열"),
                                         // 가게 정보
                                         fieldWithPath("result.store").type(JsonFieldType.OBJECT).description("가게 정보").optional(),
                                         fieldWithPath("result.store.managementId").type(JsonFieldType.STRING).description("가게 관리 번호").optional(),
@@ -139,6 +142,7 @@ public class TestReviewController extends TestAbstractController {
                                         fieldWithPath("result.list[].review").type(JsonFieldType.OBJECT).description("리뷰"),
                                         fieldWithPath("result.list[].review.id").type(JsonFieldType.NUMBER).description("리뷰 아이디"),
                                         fieldWithPath("result.list[].review.content").type(JsonFieldType.STRING).description("리뷰 상세 내용"),
+                                        fieldWithPath("result.list[].review.title").type(JsonFieldType.STRING).description("리뷰 제목"),
                                         fieldWithPath("result.list[].review.tags[]").type(JsonFieldType.ARRAY).description("리뷰 태그 목록"),
                                         fieldWithPath("result.list[].review.images[]").type(JsonFieldType.ARRAY).description("리뷰 이미지 목록"),
 

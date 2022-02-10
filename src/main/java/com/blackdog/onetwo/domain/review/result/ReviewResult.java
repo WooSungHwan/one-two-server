@@ -11,6 +11,8 @@ import java.util.List;
 public class ReviewResult {
     private Long id;
 
+    private String title;
+
     private String content;
 
     private List<String> tags;

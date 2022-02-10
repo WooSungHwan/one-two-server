@@ -1,80 +1,136 @@
 |===
-|Path|Type|Description
+|필드|데이터형식|필수여부|양식|설명
 
 |`+message+`
 |`+String+`
+|true
+|
 |메시지
 
 |`+result+`
 |`+Object+`
+|true
+|
 |결과
 
 |`+result.review+`
 |`+Object+`
+|true
+|
 |리뷰 정보
 
 |`+result.review.id+`
 |`+Number+`
+|true
+|
 |리뷰 번호
 
 |`+result.review.content+`
 |`+String+`
+|true
+|
 |리뷰 상세 내용
+
+|`+result.review.title+`
+|`+String+`
+|true
+|
+|리뷰 제목
+
+|`+result.review.tags+`
+|`+Array+`
+|true
+|
+|리뷰 태그 목록
+
+|`+result.review.images+`
+|`+Array+`
+|true
+|
+|리뷰 이미지 배열
 
 |`+result.store+`
 |`+Object+`
+|
+|
 |가게 정보
 
 |`+result.store.managementId+`
 |`+String+`
+|
+|
 |가게 관리 번호
 
 |`+result.store.storeName+`
 |`+String+`
+|
+|
 |가게 이름
 
 |`+result.store.location+`
 |`+Array+`
+|
+|
 |가게 위치 좌표
 
 |`+result.store.status+`
 |`+String+`
+|
+|
 |가게 운영 상태
 
 |`+result.store.jibunAddress+`
 |`+String+`
+|
+|
 |가게 지번 주소
 
 |`+result.store.roadAddress+`
 |`+String+`
+|
+|
 |가게 도로명 주소
 
 |`+result.store.businessItem+`
 |`+String+`
+|
+|
 |가게 업태
 
 |`+result.user+`
 |`+Object+`
+|true
+|
 |유저 정보
 
 |`+result.user.id+`
 |`+Number+`
+|true
+|
 |유저 번호
 
 |`+result.user.nickname+`
 |`+String+`
+|true
+|
 |유저 닉네임
 
 |`+result.user.isFindFriends+`
 |`+Boolean+`
+|true
+|
 |유저 동료찾기 활성화 여부
 
 |`+result.user.profile+`
 |`+String+`
+|true
+|
 |유저 프로필 사진
 
 |`+responseTime+`
 |`+String+`
+|true
+|yyyy.MM.dd hh:mm:ss
 |API 응답 시간
 
 |===

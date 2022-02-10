@@ -4,11 +4,14 @@
   "message" : "OK",
   "result" : {
     "review" : {
-      "id" : 1,
-      "content" : "content"
+      "id" : 253,
+      "title" : "title",
+      "content" : "content",
+      "tags" : [ "사진찍기 좋아요", "커피가 맛있어요", "가격이 저렴해요" ],
+      "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
     },
     "store" : {
-      "managementId" : "a3e1f038-404f-45af-838b-e2a53213e908",
+      "managementId" : "1d7bf5c1-6b08-4106-b783-b0529c16a2ea",
       "storeName" : "옛손칼",
       "location" : [ 127.0147866, 37.4962232 ],
       "status" : "영업",
@@ -17,12 +20,12 @@
       "businessItem" : "제육"
     },
     "user" : {
-      "id" : 126,
+      "id" : 268,
       "nickname" : "test",
       "isFindFriends" : false,
-      "profile" : "http://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
+      "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
     }
   },
-  "responseTime" : "2022.01.20 11:10:58"
+  "responseTime" : "2022.02.10 09:53:54"
 }
 ----
