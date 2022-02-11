@@ -52,6 +52,7 @@ public class SecurityAuthenticationFilter extends OncePerRequestFilter {
             // TODO : ExceptionHandlerMethodResolver 알아보기
             ResponseUtil.writeJson(response, objectMapper, ErrorResponse.of(ErrorCode.JWT_BAD_REQUEST));
             e.printStackTrace();
+            return;
         }
 
         filterChain.doFilter(request, response);
