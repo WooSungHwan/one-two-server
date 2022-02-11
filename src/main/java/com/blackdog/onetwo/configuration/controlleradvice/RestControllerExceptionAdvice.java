@@ -47,7 +47,7 @@ public class RestControllerExceptionAdvice {
     public ErrorResponse handleBindException(BindException e, HttpServletRequest req) {
         log.error("===================== BindException Handling =====================");
         e.printStackTrace();
-        return ErrorResponse.of(ErrorCode.BAD_REQUEST);
+        return getErrorResponseByBindingResult(e.getBindingResult(), ErrorCode.BAD_REQUEST, "잘못된 요청입니다.");
     }
 
     private ErrorResponse getErrorResponseByBindingResult(BindingResult bindingResult, ErrorCode errorCode, String defaultMessage) {
