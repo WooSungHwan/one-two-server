@@ -42,7 +42,7 @@ public class ReviewController {
      * @throws Exception
      */
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Object getReviews(@ModelAttribute @Validated ReviewListParam param) throws Exception {
+    public Object getReviews(@ModelAttribute @Validated(Order.class) ReviewListParam param) throws Exception {
         return reviewService.getReviews(
                 param.getTags(),
                 param.getLastId(),
