@@ -66,6 +66,8 @@ public class ReviewRepositorySupportImpl implements ReviewRepositorySupport {
                 .addCondition(eqTag(tags))
                 .build();
 
+        System.out.println(whereExpressions);
+
         List<Long> ids = jpaQueryFactory.select(review.id)
                 .from(review)
                 .where(whereExpressions)
@@ -106,9 +108,11 @@ public class ReviewRepositorySupportImpl implements ReviewRepositorySupport {
 
     // TODO 밖으로 빼기
     private static class BooleanExpressionBuilder {
-        private static List<BooleanExpression> booleanExpressionList = new ArrayList<>();
+        private List<BooleanExpression> booleanExpressionList;
 
-        private BooleanExpressionBuilder() { }
+        private BooleanExpressionBuilder() {
+            this.booleanExpressionList = new ArrayList<>();
+        }
 
         public static BooleanExpressionBuilder builder() {
             return new BooleanExpressionBuilder();
