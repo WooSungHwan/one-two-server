@@ -65,9 +65,7 @@ public class ReviewRepositorySupportImpl implements ReviewRepositorySupport {
                 .addCondition(ltId(id, page))
                 .addCondition(eqTag(tags))
                 .build();
-
-        System.out.println(whereExpressions);
-
+        
         List<Long> ids = jpaQueryFactory.select(review.id)
                 .from(review)
                 .where(whereExpressions)
