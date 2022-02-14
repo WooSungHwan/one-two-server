@@ -79,4 +79,17 @@ public class Review extends BaseEntity {
     public boolean isMine(Long seq) {
         return Objects.equals(seq, users.getId());
     }
+
+    public void editReview(String title,
+                           String content,
+                           Store store,
+                           Set<String> images,
+                           Set<ReviewTag> tags) {
+        this.title = title;
+        this.content = content;
+        this.store = store;
+        this.images = images;
+        this.tags = tags;
+        this.updatedAt = LocalDateTime.now();
+    }
 }

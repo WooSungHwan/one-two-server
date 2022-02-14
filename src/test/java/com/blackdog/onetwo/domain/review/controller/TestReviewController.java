@@ -4,6 +4,7 @@ import com.blackdog.onetwo.common.TestAbstractController;
 import com.blackdog.onetwo.domain.review.enums.ReviewTag;
 import com.blackdog.onetwo.domain.review.repository.ReviewRepository;
 import com.blackdog.onetwo.domain.review.request.AddReviewParam;
+import com.blackdog.onetwo.domain.review.request.EditReviewParam;
 import com.blackdog.onetwo.domain.review.request.ReviewListParam;
 import com.blackdog.onetwo.utils.JsonUtil;
 import org.apache.http.HttpHeaders;
@@ -113,6 +114,44 @@ public class TestReviewController extends TestAbstractController {
                                 )
                         )
                 ));
+    }
+
+    @Test
+    void API_리뷰수정() throws Exception {
+        EditReviewParam param = EditReviewParam.builder()
+                .title("리뷰 제목입니다.")
+                .content("리뷰 내용입니다. 리뷰 내용은 30자를 넘겨야 합니다. 30자를 넘기기 매우 어렵네요.")
+                .storeId(176L)
+                .images(Set.of("test.png"))
+                .tags(Set.of(NO_KIDS_ZONE, CHEAP, GOOD_PICTURE))
+                .build();
+
+        mockMvc.perform(put(BASE_URL + "/{id}", 249L)
+               .accept(MediaType.APPLICATION_JSON_VALUE)
+               .contentType(MediaType.APPLICATION_JSON_VALUE)
+               .header(HttpHeaders.AUTHORIZATION, getToken())
+               .content(JsonUtil.toJson(param)))
+               .andDo(print())
+               .andExpect(status().isOk())
+               .andDo(document.document(
+                       requestHeaders(loginRequired()),
+                       pathParameters(
+                                parameterWithName("id").description("수정할 리뷰 번호")
+                       ),
+                       requestFields(
+                               fieldWithPath("title").type(JsonFieldType.STRING).description("리뷰 제목"),
+                               fieldWithPath("content").type(JsonFieldType.STRING).description("리뷰 내용"),
+                               fieldWithPath("storeId").type(JsonFieldType.NUMBER).description("가게 아이디"),
+                               fieldWithPath("images").type(JsonFieldType.ARRAY).description("이미지 배열"),
+                               fieldWithPath("tags").type(JsonFieldType.ARRAY).description("리뷰 태그 배열")
+                                       .attributes(getAttribute("https://one-two-api-docs.s3.ap-northeast-2.amazonaws.com/one-two-api/code-adoc.html#%EB%A6%AC%EB%B7%B0_%ED%83%9C%EA%B7%B8_%ED%98%95%EC%8B%9D[코드 이동^]"))
+                       ),
+                       responseFields(
+                               getRestResponseDescriptor(JsonFieldType.OBJECT, false,
+                                       fieldWithPath("result.id").type(JsonFieldType.NUMBER).description("수정된 리뷰 번호")
+                               )
+                       )
+               ));
     }
 
     @Test
