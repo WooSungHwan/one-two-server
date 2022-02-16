@@ -98,7 +98,7 @@ configurations {
 //querydsl 추가 끝
 
 test {
-    exclude '**/*'
+    exclude "com/blackdog/onetwo/domain/*/controller/Test*Controller.class"
     outputs.dir snippetsDir
     useJUnitPlatform()
 }

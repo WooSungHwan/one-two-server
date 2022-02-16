@@ -31,7 +31,7 @@ public class TestReviewRepositorySupport extends TestAbstractRepositorySupport {
     @Test
     void findReviewsBySearchTest() {
         List<ReviewTag> tags = List.of(ReviewTag.CHEAP, ReviewTag.NO_KIDS_ZONE);
-        long pagingId = 180L;
+        long pagingId = 250L;
         int limit = 5;
         List<Review> reviews = reviewRepository.findReviewsBySearch(tags, pagingId, 2, limit + 1);
 
