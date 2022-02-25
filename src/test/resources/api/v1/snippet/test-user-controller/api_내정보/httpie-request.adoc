@@ -1,6 +1,6 @@
 [source,bash]
 ----
-$ http GET 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/users' \
+$ http GET 'https://onetwo-server.com/api/v1/users' \
     'Accept:application/json' \
-    'Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDQyMzc5MjMsImV4cCI6MTY0NzExNzkyMywic2VxIjoyNTV9.yB31gquDIXZltud5DMfo_RGvzs6DvGkQH2yoixMyvCs'
+    'Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDU4MDU3NTAsImV4cCI6MTY0ODY4NTc1MCwic2VxIjozMDJ9.adY4fgWjzcLTz5DZUCJLLywlP9Xc3c6a8a_Bht7luAQ'
 ----

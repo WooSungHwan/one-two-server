@@ -1,6 +1,6 @@
 [source,bash]
 ----
-$ echo '{"title":"리뷰 제목입니다.","content":"리뷰 내용입니다. 리뷰 내용은 30자를 넘겨야 합니다. 30자를 넘기기 매우 어렵네요.","storeId":176,"images":["test.png"],"tags":["NO_KIDS_ZONE","GOOD_PICTURE","CHEAP"]}' | http PUT 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/reviews/249' \
+$ echo '{"title":"리뷰 제목입니다.","content":"리뷰 내용입니다. 리뷰 내용은 30자를 넘겨야 합니다. 30자를 넘기기 매우 어렵네요.","storeId":176,"images":["test.png"],"tags":["GOOD_PICTURE","CHEAP","NO_KIDS_ZONE"]}' | http PUT 'https://onetwo-server.com/api/v1/reviews/249' \
     'Content-Type:application/json;charset=UTF-8' \
     'Accept:application/json' \
     'Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDQyMzc5MjMsImV4cCI6MTY0NzExNzkyMywic2VxIjoyNTV9.yB31gquDIXZltud5DMfo_RGvzs6DvGkQH2yoixMyvCs'

@@ -5,7 +5,7 @@ Content-Type: application/json;charset=UTF-8
 Accept: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDQyMzc5MjMsImV4cCI6MTY0NzExNzkyMywic2VxIjoyNTV9.yB31gquDIXZltud5DMfo_RGvzs6DvGkQH2yoixMyvCs
 Content-Length: 130
-Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510
+Host: https://onetwo-server.com
 
 {"genderStep":"FEMALE","priceStep":"IMPORTANT","alcoholStep":"HATE","freshFoodStep":"HATE","playStep":"WITH_PLAY","timeStep":"AM"}
 ----

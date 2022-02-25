@@ -1,6 +1,6 @@
 [source,bash]
 ----
-$ http GET 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/reviews?tags=NO_KIDS_ZONE&tags=CHEAP&page=1&limit=5&lastId=' \
+$ http GET 'https://onetwo-server.com/api/v1/reviews?tags=NO_KIDS_ZONE&tags=CHEAP&page=1&limit=5&lastId=' \
     'Content-Type:application/json;charset=UTF-8' \
     'Accept:application/json'
 ----

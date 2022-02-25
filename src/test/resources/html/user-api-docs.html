@@ -468,7 +468,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/users/kakao-login' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://onetwo-server.com/api/v1/users/kakao-login' -i -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{"accessToken":"kULGi1AAFR-Ynwi35GkrWZ71zTumGNQsK-jTLgo9cpcAAAF-1DcQYA"}'</code></pre>
@@ -483,7 +483,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
 Content-Length: 72
-Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510
+Host: https://onetwo-server.com
 
 {"accessToken":"kULGi1AAFR-Ynwi35GkrWZ71zTumGNQsK-jTLgo9cpcAAAF-1DcQYA"}</code></pre>
 </div>
@@ -619,7 +619,7 @@ Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/users' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://onetwo-server.com/api/v1/users' -i -X GET \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI4MjUwMzMsImV4cCI6MTY0NTcwNTAzMywic2VxIjoxNTZ9.-9B6UMS6q4cZCYTcjLGv7qeCCjV_SB2auL-5shRAluM'</code></pre>
 </div>
@@ -632,7 +632,7 @@ Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/v1/users HTTP/1.1
 Accept: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI4MjUwMzMsImV4cCI6MTY0NTcwNTAzMywic2VxIjoxNTZ9.-9B6UMS6q4cZCYTcjLGv7qeCCjV_SB2auL-5shRAluM
-Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510</code></pre>
+Host: https://onetwo-server.com</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -742,7 +742,7 @@ Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/users' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://onetwo-server.com/api/v1/users' -i -X DELETE \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI4MjU3MTMsImV4cCI6MTY0NTcwNTcxMywic2VxIjoxNjB9.TNFDcdFDdIpYFgFs2L5Cmc1KGs1qgF8tC2AETLRcBeQ'</code></pre>
 </div>
@@ -755,7 +755,7 @@ Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510</code></pre>
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/v1/users HTTP/1.1
 Accept: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDI4MjU3MTMsImV4cCI6MTY0NTcwNTcxMywic2VxIjoxNjB9.TNFDcdFDdIpYFgFs2L5Cmc1KGs1qgF8tC2AETLRcBeQ
-Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510</code></pre>
+Host: https://onetwo-server.com</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -835,7 +835,7 @@ Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/users/tastes' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://onetwo-server.com/api/v1/users/tastes' -i -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDQyMzc5MjMsImV4cCI6MTY0NzExNzkyMywic2VxIjoyNTV9.yB31gquDIXZltud5DMfo_RGvzs6DvGkQH2yoixMyvCs' \
@@ -852,7 +852,7 @@ Content-Type: application/json;charset=UTF-8
 Accept: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDQyMzc5MjMsImV4cCI6MTY0NzExNzkyMywic2VxIjoyNTV9.yB31gquDIXZltud5DMfo_RGvzs6DvGkQH2yoixMyvCs
 Content-Length: 130
-Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510
+Host: https://onetwo-server.com
 
 {"genderStep":"FEMALE","priceStep":"IMPORTANT","alcoholStep":"HATE","freshFoodStep":"HATE","playStep":"WITH_PLAY","timeStep":"AM"}</code></pre>
 </div>

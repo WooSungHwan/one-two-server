@@ -24,7 +24,7 @@ public class TestUserController extends TestAbstractController {
     @Test
     void API_카카오로그인() throws Exception {
         AddKakaoUserParam param = AddKakaoUserParam.builder()
-                .accessToken("kULGi1AAFR-Ynwi35GkrWZ71zTumGNQsK-jTLgo9cpcAAAF-1DcQYA")
+                .accessToken("8czXiuHVkdgjAgc4oRkkkH4R0g5YmtBo1ZE58wopcSEAAAF_MapJ4A")
                 .build();
 
         mockMvc.perform(post(BASE_URL + "/kakao-login")

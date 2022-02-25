@@ -5,14 +5,14 @@
   "result" : {
     "list" : [ {
       "review" : {
-        "id" : 255,
+        "id" : 285,
         "title" : "title",
         "content" : "content",
-        "tags" : [ "사진찍기 좋아요", "가격이 저렴해요", "커피가 맛있어요" ],
+        "tags" : [ "커피가 맛있어요", "사진찍기 좋아요", "가격이 저렴해요" ],
         "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
       },
       "store" : {
-        "managementId" : "dbbc27b7-38a9-4169-9596-2c0b59e5f7ee",
+        "managementId" : "650ee5f0-1552-4693-8ac8-f18b971361c1",
         "storeName" : "옛손칼",
         "location" : [ 127.0147866, 37.4962232 ],
         "status" : "영업",
@@ -21,21 +21,21 @@
         "businessItem" : "제육"
       },
       "user" : {
-        "id" : 270,
+        "id" : 300,
         "nickname" : "test",
         "isFindFriends" : false,
         "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
       }
     }, {
       "review" : {
-        "id" : 254,
+        "id" : 284,
         "title" : "title",
         "content" : "content",
-        "tags" : [ "사진찍기 좋아요", "가격이 저렴해요", "커피가 맛있어요" ],
+        "tags" : [ "커피가 맛있어요", "사진찍기 좋아요", "가격이 저렴해요" ],
         "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
       },
       "store" : {
-        "managementId" : "746bdb33-5ab0-4051-bcd4-8792bac5b678",
+        "managementId" : "30b364a9-b653-4bd8-997d-6d7cbf08fbe5",
         "storeName" : "옛손칼",
         "location" : [ 127.0147866, 37.4962232 ],
         "status" : "영업",
@@ -44,21 +44,21 @@
         "businessItem" : "제육"
       },
       "user" : {
-        "id" : 269,
+        "id" : 299,
         "nickname" : "test",
         "isFindFriends" : false,
         "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
       }
     }, {
       "review" : {
-        "id" : 253,
+        "id" : 283,
         "title" : "title",
         "content" : "content",
-        "tags" : [ "사진찍기 좋아요", "가격이 저렴해요", "커피가 맛있어요" ],
+        "tags" : [ "커피가 맛있어요", "사진찍기 좋아요", "가격이 저렴해요" ],
         "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
       },
       "store" : {
-        "managementId" : "1d7bf5c1-6b08-4106-b783-b0529c16a2ea",
+        "managementId" : "ab666903-214c-4d6b-b072-46ebd02dbffe",
         "storeName" : "옛손칼",
         "location" : [ 127.0147866, 37.4962232 ],
         "status" : "영업",
@@ -67,21 +67,21 @@
         "businessItem" : "제육"
       },
       "user" : {
-        "id" : 268,
+        "id" : 298,
         "nickname" : "test",
         "isFindFriends" : false,
         "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
       }
     }, {
       "review" : {
-        "id" : 252,
+        "id" : 282,
         "title" : "title",
         "content" : "content",
-        "tags" : [ "사진찍기 좋아요", "가격이 저렴해요", "커피가 맛있어요" ],
+        "tags" : [ "커피가 맛있어요", "사진찍기 좋아요", "가격이 저렴해요" ],
         "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
       },
       "store" : {
-        "managementId" : "8716fb87-49a4-41d2-9209-42405d6763c6",
+        "managementId" : "3900eec3-d849-47f6-a923-3adbd4b9e69e",
         "storeName" : "옛손칼",
         "location" : [ 127.0147866, 37.4962232 ],
         "status" : "영업",
@@ -90,21 +90,21 @@
         "businessItem" : "제육"
       },
       "user" : {
-        "id" : 267,
+        "id" : 297,
         "nickname" : "test",
         "isFindFriends" : false,
         "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
       }
     }, {
       "review" : {
-        "id" : 251,
+        "id" : 281,
         "title" : "title",
         "content" : "content",
-        "tags" : [ "사진찍기 좋아요", "가격이 저렴해요", "커피가 맛있어요" ],
+        "tags" : [ "커피가 맛있어요", "사진찍기 좋아요", "가격이 저렴해요" ],
         "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
       },
       "store" : {
-        "managementId" : "79b37cc4-f5ff-4797-9e7f-897dabea951f",
+        "managementId" : "9b1b8bc1-582d-4b31-8580-be95459a5827",
         "storeName" : "옛손칼",
         "location" : [ 127.0147866, 37.4962232 ],
         "status" : "영업",
@@ -113,21 +113,21 @@
         "businessItem" : "제육"
       },
       "user" : {
-        "id" : 265,
+        "id" : 296,
         "nickname" : "test",
         "isFindFriends" : false,
         "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
       }
     }, {
       "review" : {
-        "id" : 250,
+        "id" : 280,
         "title" : "title",
         "content" : "content",
-        "tags" : [ "사진찍기 좋아요", "가격이 저렴해요", "커피가 맛있어요" ],
+        "tags" : [ "커피가 맛있어요", "사진찍기 좋아요", "가격이 저렴해요" ],
         "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
       },
       "store" : {
-        "managementId" : "b3155ade-c304-4129-b6a4-faaff66d5aa1",
+        "managementId" : "207fd898-808d-4c68-8d01-0d9f28b7f665",
         "storeName" : "옛손칼",
         "location" : [ 127.0147866, 37.4962232 ],
         "status" : "영업",
@@ -136,14 +136,14 @@
         "businessItem" : "제육"
       },
       "user" : {
-        "id" : 264,
+        "id" : 295,
         "nickname" : "test",
         "isFindFriends" : false,
         "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
       }
     } ],
-    "lastId" : 250
+    "lastId" : 280
   },
-  "responseTime" : "2022.02.10 09:56:06"
+  "responseTime" : "2022.02.26 01:14:16"
 }
 ----

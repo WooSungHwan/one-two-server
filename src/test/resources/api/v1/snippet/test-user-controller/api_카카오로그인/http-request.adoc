@@ -4,7 +4,7 @@ POST /api/v1/users/kakao-login HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
 Content-Length: 72
-Host: ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510
+Host: onetwo-server.com
 
-{"accessToken":"kULGi1AAFR-Ynwi35GkrWZ71zTumGNQsK-jTLgo9cpcAAAF-1DcQYA"}
+{"accessToken":"8czXiuHVkdgjAgc4oRkkkH4R0g5YmtBo1ZE58wopcSEAAAF_MapJ4A"}
 ----

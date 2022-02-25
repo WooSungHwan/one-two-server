@@ -1,44 +1,64 @@
 |===
-|Path|Type|Description
+|필드|데이터형식|필수여부|양식|설명
 
 |`+message+`
 |`+String+`
+|true
+|
 |메시지
 
 |`+result+`
 |`+Object+`
+|true
+|
 |결과
 
 |`+result+`
 |`+Object+`
+|true
+|
 |결과 객체
 
 |`+result.user+`
 |`+Object+`
+|true
+|
 |유저 정보 객체
 
 |`+result.user.id+`
 |`+Number+`
+|true
+|
 |유저 번호
 
 |`+result.user.nickname+`
 |`+String+`
+|true
+|
 |유저 닉네임
 
 |`+result.user.isFindFriends+`
 |`+Boolean+`
+|
+|
 |동료찾기 여부
 
 |`+result.user.profile+`
 |`+String+`
+|true
+|
 |프로필 사진
 
 |`+result.token+`
 |`+String+`
+|true
+|
 |JWT 토큰
 
 |`+responseTime+`
 |`+String+`
+|true
+|yyyy.MM.dd hh:mm:ss
 |API 응답 시간
 
 |===

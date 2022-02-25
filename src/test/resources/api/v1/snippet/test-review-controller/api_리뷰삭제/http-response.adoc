@@ -1,6 +1,6 @@
 [source,http,options="nowrap"]
 ----
-HTTP/1.1 200 OK
+HTTP/1.1 401 Unauthorized
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -11,11 +11,11 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 83
+Content-Length: 141
 
 {
-  "message" : "OK",
-  "result" : null,
-  "responseTime" : "2022.01.22 12:20:14"
+  "code" : "JWT_BAD_REQUEST",
+  "message" : "인증 정보를 확인해주시기 바랍니다.",
+  "responseTime" : "2022.02.26 01:14:16"
 }
 ----

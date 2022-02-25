@@ -1,6 +1,6 @@
 [source,bash]
 ----
-$ echo '{"genderStep":"FEMALE","priceStep":"IMPORTANT","alcoholStep":"HATE","freshFoodStep":"HATE","playStep":"WITH_PLAY","timeStep":"AM"}' | http POST 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/users/tastes' \
+$ echo '{"genderStep":"FEMALE","priceStep":"IMPORTANT","alcoholStep":"HATE","freshFoodStep":"HATE","playStep":"WITH_PLAY","timeStep":"AM"}' | http POST 'https://onetwo-server.com/api/v1/users/tastes' \
     'Content-Type:application/json;charset=UTF-8' \
     'Accept:application/json' \
     'Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDQyMzc5MjMsImV4cCI6MTY0NzExNzkyMywic2VxIjoyNTV9.yB31gquDIXZltud5DMfo_RGvzs6DvGkQH2yoixMyvCs'

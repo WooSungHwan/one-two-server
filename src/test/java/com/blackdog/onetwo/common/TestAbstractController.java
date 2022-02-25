@@ -53,7 +53,7 @@ public abstract class TestAbstractController {
     @BeforeEach
     public void setUp(WebApplicationContext webAppContext, RestDocumentationContextProvider restDocumentation) {
         this.document = document("{class-name}/{method-name}"
-                , preprocessRequest(modifyUris().host("https").host("onetwo-server.com"))
+                , preprocessRequest(modifyUris().host("https").host("onetwo-server.com").removePort())
                 , preprocessResponse(prettyPrint()));
         this.mockMvc = MockMvcBuilders.webAppContextSetup(webAppContext)
                 .addFilters(new CharacterEncodingFilter("UTF-8", true), springSecurityFilterChain)
@@ -88,7 +88,7 @@ public abstract class TestAbstractController {
     }
 
     protected String getToken() {
-        return "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDQyMzc5MjMsImV4cCI6MTY0NzExNzkyMywic2VxIjoyNTV9.yB31gquDIXZltud5DMfo_RGvzs6DvGkQH2yoixMyvCs";
+        return "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDU4MDU3NTAsImV4cCI6MTY0ODY4NTc1MCwic2VxIjozMDJ9.adY4fgWjzcLTz5DZUCJLLywlP9Xc3c6a8a_Bht7luAQ";
     }
 
     protected HeaderDescriptor loginRequired() {

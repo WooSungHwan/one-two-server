@@ -3,11 +3,11 @@
 {
   "message" : "OK",
   "result" : {
-    "id" : 255,
+    "id" : 302,
     "nickname" : "우성환",
     "isFindFriends" : false,
     "profile" : "http://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
   },
-  "responseTime" : "2022.02.09 06:44:49"
+  "responseTime" : "2022.02.26 01:19:31"
 }
 ----

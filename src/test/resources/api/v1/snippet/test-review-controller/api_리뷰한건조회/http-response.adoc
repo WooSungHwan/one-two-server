@@ -1,6 +1,6 @@
 [source,http,options="nowrap"]
 ----
-HTTP/1.1 200 OK
+HTTP/1.1 401 Unauthorized
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -11,34 +11,11 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 937
+Content-Length: 141
 
 {
-  "message" : "OK",
-  "result" : {
-    "review" : {
-      "id" : 253,
-      "title" : "title",
-      "content" : "content",
-      "tags" : [ "사진찍기 좋아요", "커피가 맛있어요", "가격이 저렴해요" ],
-      "images" : [ "https://one-two-image.s3.ap-northeast-2.amazonaws.com/image/test.png" ]
-    },
-    "store" : {
-      "managementId" : "1d7bf5c1-6b08-4106-b783-b0529c16a2ea",
-      "storeName" : "옛손칼",
-      "location" : [ 127.0147866, 37.4962232 ],
-      "status" : "영업",
-      "jibunAddress" : "경기도 의정부시 의정부1동 225-16",
-      "roadAddress" : "경기도 의정부시 가능로136번길 9-10",
-      "businessItem" : "제육"
-    },
-    "user" : {
-      "id" : 268,
-      "nickname" : "test",
-      "isFindFriends" : false,
-      "profile" : "https://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
-    }
-  },
-  "responseTime" : "2022.02.10 09:53:54"
+  "code" : "JWT_BAD_REQUEST",
+  "message" : "인증 정보를 확인해주시기 바랍니다.",
+  "responseTime" : "2022.02.26 01:14:16"
 }
 ----

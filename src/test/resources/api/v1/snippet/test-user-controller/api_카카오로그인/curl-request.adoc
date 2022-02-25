@@ -1,7 +1,7 @@
 [source,bash]
 ----
-$ curl 'http://ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com:5510/api/v1/users/kakao-login' -i -X POST \
+$ curl 'https://onetwo-server.com/api/v1/users/kakao-login' -i -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
-    -d '{"accessToken":"kULGi1AAFR-Ynwi35GkrWZ71zTumGNQsK-jTLgo9cpcAAAF-1DcQYA"}'
+    -d '{"accessToken":"8czXiuHVkdgjAgc4oRkkkH4R0g5YmtBo1ZE58wopcSEAAAF_MapJ4A"}'
 ----

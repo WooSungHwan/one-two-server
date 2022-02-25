@@ -17,13 +17,13 @@ Content-Length: 495
   "message" : "OK",
   "result" : {
     "user" : {
-      "id" : 255,
+      "id" : 302,
       "nickname" : "우성환",
       "isFindFriends" : false,
       "profile" : "http://k.kakaocdn.net/dn/HkDIh/btrmlYT4Prd/kOZsI0MrBUEvwRzDJKV651/img_640x640.jpg"
     },
-    "token" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDQyMzc5MjMsImV4cCI6MTY0NzExNzkyMywic2VxIjoyNTV9.yB31gquDIXZltud5DMfo_RGvzs6DvGkQH2yoixMyvCs"
+    "token" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTkUtVFdPLVNFUlZFUiBBUEkiLCJpc3MiOiJPTkUtVFdPLVVTRVIiLCJpYXQiOjE2NDU4MDU3NTAsImV4cCI6MTY0ODY4NTc1MCwic2VxIjozMDJ9.adY4fgWjzcLTz5DZUCJLLywlP9Xc3c6a8a_Bht7luAQ"
   },
-  "responseTime" : "2022.02.07 09:45:23"
+  "responseTime" : "2022.02.26 01:15:50"
 }
 ----
