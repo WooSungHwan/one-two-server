@@ -53,7 +53,7 @@ public abstract class TestAbstractController {
     @BeforeEach
     public void setUp(WebApplicationContext webAppContext, RestDocumentationContextProvider restDocumentation) {
         this.document = document("{class-name}/{method-name}"
-                , preprocessRequest(modifyUris().host("http").host("ec2-54-180-30-10.ap-northeast-2.compute.amazonaws.com").port(5510))
+                , preprocessRequest(modifyUris().host("https").host("onetwo-server.com"))
                 , preprocessResponse(prettyPrint()));
         this.mockMvc = MockMvcBuilders.webAppContextSetup(webAppContext)
                 .addFilters(new CharacterEncodingFilter("UTF-8", true), springSecurityFilterChain)
