@@ -99,6 +99,7 @@ configurations {
 
 test {
     exclude "com/blackdog/onetwo/domain/*/controller/Test*Controller.class"
+    exclude "com/blackdog/onetwo/domain/upload/**"
     outputs.dir snippetsDir
     useJUnitPlatform()
 }
