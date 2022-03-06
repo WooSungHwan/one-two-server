@@ -3,6 +3,6 @@
 GET /api/v1/reviews?tags=NO_KIDS_ZONE&tags=CHEAP&page=1&limit=5&lastId= HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Host: https://onetwo-server.com
+Host: onetwo-server.com
 
 ----

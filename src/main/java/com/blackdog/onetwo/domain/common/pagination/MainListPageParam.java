@@ -35,13 +35,20 @@ public class MainListPageParam {
     @JsonIgnore
     @AssertTrue(message = "첫 페이지에서는 id를 입력할 수 없습니다.", groups = OrderSecond.class)
     private boolean isValidId() {
-        return this.page != 1 || Objects.isNull(this.lastId);
+        return validId(this.page, this.lastId);
     }
 
     @JsonIgnore
     @AssertTrue(message = "id를 입력해주세요.", groups = OrderSecond.class)
-    private boolean isIdNotNull() {
-        return this.page == 1 || Objects.nonNull(this.lastId);
+    private boolean isPageOneIdNotNull() {
+        return pageOneIdNotNull(this.page, this.lastId);
     }
 
+    public boolean validId(Integer page, Long lastId) {
+        return page != 1 || Objects.isNull(lastId);
+    }
+
+    public boolean pageOneIdNotNull(Integer page, Long lastId) {
+        return this.page == 1 || Objects.nonNull(this.lastId);
+    }
 }

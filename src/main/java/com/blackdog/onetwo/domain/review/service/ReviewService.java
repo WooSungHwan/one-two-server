@@ -18,9 +18,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Transactional(readOnly = true)
@@ -49,7 +51,17 @@ public class ReviewService {
                 page,
                 limit + 1);
 
-        return ReviewListResult.of(reviewMapstruct.reviewsToReviewDetailResults(reviews));
+        if (CollectionUtils.isEmpty(reviews)) {
+            return ReviewListResult.empty();
+        }
+
+        List<Review> results = reviews.stream()
+                .limit(limit)
+                .collect(Collectors.toUnmodifiableList());
+
+        boolean hasNext = reviews.size() != results.size();
+
+        return ReviewListResult.of(reviewMapstruct.reviewsToReviewDetailResults(results), hasNext);
     }
 
     @Transactional

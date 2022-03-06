@@ -14,9 +14,15 @@ public class ReviewListResult {
 
     private Long lastId;
 
-    public static ReviewListResult of(List<ReviewDetailResult> list) {
+    private boolean hasNext;
+
+    public static ReviewListResult empty() {
+        return new ReviewListResult(Collections.emptyList(), null, false);
+    }
+
+    public static ReviewListResult of(List<ReviewDetailResult> list, boolean hasNext) {
         if (CollectionUtils.isEmpty(list)) {
-            return new ReviewListResult(Collections.emptyList(), null);
+            return new ReviewListResult(Collections.emptyList(), null, false);
         }
 
         Long minId = list.stream()
@@ -24,6 +30,6 @@ public class ReviewListResult {
                 .min(Comparator.comparing(result -> result))
                 .orElseThrow(NoSuchElementException::new);
 
-        return new ReviewListResult(list, minId);
+        return new ReviewListResult(list, minId, hasNext);
     }
 }

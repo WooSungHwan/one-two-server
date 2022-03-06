@@ -139,6 +139,12 @@
 |
 |최종 행 아이디
 
+|`+result.hasNext+`
+|`+Boolean+`
+|true
+|
+|다음 페이지 여부
+
 |`+responseTime+`
 |`+String+`
 |true

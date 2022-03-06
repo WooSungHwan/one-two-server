@@ -200,7 +200,8 @@ public class TestReviewController extends TestAbstractController {
                                         fieldWithPath("result.list[].user.isFindFriends").type(JsonFieldType.BOOLEAN).description("유저 동료찾기 활성화 여부"),
                                         fieldWithPath("result.list[].user.profile").type(JsonFieldType.STRING).description("유저 프로필 사진"),
 
-                                        fieldWithPath("result.lastId").type(JsonFieldType.NUMBER).description("최종 행 아이디")
+                                        fieldWithPath("result.lastId").type(JsonFieldType.NUMBER).description("최종 행 아이디"),
+                                        fieldWithPath("result.hasNext").type(JsonFieldType.BOOLEAN).description("다음 페이지 여부")
                                 )
                         )
                 ))
